@@ -21,7 +21,7 @@
 
         <li class="menu-item ">
             <a href="{{URL::To('admin/dashboard')}}" class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
+                <i class="mdi mdi-home menu-icon"></i>
                 <div>Dashboard</div>
             </a>
 
@@ -29,7 +29,7 @@
         </li>
         <li class="menu-item ">
             <a href="{{URL::To('admin/user/list')}}" class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
+                <i class="fa-solid fa-users  menu-icon"></i>
                 <div>User Management</div>
             </a>
 
@@ -37,24 +37,45 @@
         </li>
         <li class="menu-item ">
             <a href="icons/icons-mdi.html" class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
+                <i class="fa-solid fa-users  menu-icon"></i>
                 <div>Vendors Management</div>
             </a>
 
 
         </li>
+       
+
         <li class="menu-item ">
-            <a href="icons/icons-mdi.html" class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="fa-solid fa-location-dot menu-icon"></i>
                 <div>Location</div>
             </a>
+            <ul class="menu-sub">
 
 
+
+                <li class="menu-item ">
+                    <a href="{{URL::To('admin/location/category/list')}}" class="menu-link" target="_blank">
+                        
+                        <div>Location Category</div>
+                    </a>
+
+
+                </li>
+                <li class="menu-item ">
+                    <a href="{{URL::To('admin/location/list')}}" class="menu-link" target="_blank">
+                        <div>Location</div>
+                    </a>
+
+
+                </li>
+                
+            </ul>
         </li>
 
         <li class="menu-item ">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons mdi mdi-lock-open-outline"></i>
+                <i class="fa-solid fa-hotel menu-icon"></i>
                 <div>Hotels</div>
             </a>
 
@@ -65,6 +86,7 @@
 
                 <li class="menu-item ">
                     <a href="auth/login-basic.html" class="menu-link" target="_blank">
+                        <i class="fa-solid fa-house menu-icon"></i>
                         <div>Rooms</div>
                     </a>
 
@@ -91,7 +113,7 @@
         </li>
         <li class="menu-item ">
             <a href="icons/icons-mdi.html" class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
+                <i class="fa-solid fa-indian-rupee-sign menu-icon"></i>
                 <div>Payouts</div>
             </a>
 
@@ -99,7 +121,7 @@
         </li>
         <li class="menu-item ">
             <a href="icons/icons-mdi.html" class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
+                <i class="fa-solid fa-flag menu-icon"></i>
                 <div>Reports</div>
             </a>
 
@@ -107,7 +129,7 @@
         </li>
         <li class="menu-item ">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons mdi mdi-lock-open-outline"></i>
+                <i class="fa-solid fa-gear menu-icon"></i>
                 <div>Settings</div>
             </a>
 
@@ -138,7 +160,7 @@
         </li>
         <li class="menu-item ">
             <a href="icons/icons-mdi.html" class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
+                <i class="fa-solid fa-face-smile menu-icon"></i>
                 <div>Experience</div>
             </a>
 
@@ -146,7 +168,7 @@
         </li>
         <li class="menu-item ">
             <a href="icons/icons-mdi.html" class="menu-link">
-                <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
+                <i class="fa-solid fa-percent menu-icon"></i>
                 <div>Discount</div>
             </a>
 

@@ -6,16 +6,33 @@
     {{ Request::segment(2) . '/' . Request::segment(3) }}
 
 </h6>
+<div class="row">
+    <div class="col-md-3">
+        <h4>Add Category</h4>
+        <form action="">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" placeholder="Category Name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="name">Icon Class</label>
+                <input type="text" placeholder="Category Name" class="form-control">
+            </div>
+
+            <button class="btn btn-primary mt-2">Add New</button>
+        </form>
+    </div>
+    <div class="col-md-9">
 <div class="card">
-    <h5 class="card-header">User List</h5>
+    {{-- <h5 class="card-header">User List</h5> --}}
     <div class="table-responsive text-nowrap">
       <table class="table" id="zero_config">
         <thead>
           <tr class="text-nowrap">
             <th>#</th>
             <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
+            <th>Status</th>
+            <th>Date</th>
             <th>Action</th>
            
           </tr>
@@ -23,9 +40,9 @@
         <tbody class="table-border-bottom-0" >
           <tr>
             <th scope="row">1</th>
-            <td>Demo</td>
-            <td>demo@user.com</td>
-            <td>9933225544</td>
+            <td>Exprience</td>
+            <td style="color: green">Publish</td>
+            <td>26/03/2024</td>
             <td>
                 <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
                 <a href="#"  onclick="deleteConfirmation(event)"><i class="fa-solid fa-trash"></i></a>
@@ -39,4 +56,7 @@
     </div>
   </div>
 </div>
+    </div>
+</div>
+
 @endsection

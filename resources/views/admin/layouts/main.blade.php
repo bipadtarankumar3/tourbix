@@ -27,24 +27,9 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <!-- Google Tag Manager (Default ThemeSelection: GTM-5DDHKGP, PixInvent: GTM-5J3LMKC) -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                '../../../www.googletagmanager.com/gtm5445.html?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5DDHKGP');
-    </script>
+
     <!-- End Google Tag Manager -->
 
 
@@ -56,25 +41,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;ampdisplay=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="{{URL::to('public/assets/admin/vendor/fonts/materialdesigniconsf861.css?id=9a16ed1a5c9f397c4fb730e76fd36384')}}" />
     <link rel="stylesheet"
-        href="{{URL::to('public/assets/admin/vendor/libs/node-waves/node-wavesd178.css?id=aa72fb97dfa8e932ba88c8a3c04641bc')}}" />
+        href="{{ URL::to('public/assets/admin/vendor/fonts/materialdesigniconsf861.css?id=9a16ed1a5c9f397c4fb730e76fd36384') }}" />
+    <link rel="stylesheet"
+        href="{{ URL::to('public/assets/admin/vendor/libs/node-waves/node-wavesd178.css?id=aa72fb97dfa8e932ba88c8a3c04641bc') }}" />
     <!-- Core CSS -->
-    <link rel="stylesheet" href="{{URL::to('public/assets/admin/vendor/css/core39e0.css?id=fdb5cd3f802d37d094730acf8fdcb33a')}}" />
-    <link rel="stylesheet" href="{{URL::to('public/assets/admin/vendor/css/theme-default5761.css?id=da9b9645b9e4f480d38ea81168db36b7')}}" />
-    <link rel="stylesheet" href="{{URL::to('public/assets/admin/css/demo2b5e.css?id=0f3ae65b84f44dbd4971231c5d97ac3b')}}" />
+    <link rel="stylesheet"
+        href="{{ URL::to('public/assets/admin/vendor/css/core39e0.css?id=fdb5cd3f802d37d094730acf8fdcb33a') }}" />
+    <link rel="stylesheet"
+        href="{{ URL::to('public/assets/admin/vendor/css/theme-default5761.css?id=da9b9645b9e4f480d38ea81168db36b7') }}" />
+    <link rel="stylesheet"
+        href="{{ URL::to('public/assets/admin/css/demo2b5e.css?id=0f3ae65b84f44dbd4971231c5d97ac3b') }}" />
     <!-- Vendors CSS -->
     <link rel="stylesheet"
-        href="{{URL::to('public/assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbarda97.css?id=e542d5fe23051cba0a5aedb27dadd732')}}" />
+        href="{{ URL::to('public/assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbarda97.css?id=e542d5fe23051cba0a5aedb27dadd732') }}" />
 
     <!-- Vendor Styles -->
-    <link rel="stylesheet" href="{{URL::to('public/assets/admin/vendor/libs/apex-charts/apex-charts.css')}}">
+    <link rel="stylesheet" href="{{ URL::to('public/assets/admin/vendor/libs/apex-charts/apex-charts.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" type="text/css" href=" https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css"
+        href=" https://cdn.datatables.net/buttons/2.4.2/css/buttons.dataTables.min.css">
 
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <style>
         span.select2.select2-container.select2-container--classic {
             width: 100% !important;
@@ -85,11 +78,11 @@
 
     <!-- Include Scripts for customizer, helper, analytics, config -->
     <!-- laravel style -->
-    <script src="{{URL::to('public/assets/admin/vendor/js/helpers.js')}}"></script>
+    <script src="{{ URL::to('public/assets/admin/vendor/js/helpers.js') }}"></script>
 
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
-    <script src="{{URL::to('public/assets/admin/js/config.js')}}"></script>
-
+    <script src="{{ URL::to('public/assets/admin/js/config.js') }}"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="../../../buttons.github.io/buttons.js')}}"></script>
 </head>
@@ -109,9 +102,9 @@
             @include('admin.layouts.sidebar')
             @include('admin.layouts.validation')
             @include('admin.layouts.header')
-        
+
             <!-- Left side column. contains the logo and sidebar -->
-        
+
             @yield('content')
             @include('admin.layouts.footer')
         </div>
@@ -130,25 +123,58 @@
 
     <!-- Include Scripts -->
     <!-- BEGIN: Vendor JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="{{URL::to('public/assets/admin/vendor/libs/popper/poppere728.js?id=bd2c3acedf00f48d6ee99997ba90f1d8')}}"></script>
-    <script src="{{URL::to('public/assets/admin/vendor/js/bootstrap05f9.js?id=0a1f83aa0a6a7fd382c37453e3f11128')}}"></script>
-    <script src="{{URL::to('public/assets/admin/vendor/libs/node-waves/node-wavesa75b.js?id=0ca80150f23789eaa9840778ce45fc5c')}}"></script>
-    <script src="{{URL::to('public/assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbard295.js?id=f4192eb35ed7bdba94dcb820a77d9e47')}}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+ 
+    <script src="{{ URL::to('public/assets/admin/vendor/libs/popper/poppere728.js?id=bd2c3acedf00f48d6ee99997ba90f1d8') }}">
     </script>
-    <script src="{{URL::to('public/assets/admin/vendor/js/menuadfb.js?id=201bb3c555bc0ff219dec4dfd098c916')}}"></script>
-    <script src="{{URL::to('public/assets/admin/vendor/libs/apex-charts/apexcharts.js')}}"></script>
+    <script src="{{ URL::to('public/assets/admin/vendor/js/bootstrap05f9.js?id=0a1f83aa0a6a7fd382c37453e3f11128') }}">
+    </script>
+    <script
+        src="{{ URL::to('public/assets/admin/vendor/libs/node-waves/node-wavesa75b.js?id=0ca80150f23789eaa9840778ce45fc5c') }}">
+    </script>
+    <script
+        src="{{ URL::to('public/assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbard295.js?id=f4192eb35ed7bdba94dcb820a77d9e47') }}">
+    </script>
+    <script src="{{ URL::to('public/assets/admin/vendor/js/menuadfb.js?id=201bb3c555bc0ff219dec4dfd098c916') }}"></script>
+    <script src="{{ URL::to('public/assets/admin/vendor/libs/apex-charts/apexcharts.js') }}"></script>
     <!-- END: Page Vendor JS-->
     <!-- BEGIN: Theme JS-->
-    <script src="{{URL::to('public/assets/admin/js/main270c.js?id=4f816bbbc912e9a5bcff6119bc265966')}}"></script>
+    <script src="{{ URL::to('public/assets/admin/js/main270c.js?id=4f816bbbc912e9a5bcff6119bc265966') }}"></script>
+    <!-- DataTable -->
 
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.2/js/buttons.print.min.js"></script>
+
+    <script>
+        $('#zero_config').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+
+            ]
+
+        });
+        $('#report').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                'excel', 'pdf'
+            ]
+        });
+    </script>
     <!-- END: Theme JS-->
     <!-- Pricing Modal JS-->
     <!-- END: Pricing Modal JS-->
     <!-- BEGIN: Page JS-->
-    <script src="{{URL::to('public/assets/admin/js/dashboards-analytics.js')}}"></script>
+    <script src="{{ URL::to('public/assets/admin/js/dashboards-analytics.js') }}"></script>
 
-        
+
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 
@@ -163,12 +189,12 @@
 
     <script>
         function deleteConfirmation(ev) {
-    
+
             ev.preventDefault();
             var urlToRedirect = ev.currentTarget.getAttribute(
                 'href'
-                );
-    
+            );
+
             swal({
                 title: "Delete?",
                 text: "Please ensure and then confirm!",
@@ -177,38 +203,42 @@
                 confirmButtonText: "Yes, delete it!",
                 cancelButtonText: "No, cancel!",
                 reverseButtons: !0
-            }).then(function (e) {
-    
+            }).then(function(e) {
+
                 if (e.value === true) {
                     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-    
+
                     $.ajax({
                         type: 'POST',
                         url: urlToRedirect,
-                        data: {_token: CSRF_TOKEN},
+                        data: {
+                            _token: CSRF_TOKEN
+                        },
                         dataType: 'JSON',
-                        success: function (results) {
-    
+                        success: function(results) {
+
                             if (results.success === true) {
                                 swal("Done!", results.message, "success");
                                 setTimeout(() => {
-                            location.reload(true);
-                        }, 1000);
+                                    location.reload(true);
+                                }, 1000);
                             } else {
                                 swal("Error!", results.message, "error");
                             }
                         }
                     });
-    
+
                 } else {
                     e.dismiss;
                 }
-    
-            }, function (dismiss) {
+
+            }, function(dismiss) {
                 return false;
             })
         }
     </script>
+
+
     <!-- END: Page JS-->
 
 </body>
