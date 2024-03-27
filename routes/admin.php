@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\AdminAuthController;
 use App\Http\Controllers\admin\LocationManagementController;
 use App\Http\Controllers\admin\UserManagementController;
+use App\Http\Controllers\admin\HotelController;
 
 Route::get('login', [AdminAuthController::class, 'login'])->name('login');
 Route::post('admin-login-action', [AdminAuthController::class, 'adminLoginAction']);
@@ -22,4 +23,13 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
             Route::get('list', [LocationManagementController::class, 'locationCategoryList']);
         });
     });
+
+    Route::group(['prefix' => 'hotel', 'as' => 'hotel.'], function () {
+        Route::get('list', [HotelController::class, 'hotelList']);
+        Route::get('add_hotel', [HotelController::class, 'add_hotel']);
+        Route::get('proprity_type', [HotelController::class, 'proprity_type']);
+        Route::get('facility', [HotelController::class, 'facility']);
+        Route::get('hotel_service', [HotelController::class, 'hotel_service']);
+    });
+
 });
