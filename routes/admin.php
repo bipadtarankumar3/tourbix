@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\admin\AdminAuthController;
+use App\Http\Controllers\admin\CouponManagementController;
 use App\Http\Controllers\admin\LocationManagementController;
+use App\Http\Controllers\admin\PayoutManagementController;
 use App\Http\Controllers\admin\UserManagementController;
 
 Route::get('login', [AdminAuthController::class, 'login'])->name('login');
@@ -21,5 +23,15 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
         Route::group(['prefix' => 'category', 'as' => 'category.'], function () {
             Route::get('list', [LocationManagementController::class, 'locationCategoryList']);
         });
+    });
+
+    Route::group(['prefix' => 'coupon', 'as' => 'coupon.'], function () {
+        Route::get('list', [CouponManagementController::class, 'couponList']);
+        Route::get('add', [CouponManagementController::class, 'addCoupon']);
+    });
+
+    Route::group(['prefix' => 'payout', 'as' => 'payout.'], function () {
+        Route::get('list', [PayoutManagementController::class, 'payoutList']);
+       
     });
 });
