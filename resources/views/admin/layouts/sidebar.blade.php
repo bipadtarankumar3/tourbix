@@ -113,7 +113,7 @@
             </ul>
         </li>
         <li class="menu-item ">
-            <a href="icons/icons-mdi.html" class="menu-link">
+            <a href="{{URL::To('admin/payout/list')}}" class="menu-link">
                 <i class="fa-solid fa-indian-rupee-sign menu-icon"></i>
                 <div>Payouts</div>
             </a>
@@ -168,9 +168,9 @@
 
         </li>
         <li class="menu-item ">
-            <a href="icons/icons-mdi.html" class="menu-link">
+            <a href="{{URL::To('admin/coupon/list')}}" class="menu-link">
                 <i class="fa-solid fa-percent menu-icon"></i>
-                <div>Discount</div>
+                <div>Coupon</div>
             </a>
 
 
