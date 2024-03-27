@@ -36,7 +36,7 @@
 
         </li>
         <li class="menu-item ">
-            <a href="icons/icons-mdi.html" class="menu-link">
+            <a href="{{URL::to('admin/vendor/list')}}" class="menu-link">
                 <i class="fa-solid fa-users  menu-icon"></i>
                 <div>Vendors Management</div>
             </a>

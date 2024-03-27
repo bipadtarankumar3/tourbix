@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\AdminAuthController;
 use App\Http\Controllers\admin\LocationManagementController;
 use App\Http\Controllers\admin\UserManagementController;
 use App\Http\Controllers\admin\HotelController;
+use App\Http\Controllers\admin\VendorController;
 
 Route::get('login', [AdminAuthController::class, 'login'])->name('login');
 Route::post('admin-login-action', [AdminAuthController::class, 'adminLoginAction']);
@@ -16,6 +17,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
 
     Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
         Route::get('list', [UserManagementController::class, 'userList']);
+    });
+    Route::group(['prefix' => 'vendor', 'as' => 'vendor.'], function () {
+        Route::get('list', [VendorController::class, 'vendorList']);
     });
     Route::group(['prefix' => 'location', 'as' => 'location.'], function () {
         Route::get('list', [LocationManagementController::class, 'locationList']);
