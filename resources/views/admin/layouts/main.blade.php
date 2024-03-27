@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 
-<html class="light-style layout-menu-fixed" data-theme="theme-default"
-    data-assets-path="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template-free/demo/assets/"
-    data-base-url="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template-free/demo"
-    data-framework="laravel" data-template="vertical-menu-laravel-template-free">
+<html>
 
 
 <!-- Mirrored from demos.themeselection.com/materio-bootstrap-html-laravel-admin-template-free/demo/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Mar 2024 18:59:25 GMT -->
@@ -15,15 +12,15 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Dashboard - Analytics | Materio - HTML Laravel Free Admin Template </title>
+    <title>Tourbix</title>
     <meta name="description"
         content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
     <meta name="keywords"
-        content="dashboard, bootstrap 5 dashboard, bootstrap 5 design, bootstrap 5, bootstrap 5 free, free admin template">
+        content="">
     <!-- laravel CRUD token -->
     <meta name="csrf-token" content="Fh5jYGDPizn8OZeM3AxJp8ecY405k7hbJCFpTG8Y">
     <!-- Canonical SEO -->
-    <link rel="canonical" href="https://themeselection.com/item/materio-free-bootstrap-html-laravel-admin-template/">
+    <link rel="canonical" href="#">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
 
