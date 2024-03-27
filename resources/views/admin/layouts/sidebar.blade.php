@@ -20,7 +20,7 @@
 
 
         <li class="menu-item ">
-            <a href="{{URL::To('admin/dashboard')}}" class="menu-link">
+            <a href="{{URL::to('admin/dashboard')}}" class="menu-link">
                 <i class="mdi mdi-home menu-icon"></i>
                 <div>Dashboard</div>
             </a>
@@ -28,7 +28,7 @@
 
         </li>
         <li class="menu-item ">
-            <a href="{{URL::To('admin/user/list')}}" class="menu-link">
+            <a href="{{URL::to('admin/user/list')}}" class="menu-link">
                 <i class="fa-solid fa-users  menu-icon"></i>
                 <div>User Management</div>
             </a>
@@ -55,7 +55,7 @@
 
 
                 <li class="menu-item ">
-                    <a href="{{URL::To('admin/location/category/list')}}" class="menu-link" target="_blank">
+                    <a href="{{URL::to('admin/location/category/list')}}" class="menu-link">
                         
                         <div>Location Category</div>
                     </a>
@@ -63,7 +63,7 @@
 
                 </li>
                 <li class="menu-item ">
-                    <a href="{{URL::To('admin/location/list')}}" class="menu-link" target="_blank">
+                    <a href="{{URL::to('admin/location/list')}}" class="menu-link">
                         <div>Location</div>
                     </a>
 
@@ -81,30 +81,31 @@
 
 
             <ul class="menu-sub">
-
-
-
                 <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link" target="_blank">
-                        <i class="fa-solid fa-house menu-icon"></i>
-                        <div>Rooms</div>
+                    <a href="{{URL::to('admin/hotel/list')}}" class="menu-link">
+                       
+                        <div>All Hotels</div>
                     </a>
-
-
                 </li>
                 <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link" target="_blank">
-                        <div>Room Categories</div>
+                    <a href="{{URL::to('admin/hotel/add_hotel')}}" class="menu-link">
+                        <div>Add New Hotel </div>
                     </a>
-
-
                 </li>
                 <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link" target="_blank">
-                        <div>Amenities</div>
+                    <a href="{{URL::to('admin/hotel/proprity_type')}}" class="menu-link">
+                        <div>Property Type</div>
                     </a>
-
-
+                </li>
+                <li class="menu-item ">
+                    <a href="{{URL::to('admin/hotel/facility')}}" class="menu-link">
+                        <div>Facility</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="{{URL::to('admin/hotel/hotel_service')}}" class="menu-link">
+                        <div>Hotel Service</div>
+                    </a>
                 </li>
 
 
@@ -139,14 +140,14 @@
 
 
                 <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link" target="_blank">
+                    <a href="auth/login-basic.html" class="menu-link">
                         <div>Role management </div>
                     </a>
 
 
                 </li>
                 <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link" target="_blank">
+                    <a href="auth/login-basic.html" class="menu-link">
                         <div>Profile</div>
                     </a>
 
