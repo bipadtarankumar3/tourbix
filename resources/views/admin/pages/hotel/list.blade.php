@@ -16,12 +16,12 @@
                             <thead>
                                 <tr class="text-nowrap">
                                     <th>#</th>
-                                    <th>Date</th>
-                                    <th>Title</th>
-                                    <th>Desc</th>
-                                    <th>Image</th>
-                                    <th>Pricing</th>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Author</th>
                                     <th>Status</th>
+                                    <th>Reviews</th>
+                                    <th>Date</th>
                                     
                                     <th>Action</th>
 
@@ -30,15 +30,14 @@
                             <tbody class="table-border-bottom-0">
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>26/03/2024</td>
-                                    <td>Exprience</td>
-                                    <td>Description</td>
-                                    <td>
-                                        <img src="" alt="">
-                                    </td>
-                                    <td>2000</td>
-                                    <td style="color: green">Publish</td>
+                                    <td>Hote Hill</td>
+                                    <td>Kolkata</td>
+                                    <td>demo1</td>
+                                    
                                    
+                                    <td style="color: green">Publish</td>
+                                    <td>2</td>
+                                    <td>24/05/2024</td>
                                     <td>
                                         <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
                                         <a href="#" onclick="deleteConfirmation(event)"><i

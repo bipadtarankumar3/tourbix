@@ -8,22 +8,13 @@
         </h6>
         <div class="row">
             <div class="col-md-3">
-                <h4>Add Location</h4>
+                <h4>{{$title}}</h4>
                 <form action="">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" placeholder="Category Name" class="form-control">
+                        <label for="name"> Poperty Name</label>
+                        <input type="text" placeholder="Poperty Name" class="form-control">
                     </div>
-                    <div class="form-group">
-                        <label for="name">Parent</label>
-                        <select name="" class="form-control" id="">
-                            <option value="">--please Select--</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea id="description" name="description" class="ckeditor form-control"></textarea>
-                    </div>
+                  
                     <button class="btn btn-primary mt-2">Add New</button>
                 </form>
             </div>
@@ -45,7 +36,7 @@
                             <tbody class="table-border-bottom-0">
                                 <tr>
                                     <th scope="row">1</th>
-                                    <td>Exprience</td>
+                                    <td>Homestay</td>
                                     <td style="color: green">Publish</td>
                                     <td>26/03/2024</td>
                                     <td>

@@ -16,7 +16,7 @@ class HotelController extends Controller
         return view('admin.pages.hotel.add_hotel',$data);
     }
     public function proprity_type(){
-        $data['title']='Hotel Add';
+        $data['title']='Add Poperty Type';
         return view('admin.pages.proprity_type.list',$data);
     }
     public function facility(){
