@@ -8,20 +8,26 @@
         </h6>
         <div class="row">
             <div class="col-md-3">
-                <h4>{{$title}}</h4>
-                <form action="">
-                    <div class="form-group">
-                        <label for="name"> Poperty Name</label>
-                        <input type="text" placeholder="Poperty Name" class="form-control">
+                <div class="card">
+                    <h4  class="card-header">{{$title}}</h4>
+                    <div class="card-body">
+                        <form action="">
+                            <div class="form-group">
+                                <label for="name"> Poperty Name</label>
+                                <input type="text" placeholder="Poperty Name" class="form-control">
+                            </div>
+                        
+                            <button class="btn btn-primary mt-2">Add New</button>
+                        </form>
                     </div>
-                  
-                    <button class="btn btn-primary mt-2">Add New</button>
-                </form>
+                    
+                </div>
             </div>
             <div class="col-md-9">
                 <div class="card">
                     {{-- <h5 class="card-header">User List</h5> --}}
-                    <div class="table-responsive text-nowrap">
+                    <div class="card-body">
+                        <div class="table-responsive text-nowrap">
                         <table class="table" id="zero_config">
                             <thead>
                                 <tr class="text-nowrap">
@@ -51,6 +57,8 @@
                             </tbody>
                         </table>
                     </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>

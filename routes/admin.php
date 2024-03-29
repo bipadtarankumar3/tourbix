@@ -9,6 +9,7 @@ use App\Http\Controllers\admin\PayoutManagementController;
 use App\Http\Controllers\admin\UserManagementController;
 use App\Http\Controllers\admin\HotelController;
 use App\Http\Controllers\admin\VendorController;
+use App\Http\Controllers\admin\ExperianceController;
 
 Route::get('login', [AdminAuthController::class, 'login'])->name('login');
 Route::post('admin-login-action', [AdminAuthController::class, 'adminLoginAction']);
@@ -46,6 +47,16 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
 
     Route::group(['prefix' => 'payout', 'as' => 'payout.'], function () {
         Route::get('list', [PayoutManagementController::class, 'payoutList']);
+       
+    });
+
+    Route::group(['prefix' => 'room', 'as' => 'room.'], function () {
+        Route::get('list', [HotelController::class, 'roomList']);
+       
+    });
+
+    Route::group(['prefix' => 'experiance', 'as' => 'experiance.'], function () {
+        Route::get('list', [ExperianceController::class, 'experianceList']);
        
     });
 });

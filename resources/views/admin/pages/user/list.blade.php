@@ -8,7 +8,8 @@
 </h6>
 <div class="card">
     <h5 class="card-header">User List</h5>
-    <div class="table-responsive text-nowrap">
+    <div class="card-body">
+      <div class="table-responsive text-nowrap">
       <table class="table" id="zero_config">
         <thead>
           <tr class="text-nowrap">
@@ -37,6 +38,8 @@
         </tbody>
       </table>
     </div>
+    </div>
+    
   </div>
 </div>
 @endsection

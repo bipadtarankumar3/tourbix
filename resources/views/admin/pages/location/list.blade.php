@@ -8,7 +8,9 @@
         </h6>
         <div class="row">
             <div class="col-md-3">
-                <h4>Add Location</h4>
+                <div class="card">
+                <h4  class="card-header">Add Location</h4>
+                <div class="card-body">
                 <form action="">
                     <div class="form-group">
                         <label for="name">Name</label>
@@ -26,39 +28,45 @@
                     </div>
                     <button class="btn btn-primary mt-2">Add New</button>
                 </form>
+                </div>
+            </div>
             </div>
             <div class="col-md-9">
                 <div class="card">
                     {{-- <h5 class="card-header">User List</h5> --}}
-                    <div class="table-responsive text-nowrap">
-                        <table class="table" id="zero_config">
-                            <thead>
-                                <tr class="text-nowrap">
-                                    <th>#</th>
-                                    <th>Name</th>
-                                    <th>Status</th>
-                                    <th>Date</th>
-                                    <th>Action</th>
+                    <div class="card-body">
 
-                                </tr>
-                            </thead>
-                            <tbody class="table-border-bottom-0">
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Exprience</td>
-                                    <td style="color: green">Publish</td>
-                                    <td>26/03/2024</td>
-                                    <td>
-                                        <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-                                        <a href="#" onclick="deleteConfirmation(event)"><i
-                                                class="fa-solid fa-trash"></i></a>
+                    
+                        <div class="table-responsive text-nowrap">
+                            <table class="table" id="zero_config">
+                                <thead>
+                                    <tr class="text-nowrap">
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th>Action</th>
 
-                                    </td>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-border-bottom-0">
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Exprience</td>
+                                        <td style="color: green">Publish</td>
+                                        <td>26/03/2024</td>
+                                        <td>
+                                            <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            <a href="#" onclick="deleteConfirmation(event)"><i
+                                                    class="fa-solid fa-trash"></i></a>
 
-                                </tr>
+                                        </td>
 
-                            </tbody>
-                        </table>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

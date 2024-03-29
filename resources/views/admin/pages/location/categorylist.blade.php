@@ -8,23 +8,30 @@
 </h6>
 <div class="row">
     <div class="col-md-3">
-        <h4>Add Category</h4>
-        <form action="">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" placeholder="Category Name" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="name">Icon Class</label>
-                <input type="text" placeholder="Category Name" class="form-control">
-            </div>
+      <div class="card">
+          <h4 class="card-header">Add Category</h4>
+          <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" placeholder="Category Name" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="name">Icon Class</label>
+                    <input type="text" placeholder="Category Name" class="form-control">
+                </div>
 
-            <button class="btn btn-primary mt-2">Add New</button>
-        </form>
+                <button class="btn btn-primary mt-2">Add New</button>
+            </form>
+        </div>
+      </div>
     </div>
     <div class="col-md-9">
 <div class="card">
     {{-- <h5 class="card-header">User List</h5> --}}
+    <div class="card-body">
+
+    
     <div class="table-responsive text-nowrap">
       <table class="table" id="zero_config">
         <thead>
@@ -54,6 +61,7 @@
         </tbody>
       </table>
     </div>
+  </div>
   </div>
 </div>
     </div>

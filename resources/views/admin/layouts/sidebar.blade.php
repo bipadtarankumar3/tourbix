@@ -8,7 +8,7 @@
         </a>
 
         <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
-            <i class="mdi menu-toggle-icon d-xl-block align-middle mdi-20px"></i>
+            <i class="mdi menu-toggle-icon d-xl-block align-middle mdi-24px"></i>
         </a>
     </div>
 
@@ -19,9 +19,9 @@
 
 
 
-        <li class="menu-item ">
+        <li class="menu-item active">
             <a href="{{URL::to('admin/dashboard')}}" class="menu-link">
-                <i class="mdi mdi-home menu-icon"></i>
+                <i class="menu-icon tf-icons mdi mdi-home-outline"></i>
                 <div>Dashboard</div>
             </a>
 
@@ -29,7 +29,7 @@
         </li>
         <li class="menu-item ">
             <a href="{{URL::to('admin/user/list')}}" class="menu-link">
-                <i class="fa-solid fa-users  menu-icon"></i>
+                <i class="menu-icon tf-icons mdi mdi-account-outline"></i>
                 <div>User Management</div>
             </a>
 
@@ -37,7 +37,7 @@
         </li>
         <li class="menu-item ">
             <a href="{{URL::to('admin/vendor/list')}}" class="menu-link">
-                <i class="fa-solid fa-users  menu-icon"></i>
+                <i class="menu-icon tf-icons mdi mdi-account-outline"></i>
                 <div>Vendors Management</div>
             </a>
 
@@ -47,7 +47,7 @@
 
         <li class="menu-item ">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="fa-solid fa-location-dot menu-icon"></i>
+                <i class="mdi mdi-map-marker-radius  mdi-24px"></i>
                 <div>Location</div>
             </a>
             <ul class="menu-sub">
@@ -75,7 +75,7 @@
 
         <li class="menu-item ">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="fa-solid fa-hotel menu-icon"></i>
+                <span class="mdi mdi-office-building-marker-outline mdi-24px"></span>
                 <div>Hotels</div>
             </a>
 
@@ -107,6 +107,11 @@
                         <div>Hotel Service</div>
                     </a>
                 </li>
+                <li class="menu-item ">
+                    <a href="{{URL::to('admin/room/list')}}" class="menu-link">
+                        <div>Room Management</div>
+                    </a>
+                </li>
 
 
 
@@ -114,15 +119,31 @@
         </li>
         <li class="menu-item ">
             <a href="{{URL::To('admin/payout/list')}}" class="menu-link">
-                <i class="fa-solid fa-indian-rupee-sign menu-icon"></i>
+                <span class="mdi mdi-currency-rupee  mdi-24px"></span>
                 <div>Payouts</div>
             </a>
 
 
         </li>
         <li class="menu-item ">
+            <a href="{{URL::To('admin/experiance/list')}}" class="menu-link">
+                <span class="mdi mdi-emoticon  mdi-24px"></span>
+                <div>Experience</div>
+            </a>
+
+
+        </li>
+        <li class="menu-item ">
+            <a href="{{URL::To('admin/coupon/list')}}" class="menu-link">
+                <span class="mdi mdi-counter  mdi-24px"></span>
+                <div>Coupon/Discount</div>
+            </a>
+
+
+        </li>
+        <li class="menu-item ">
             <a href="icons/icons-mdi.html" class="menu-link">
-                <i class="fa-solid fa-flag menu-icon"></i>
+                <span class="mdi mdi-file-chart  mdi-24px"></span>
                 <div>Reports</div>
             </a>
 
@@ -130,7 +151,7 @@
         </li>
         <li class="menu-item ">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="fa-solid fa-gear menu-icon"></i>
+                <span class="mdi mdi-cog  mdi-24px"></span>
                 <div>Settings</div>
             </a>
 
@@ -154,27 +175,17 @@
 
                 </li>
                
-
-
-
             </ul>
         </li>
         <li class="menu-item ">
-            <a href="icons/icons-mdi.html" class="menu-link">
-                <i class="fa-solid fa-face-smile menu-icon"></i>
-                <div>Experience</div>
+            <a href="{{URL::To('admin/vendor/list')}}" class="menu-link">
+                <span class="mdi mdi-file-chart  mdi-24px"></span>
+                <div>Vendor Dashboard</div>
             </a>
 
 
         </li>
-        <li class="menu-item ">
-            <a href="{{URL::To('admin/coupon/list')}}" class="menu-link">
-                <i class="fa-solid fa-percent menu-icon"></i>
-                <div>Coupon</div>
-            </a>
-
-
-        </li>
+        
 
 
 

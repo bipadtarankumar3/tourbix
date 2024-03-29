@@ -1,0 +1,10 @@
+.layout-menu{
+    border-right: 1px solid black;
+    /* background-color: #e1e6ed !important; */
+    background: linear-gradient(180deg, rgb(241, 240, 241) 0%, rgba(64,195,238,1) 100%);
+}
+.navbar-nav-right{
+    padding: 4px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, rgba(234,141,216,1) 0%, rgba(64,195,238,1) 100%);
+}
