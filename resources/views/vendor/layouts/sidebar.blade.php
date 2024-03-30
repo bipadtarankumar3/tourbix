@@ -80,7 +80,7 @@
 
 
                 <li class="menu-item ">
-                    <a href="{{URL::to('vendor/reports/booking_report')}}" class="menu-link">
+                    <a href="{{URL::To('vendor/reports/booking-report')}}" class="menu-link" target="_blank">
                         <div> Booking Reports </div>
                     </a>
 
