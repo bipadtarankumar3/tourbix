@@ -28,7 +28,7 @@
 
         </li>
         <li class="menu-item ">
-            <a href="icons/icons-mdi.html" class="menu-link">
+            <a href="{{URL::To('vendor/user/list')}}" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
                 <div>User Management</div>
             </a>
@@ -128,7 +128,7 @@
 
                 </li>
                 <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link">
+                    <a href="{{URL::To('vendor/change-password')}}" class="menu-link">
                         <div>Password change</div>
                     </a>
 

@@ -34,4 +34,13 @@ class VendorAuthController extends Controller
      $request->session()->flash('error','loged out');
      return redirect('vendor/login');
     }
+
+    public function userList(){
+        $data['title']='User Lists';
+        return view('vendor.pages.user.list',$data);
+    }
+    public function changePassword(){
+        $data['title']='Change Password';
+        return view('vendor.Auth.change_password',$data);
+    }
 }

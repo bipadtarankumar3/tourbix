@@ -15,12 +15,16 @@ Route::post('vendor-login-action', [VendorAuthController::class, 'vendorLoginAct
 Route::group(['prefix' => 'vendor', 'as' => 'vendor.', 'middleware' => ['App\Http\Middleware\vendorAuth']], function () {
     Route::get('dashboard', [VendorAuthController::class, 'dashboard']);
     Route::get('logout', [VendorAuthController::class, 'logout']);
+    Route::get('change-password', [VendorAuthController::class, 'changePassword']);
     Route::group(['prefix' => 'reports', 'as' => 'reports.'], function () {
         Route::get('booking-report', [ReportsController::class, 'bookingReports']);
         Route::get('enquiry_report', [ReportsController::class, 'enquiry_report']);
     });
     Route::group(['prefix' => 'booking', 'as' => 'booking.'], function () {
         Route::get('history', [BookingHistoryController::class, 'BookingHistory']);
+    });
+    Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
+        Route::get('list', [VendorAuthController::class, 'userList']);
     });
 
     Route::group(['prefix' => 'hotel', 'as' => 'hotel.'], function () {
