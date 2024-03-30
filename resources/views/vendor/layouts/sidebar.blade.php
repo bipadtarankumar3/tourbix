@@ -46,26 +46,12 @@
 
 
             <ul class="menu-sub">
-
-
-
                 <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link" target="_blank">
-                        <div>Rooms</div>
+                    <a href="{{URL::to('vendor/hotel/list')}}" class="menu-link">
+                        <div>Hotel</div>
                     </a>
-
-
-                </li>
-                <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link" target="_blank">
-                        <div>Room Categories</div>
-                    </a>
-
-
-                </li>
-                <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link" target="_blank">
-                        <div>Amenities</div>
+                    <a href="{{URL::to('vendor/hotel/add_hotel')}}" class="menu-link">
+                        <div>Add Hotel</div>
                     </a>
 
 
@@ -80,8 +66,6 @@
                 <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
                 <div>Booking History</div>
             </a>
-
-
         </li>
 
         <li class="menu-item ">
@@ -96,14 +80,14 @@
 
 
                 <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link" target="_blank">
+                    <a href="{{URL::to('vendor/reports/booking_report')}}" class="menu-link">
                         <div> Booking Reports </div>
                     </a>
 
 
                 </li>
                 <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link" target="_blank">
+                    <a href="{{URL::to('vendor/reports/enquiry_report')}}" class="menu-link">
                         <div>Enquiry Reports</div>
                     </a>
 
@@ -137,14 +121,14 @@
 
 
                 <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link" target="_blank">
+                    <a href="auth/login-basic.html" class="menu-link">
                         <div>  My Profile </div>
                     </a>
 
 
                 </li>
                 <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link" target="_blank">
+                    <a href="auth/login-basic.html" class="menu-link">
                         <div>Password change</div>
                     </a>
 
