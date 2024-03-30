@@ -16,6 +16,7 @@ Route::group(['prefix' => 'vendor', 'as' => 'vendor.', 'middleware' => ['App\Htt
     Route::get('logout', [VendorAuthController::class, 'logout']);
     Route::group(['prefix' => 'reports', 'as' => 'reports.'], function () {
         Route::get('booking-report', [ReportsController::class, 'bookingReports']);
+        Route::get('enquiry_report', [ReportsController::class, 'enquiry_report']);
     });
 
     Route::group(['prefix' => 'hotel', 'as' => 'hotel.'], function () {
