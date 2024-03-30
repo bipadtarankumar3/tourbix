@@ -1,235 +1,296 @@
-@extends('vendor.layouts.main')
+@extends('admin.layouts.main')
 
 @section('content')
-
     <div class="container-xxl flex-grow-1 container-p-y">
 
         <div class="row gy-4">
-            <!-- Congratulations card -->
-            <div class="col-md-12 col-lg-4">
+
+            <div class="col-xl-3 col-sm-6 mt-5">
                 <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title mb-1">Total Hotel</h4>
-                       
-                        <a href="javascript:;" class="btn btn-sm btn-primary">View </a>
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="card-body">
+                        <div class="card-info">
+                          <h6 class="mb-4 pb-1 text-nowrap">Ratings</h6>
+                          <div class="d-flex align-items-end mb-3">
+                            <h4 class="mb-0 me-2">13k</h4>
+                            {{-- <small class="text-success">+15.6%</small> --}}
+                          </div>
+                          <div class="badge bg-label-primary rounded-pill">Year of 2024</div>
+                        </div>
+                      </div>
                     </div>
-                  
+                    <div class="col-6">
+                      <div class="h-100 position-relative">
+                        <img src="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/assets/img/illustrations/illustration-1.png" alt="Ratings" class="position-absolute card-img-position scaleX-n1-rtl bottom-0 w-auto end-0 me-3 me-xl-0 me-xxl-3 pe-1" width="95">
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="col-md-12 col-lg-4">
+              </div>
+
+              <div class="col-xl-3 col-sm-6 mt-5">
                 <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title mb-1">Total User</h4>
-                       
-                        <a href="javascript:;" class="btn btn-sm btn-primary">View </a>
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="card-body">
+                        <div class="card-info">
+                          <h6 class="mb-4 pb-1 text-nowrap">Experience</h6>
+                          <div class="d-flex align-items-end mb-3">
+                            <h4 class="mb-0 me-2">200</h4>
+                            {{-- <small class="text-danger">-20%</small> --}}
+                          </div>
+                          <div class="badge bg-label-secondary rounded-pill">Last Week</div>
+                        </div>
+                      </div>
                     </div>
-                  
+                    <div class="col-6">
+                      <div class="h-100 position-relative">
+                        <img src="https://demos.themeselection.com/materio-bootstrap-html-laravel-admin-template/demo/assets/img/illustrations/illustration-2.png" alt="Ratings" class="position-absolute card-img-position scaleX-n1-rtl bottom-0 w-auto end-0 me-3 me-xl-0 me-xxl-3 pe-1" width="81">
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="col-md-12 col-lg-4">
+              </div>
+
+              <div class="col-xl-6 align-self-end">
                 <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title mb-1">Total Vendor</h4>
-                       
-                        <a href="javascript:;" class="btn btn-sm btn-primary">View </a>
+                  <div class="card-header d-flex align-items-center justify-content-between">
+                    <h5 class="card-title m-0 me-2">Transactions</h5>
+                    <div class="dropdown">
+                      <button class="btn p-0" type="button" id="transactionID" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="mdi mdi-dots-vertical mdi-24px"></i>
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-end" aria-labelledby="transactionID">
+                        <a class="dropdown-item waves-effect" href="javascript:void(0);">Refresh</a>
+                        <a class="dropdown-item waves-effect" href="javascript:void(0);">Share</a>
+                        <a class="dropdown-item waves-effect" href="javascript:void(0);">Update</a>
+                      </div>
                     </div>
-                  
+                  </div>
+                  <div class="card-body">
+                    <div class="row g-3 mb-xl-2">
+                      <div class="col-md-4">
+                        <div class="d-flex align-items-center">
+                          <div class="avatar">
+                            <div class="avatar-initial bg-primary rounded shadow">
+                              <i class="mdi mdi-trending-up mdi-24px"></i>
+                            </div>
+                          </div>
+                          <div class="ms-3">
+                            <div class="small mb-1">Sales</div>
+                            <h5 class="mb-0">245k</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="d-flex align-items-center">
+                          <div class="avatar">
+                            <div class="avatar-initial bg-success rounded shadow">
+                              <i class="mdi mdi-account-outline mdi-24px"></i>
+                            </div>
+                          </div>
+                          <div class="ms-3">
+                            <div class="small mb-1">Customers</div>
+                            <h5 class="mb-0">12.5k</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="d-flex align-items-center">
+                          <div class="avatar">
+                            <div class="avatar-initial bg-warning rounded shadow">
+                              <i class="mdi mdi-cellphone-link mdi-24px"></i>
+                            </div>
+                          </div>
+                          <div class="ms-3">
+                            <div class="small mb-1">Hotels</div>
+                            <h5 class="mb-0">200</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <!--/ Congratulations card -->
+              </div>
 
 
+        </div>
 
+        <div class="row mt-4">
+            <div class="col-sm-6 col-lg-3 mb-4">
+              <div class="card card-border-shadow-primary h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-2 pb-1">
+                    <div class="avatar me-2">
+                      <span class="avatar-initial rounded bg-label-primary"><i class="mdi mdi-account-outline mdi-24px"></i></span>
+                    </div>
+                    <h4 class="ms-1 mb-0 display-6">1500</h4>
+                  </div>
+                  <p class="mb-0 text-heading">Pending</p>
+                  {{-- <p class="mb-0">
+                    <span class="me-1">+18.2%</span>
+                    <small class="text-muted">than last week</small>
+                  </p> --}}
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-4">
+              <div class="card card-border-shadow-warning h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-2 pb-1">
+                    <div class="avatar me-2">
+                      <span class="avatar-initial rounded bg-label-warning">
+                        <i class="mdi mdi-alert mdi-20px"></i></span>
+                    </div>
+                    <h4 class="ms-1 mb-0 display-6">5000</h4>
+                  </div>
+                  <p class="mb-0 text-heading">Earnings</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-4">
+              <div class="card card-border-shadow-danger h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-2 pb-1">
+                    <div class="avatar me-2">
+                      <span class="avatar-initial rounded bg-label-danger">
+                        <i class="mdi mdi-source-fork mdi-20px"></i>
+                      </span>
+                    </div>
+                    <h4 class="ms-1 mb-0 display-6">27</h4>
+                  </div>
+                  <p class="mb-0 text-heading">Bookings</p>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-3 mb-4">
+              <div class="card card-border-shadow-info h-100">
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-2 pb-1">
+                    <div class="avatar me-2">
+                      <span class="avatar-initial rounded bg-label-info"><i class="mdi mdi-timer-outline mdi-20px"></i></span>
+                    </div>
+                    <h4 class="ms-1 mb-0 display-6">13</h4>
+                  </div>
+                  <p class="mb-0 text-heading">Services</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+                
             <!-- Data Tables -->
             <div class="col-12">
                 <div class="card">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead class="table-light">
-                                <tr>
-                                    <th class="text-truncate">User</th>
-                                    <th class="text-truncate">Email</th>
-                                    <th class="text-truncate">Role</th>
-                                    <th class="text-truncate">Age</th>
-                                    <th class="text-truncate">Salary</th>
-                                    <th class="text-truncate">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="avatar avatar-sm me-3">
-                                                <img src="assets/img/avatars/1.png" alt="Avatar"
-                                                    class="rounded-circle">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-0 text-truncate">Jordan Stevenson</h6>
-                                                <small class="text-truncate">@amiccoo</small>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-truncate">susanna.Lind57@gmail.com</td>
-                                    <td class="text-truncate"><i class="mdi mdi-laptop mdi-24px text-danger me-1"></i>
-                                        Admin</td>
-                                    <td class="text-truncate">24</td>
-                                    <td class="text-truncate">34500$</td>
-                                    <td><span class="badge bg-label-warning rounded-pill">Pending</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="avatar avatar-sm me-3">
-                                                <img src="assets/img/avatars/3.png" alt="Avatar"
-                                                    class="rounded-circle">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-0 text-truncate">Benedetto Rossiter</h6>
-                                                <small class="text-truncate">@brossiter15</small>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-truncate">estelle.Bailey10@gmail.com</td>
-                                    <td class="text-truncate"><i
-                                            class="mdi mdi-pencil-outline text-info mdi-24px me-1"></i>
-                                        Editor</td>
-                                    <td class="text-truncate">29</td>
-                                    <td class="text-truncate">64500$</td>
-                                    <td><span class="badge bg-label-success rounded-pill">Active</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="avatar avatar-sm me-3">
-                                                <img src="assets/img/avatars/2.png" alt="Avatar"
-                                                    class="rounded-circle">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-0 text-truncate">Bentlee Emblin</h6>
-                                                <small class="text-truncate">@bemblinf</small>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-truncate">milo86@hotmail.com</td>
-                                    <td class="text-truncate"><i
-                                            class="mdi mdi-cog-outline text-warning mdi-24px me-1"></i>
-                                        Author</td>
-                                    <td class="text-truncate">44</td>
-                                    <td class="text-truncate">94500$</td>
-                                    <td><span class="badge bg-label-success rounded-pill">Active</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="avatar avatar-sm me-3">
-                                                <img src="assets/img/avatars/5.png" alt="Avatar"
-                                                    class="rounded-circle">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-0 text-truncate">Bertha Biner</h6>
-                                                <small class="text-truncate">@bbinerh</small>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-truncate">lonnie35@hotmail.com</td>
-                                    <td class="text-truncate"><i
-                                            class="mdi mdi-pencil-outline text-info mdi-24px me-1"></i>
-                                        Editor</td>
-                                    <td class="text-truncate">19</td>
-                                    <td class="text-truncate">4500$</td>
-                                    <td><span class="badge bg-label-warning rounded-pill">Pending</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="avatar avatar-sm me-3">
-                                                <img src="assets/img/avatars/4.png" alt="Avatar"
-                                                    class="rounded-circle">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-0 text-truncate">Beverlie Krabbe</h6>
-                                                <small class="text-truncate">@bkrabbe1d</small>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-truncate">ahmad_Collins@yahoo.com</td>
-                                    <td class="text-truncate"><i
-                                            class="mdi mdi-chart-donut mdi-24px text-success me-1"></i>
-                                        Maintainer</td>
-                                    <td class="text-truncate">22</td>
-                                    <td class="text-truncate">10500$</td>
-                                    <td><span class="badge bg-label-success rounded-pill">Active</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="avatar avatar-sm me-3">
-                                                <img src="assets/img/avatars/7.png" alt="Avatar"
-                                                    class="rounded-circle">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-0 text-truncate">Bradan Rosebotham</h6>
-                                                <small class="text-truncate">@brosebothamz</small>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-truncate">tillman.Gleason68@hotmail.com</td>
-                                    <td class="text-truncate"><i
-                                            class="mdi mdi-pencil-outline text-info mdi-24px me-1"></i>
-                                        Editor</td>
-                                    <td class="text-truncate">50</td>
-                                    <td class="text-truncate">99500$</td>
-                                    <td><span class="badge bg-label-warning rounded-pill">Pending</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="avatar avatar-sm me-3">
-                                                <img src="assets/img/avatars/6.png" alt="Avatar"
-                                                    class="rounded-circle">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-0 text-truncate">Bree Kilday</h6>
-                                                <small class="text-truncate">@bkildayr</small>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-truncate">otho21@gmail.com</td>
-                                    <td class="text-truncate"><i
-                                            class="mdi mdi-account-outline mdi-24px text-primary me-1"></i>
-                                        Subscriber</td>
-                                    <td class="text-truncate">23</td>
-                                    <td class="text-truncate">23500$</td>
-                                    <td><span class="badge bg-label-success rounded-pill">Active</span></td>
-                                </tr>
-                                <tr class="border-transparent">
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="avatar avatar-sm me-3">
-                                                <img src="assets/img/avatars/1.png" alt="Avatar"
-                                                    class="rounded-circle">
-                                            </div>
-                                            <div>
-                                                <h6 class="mb-0 text-truncate">Breena Gallemore</h6>
-                                                <small class="text-truncate">@bgallemore6</small>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="text-truncate">florencio.Little@hotmail.com</td>
-                                    <td class="text-truncate"><i
-                                            class="mdi mdi-account-outline mdi-24px text-primary me-1"></i>
-                                        Subscriber</td>
-                                    <td class="text-truncate">33</td>
-                                    <td class="text-truncate">20500$</td>
-                                    <td><span class="badge bg-label-secondary rounded-pill">Inactive</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <div class="card-title mb-0">
+                          <h5 class="m-0 me-2">Recent Bookings</h5>
+                        </div>
+                        
                     </div>
+
+                    <div class="card-datatable table-responsive">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th class="text-truncate">#</th>
+                                        <th class="text-truncate">Item</th>
+                                        <th class="text-truncate">Total</th>
+                                        <th class="text-truncate">Paid</th>
+                                        <th class="text-truncate">Status</th>
+                                        <th class="text-truncate">created At</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td class="text-truncate">Hitel Hill</td>
+                                        <td class="text-truncate">1500</td>
+                                        <td class="text-truncate">0</td>
+                                        <td class="text-truncate">Unpaid</td>
+                                        <td><span class="badge bg-label-warning rounded-pill">26/03/2024</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td class="text-truncate">Hitel Hill</td>
+                                        <td class="text-truncate">1500</td>
+                                        <td class="text-truncate">0</td>
+                                        <td class="text-truncate">Unpaid</td>
+                                        <td><span class="badge bg-label-warning rounded-pill">26/03/2024</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td class="text-truncate">Hitel Hill</td>
+                                        <td class="text-truncate">1500</td>
+                                        <td class="text-truncate">0</td>
+                                        <td class="text-truncate">Unpaid</td>
+                                        <td><span class="badge bg-label-warning rounded-pill">26/03/2024</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td class="text-truncate">Hitel Hill</td>
+                                        <td class="text-truncate">1500</td>
+                                        <td class="text-truncate">0</td>
+                                        <td class="text-truncate">Unpaid</td>
+                                        <td><span class="badge bg-label-warning rounded-pill">26/03/2024</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td class="text-truncate">Hitel Hill</td>
+                                        <td class="text-truncate">1500</td>
+                                        <td class="text-truncate">0</td>
+                                        <td class="text-truncate">Unpaid</td>
+                                        <td><span class="badge bg-label-warning rounded-pill">26/03/2024</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td class="text-truncate">Hitel Hill</td>
+                                        <td class="text-truncate">1500</td>
+                                        <td class="text-truncate">0</td>
+                                        <td class="text-truncate">Unpaid</td>
+                                        <td><span class="badge bg-label-warning rounded-pill">26/03/2024</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            1
+                                        </td>
+                                        <td class="text-truncate">Hitel Hill</td>
+                                        <td class="text-truncate">1500</td>
+                                        <td class="text-truncate">0</td>
+                                        <td class="text-truncate">Unpaid</td>
+                                        <td><span class="badge bg-label-warning rounded-pill">26/03/2024</span></td>
+                                    </tr>
+     
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    
                 </div>
             </div>
             <!--/ Data Tables -->
-        </div>
+            </div>
+          </div>
 
     </div>
 @endsection

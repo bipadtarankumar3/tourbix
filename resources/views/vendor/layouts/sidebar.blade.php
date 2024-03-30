@@ -20,7 +20,7 @@
 
 
         <li class="menu-item ">
-            <a href="icons/icons-mdi.html" class="menu-link">
+            <a href="{{URL::to('vendor/dashboard')}}" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
                 <div>Dashboard</div>
             </a>
