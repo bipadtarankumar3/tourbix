@@ -96,7 +96,7 @@
 
 
                 <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link" target="_blank">
+                    <a href="{{URL::To('vendor/reports/booking-report')}}" class="menu-link" target="_blank">
                         <div> Booking Reports </div>
                     </a>
 
