@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\admin\AdminAuthController;
+use App\Http\Controllers\vendor\BookingHistoryController;
 use App\Http\Controllers\vendor\ReportsController;
 use App\Http\Controllers\vendor\VendorAuthController;
 
@@ -14,6 +15,9 @@ Route::group(['prefix' => 'vendor', 'as' => 'vendor.', 'middleware' => ['App\Htt
     Route::get('logout', [VendorAuthController::class, 'logout']);
     Route::group(['prefix' => 'reports', 'as' => 'reports.'], function () {
         Route::get('booking-report', [ReportsController::class, 'bookingReports']);
+    });
+    Route::group(['prefix' => 'booking', 'as' => 'booking.'], function () {
+        Route::get('history', [BookingHistoryController::class, 'BookingHistory']);
     });
 
 });
