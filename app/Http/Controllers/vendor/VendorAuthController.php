@@ -43,4 +43,8 @@ class VendorAuthController extends Controller
         $data['title']='Change Password';
         return view('vendor.Auth.change_password',$data);
     }
+    public function myProfile(){
+        $data['title']='My Profile';
+        return view('vendor.Auth.my_profile',$data);
+    }
 }

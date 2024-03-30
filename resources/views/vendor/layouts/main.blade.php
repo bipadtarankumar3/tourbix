@@ -66,7 +66,8 @@
     <!-- Vendors CSS -->
     <link rel="stylesheet"
         href="{{URL::to('public/assets/admin/vendor/libs/perfect-scrollbar/perfect-scrollbarda97.css?id=e542d5fe23051cba0a5aedb27dadd732')}}" />
-
+        <link rel="stylesheet"
+        href="{{ URL::to('public/assets/admin/css/style.css') }}" />
     <!-- Vendor Styles -->
     <link rel="stylesheet" href="{{ URL::to('public/assets/admin/vendor/libs/apex-charts/apex-charts.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />

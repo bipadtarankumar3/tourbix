@@ -121,7 +121,7 @@
 
 
                 <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link">
+                    <a href="{{URL::To('vendor/my-profile')}}" class="menu-link">
                         <div>  My Profile </div>
                     </a>
 
