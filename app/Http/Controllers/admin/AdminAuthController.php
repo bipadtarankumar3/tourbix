@@ -15,9 +15,13 @@ class AdminAuthController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
 
-           
-                $request->session()->flash('success', 'Login Success');
-                return redirect('admin/dashboard');
+            if(Auth::user()->user_type=="admin"){
+              
+            }else{
+                 $request->session()->flash('success', 'Login Success');
+                return redirect('vendor/dashboard');  
+            }
+               
            
         } else {
             $request->session()->flash('error', 'You have entered wrong Email or Password.');
