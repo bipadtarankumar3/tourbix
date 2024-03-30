@@ -4,7 +4,7 @@ namespace App\Http\Controllers\vendor;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Auth;
 class VendorAuthController extends Controller
 {
     public function login(){
@@ -14,6 +14,7 @@ class VendorAuthController extends Controller
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
 
+            // dd('hi');
            
                 $request->session()->flash('success', 'Login Success');
                 return redirect('vendor/dashboard');
