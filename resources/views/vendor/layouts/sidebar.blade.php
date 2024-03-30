@@ -80,7 +80,7 @@
 
 
                 <li class="menu-item ">
-                    <a href="{{URL::To('vendor/reports/booking-report')}}" class="menu-link" target="_blank">
+                    <a href="{{URL::To('vendor/reports/booking-report')}}" class="menu-link">
                         <div> Booking Reports </div>
                     </a>
 
@@ -100,7 +100,7 @@
             </ul>
         </li>
         <li class="menu-item ">
-            <a href="icons/icons-mdi.html" class="menu-link">
+            <a href="{{URL::to('vendor/payouts/list')}}" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
                 <div>payouts</div>
             </a>

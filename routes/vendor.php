@@ -8,6 +8,7 @@ use App\Http\Controllers\vendor\ReportsController;
 use App\Http\Controllers\vendor\VendorAuthController;
 use App\Http\Controllers\vendor\HotelController;
 use App\Http\Controllers\vendor\ReportController;
+use App\Http\Controllers\vendor\PayoutsController;
 
 Route::get('vendor/login', [VendorAuthController::class, 'login'])->name('vendor.login');
 Route::post('vendor-login-action', [VendorAuthController::class, 'vendorLoginAction']);
@@ -25,6 +26,10 @@ Route::group(['prefix' => 'vendor', 'as' => 'vendor.', 'middleware' => ['App\Htt
     });
     Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
         Route::get('list', [VendorAuthController::class, 'userList']);
+    });
+
+    Route::group(['prefix' => 'payouts', 'as' => 'payouts.'], function () {
+        Route::get('list', [PayoutsController::class, 'payoutsList']);
     });
 
     Route::group(['prefix' => 'hotel', 'as' => 'hotel.'], function () {
