@@ -62,7 +62,7 @@
             </ul>
         </li>
         <li class="menu-item ">
-            <a href="icons/icons-mdi.html" class="menu-link">
+            <a href="{{URL::To('vendor/booking/history')}}" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
                 <div>Booking History</div>
             </a>
