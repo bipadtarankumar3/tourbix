@@ -16,7 +16,7 @@ class AdminAuthController extends Controller
         if (Auth::attempt($credentials)) {
 
             if(Auth::user()->user_type=="admin"){
-              
+                return redirect('admin/dashboard'); 
             }else{
                  $request->session()->flash('success', 'Login Success');
                 return redirect('vendor/dashboard');  

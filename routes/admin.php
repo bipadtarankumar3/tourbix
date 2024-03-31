@@ -57,6 +57,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
 
     Route::group(['prefix' => 'experiance', 'as' => 'experiance.'], function () {
         Route::get('list', [ExperianceController::class, 'experianceList']);
+        Route::get('add-new-tour', [ExperianceController::class, 'addNewTour']);
+        Route::get('category', [ExperianceController::class, 'category']);
+        Route::get('attributes', [ExperianceController::class, 'attributes']);
        
     });
 });
