@@ -125,13 +125,64 @@
 
 
         </li>
-        <li class="menu-item ">
+        {{-- <li class="menu-item ">
             <a href="{{URL::To('admin/experiance/list')}}" class="menu-link">
                 <span class="mdi mdi-emoticon  mdi-24px"></span>
                 <div>Experience</div>
             </a>
 
 
+        </li> --}}
+
+        
+        <li class="menu-item ">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <span class="mdi mdi-emoticon  mdi-24px"></span>
+                <div>Experience</div>
+            </a>
+
+
+            <ul class="menu-sub">
+                <li class="menu-item ">
+                    <a href="{{URL::To('admin/experiance/list')}}" class="menu-link">
+                       
+                        <div>All Tour</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="{{URL::to('admin/experiance/add-new-tour')}}" class="menu-link">
+                        <div>Add New Tour </div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="{{URL::to('admin/experiance/category')}}" class="menu-link">
+                        <div>Categories</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="{{URL::to('admin/experiance/attributes')}}" class="menu-link">
+                        <div>Attributes</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="#" class="menu-link">
+                        <div>Avaliblity</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="#" class="menu-link">
+                        <div>Booking Calender</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="#" class="menu-link">
+                        <div>Recovery</div>
+                    </a>
+                </li>
+
+
+
+            </ul>
         </li>
         <li class="menu-item ">
             <a href="{{URL::To('admin/coupon/list')}}" class="menu-link">
