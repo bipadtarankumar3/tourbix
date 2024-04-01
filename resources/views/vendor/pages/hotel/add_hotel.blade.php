@@ -165,11 +165,42 @@
                             <div class="col-md-12">
                                 <h4>Education</h4>
                                 <table class="table">
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Content</th>
-                                        <th>Distance</th>
-                                    </tr>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Content</th>
+                                            <th>Distance</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Name" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Content" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Distance" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="M" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                                 <div class="row float-right mt-2" style="text-align: right">
                                     <div class="col-md-12 text-right">
@@ -183,11 +214,35 @@
                             <div class="col-md-12">
                                 <h4>Health</h4>
                                 <table class="table">
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Content</th>
-                                        <th>Distance</th>
-                                    </tr>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Content</th>
+                                            <th>Distance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Name" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Content" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Distance" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                                 <div class="row float-right mt-2" style="text-align: right">
                                     <div class="col-md-12 text-right">
@@ -201,11 +256,35 @@
                             <div class="col-md-12">
                                 <h4>Transportation</h4>
                                 <table class="table">
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Content</th>
-                                        <th>Distance</th>
-                                    </tr>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Content</th>
+                                            <th>Distance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Name" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Content" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Distance" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                                 <div class="row float-right mt-2" style="text-align: right">
                                     <div class="col-md-12 text-right">
@@ -219,11 +298,35 @@
                             <div class="col-md-12">
                                 <h4>Adventures</h4>
                                 <table class="table">
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Content</th>
-                                        <th>Distance</th>
-                                    </tr>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Content</th>
+                                            <th>Distance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Name" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Content" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Distance" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                                 <div class="row float-right mt-2" style="text-align: right">
                                     <div class="col-md-12 text-right">
@@ -237,11 +340,35 @@
                             <div class="col-md-12">
                                 <h4>Experience</h4>
                                 <table class="table">
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Content</th>
-                                        <th>Distance</th>
-                                    </tr>
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Content</th>
+                                            <th>Distance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Name" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Content" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                            <td>
+                                                <div class="form-floating form-floating-outline mb-4">
+                                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Distance" required="">
+                                                    
+                                                  </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                                 <div class="row float-right mt-2" style="text-align: right">
                                     <div class="col-md-12 text-right">

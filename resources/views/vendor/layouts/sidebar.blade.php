@@ -27,14 +27,12 @@
 
 
         </li>
-        <li class="menu-item ">
+        {{-- <li class="menu-item ">
             <a href="{{URL::To('vendor/user/list')}}" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
                 <div>User Management</div>
             </a>
-
-
-        </li>
+        </li> --}}
 
 
         <li class="menu-item ">
@@ -117,9 +115,6 @@
 
 
             <ul class="menu-sub">
-
-
-
                 <li class="menu-item ">
                     <a href="{{URL::To('vendor/my-profile')}}" class="menu-link">
                         <div>  My Profile </div>
@@ -134,11 +129,14 @@
 
 
                 </li>
-               
-
-
-
             </ul>
+        </li>
+
+        <li class="menu-item ">
+            <a href="#" class="menu-link">
+                <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
+                <div>Admin Dashboard</div>
+            </a>
         </li>
 
 
