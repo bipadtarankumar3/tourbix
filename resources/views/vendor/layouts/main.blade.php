@@ -97,6 +97,10 @@
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="../../../buttons.github.io/buttons.js')}}"></script>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.css">
+
 </head>
 
 <body>
@@ -191,6 +195,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.js"></script>
 
     <script>
         function deleteConfirmation(ev) {
@@ -241,6 +248,9 @@
         }
     </script>
     <!-- END: Page JS-->
+
+    
+    @yield('js')
 
 </body>
 

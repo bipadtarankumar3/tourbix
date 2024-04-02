@@ -16,16 +16,11 @@
 
     <ul class="menu-inner py-1">
 
-
-
-
         <li class="menu-item active">
             <a href="{{URL::to('admin/dashboard')}}" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-home-outline"></i>
                 <div>Dashboard</div>
             </a>
-
-
         </li>
         <li class="menu-item ">
             <a href="{{URL::to('admin/user/list')}}" class="menu-link">
@@ -108,8 +103,23 @@
                     </a>
                 </li>
                 <li class="menu-item ">
+                    <a href="{{URL::to('admin/room/amenities')}}" class="menu-link">
+                        <div>Room Amenities</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="{{URL::to('admin/room/type')}}" class="menu-link">
+                        <div>Room Types</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
                     <a href="{{URL::to('admin/room/list')}}" class="menu-link">
-                        <div>Room Management</div>
+                        <div>Room List</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="{{URL::to('admin/room/avalibility')}}" class="menu-link">
+                        <div>Room Avaliblity</div>
                     </a>
                 </li>
 

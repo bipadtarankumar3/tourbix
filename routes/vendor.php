@@ -41,6 +41,11 @@ Route::group(['prefix' => 'vendor', 'as' => 'vendor.', 'middleware' => ['App\Htt
         Route::get('hotel_service', [HotelController::class, 'hotel_service']);
     });
 
+    Route::group(['prefix' => 'room', 'as' => 'room.'], function () {
+        Route::get('list', [HotelController::class, 'roomList']);
+        Route::get('avalibility', [HotelController::class, 'roomAvalibility']);
+       
+    });
 
 
 

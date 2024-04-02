@@ -17,4 +17,15 @@ class HotelController extends Controller
         return view('vendor.pages.hotel.add_hotel',$data);
     }
 
+    
+    public function roomList(){
+        $data['title']='Room Management';
+        return view('vendor.pages.room.list',$data);
+    }
+
+    public function roomAvalibility(){
+        $data['title']='Room Management';
+        return view('vendor.pages.room.avalibility',$data);
+    }
+
 }

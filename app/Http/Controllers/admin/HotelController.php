@@ -28,9 +28,27 @@ class HotelController extends Controller
         return view('admin.pages.hotel_service.list',$data);
     }
 
+    public function roomamenities(){
+        $data['title']='Room amenities';
+        return view('admin.pages.room.amenities',$data);
+    }
+
+    public function roomtype(){
+        $data['title']='Room Type';
+        return view('admin.pages.room.roomtype',$data);
+    }
     public function roomList(){
         $data['title']='Room Management';
         return view('admin.pages.room.list',$data);
+    }
+    public function addRoom(){
+        $data['title']='Add Room';
+        return view('admin.pages.room.addRoom',$data);
+    }
+
+    public function roomAvalibility(){
+        $data['title']='Room Management';
+        return view('admin.pages.room.avalibility',$data);
     }
 
 }

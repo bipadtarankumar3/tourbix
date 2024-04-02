@@ -48,11 +48,27 @@
                     <a href="{{URL::to('vendor/hotel/list')}}" class="menu-link">
                         <div>Hotel</div>
                     </a>
+
+
+                </li>
+                <li class="menu-item ">
+                    
                     <a href="{{URL::to('vendor/hotel/add_hotel')}}" class="menu-link">
                         <div>Add Hotel</div>
                     </a>
 
 
+                </li>
+
+                <li class="menu-item ">
+                    <a href="{{URL::to('vendor/room/list')}}" class="menu-link">
+                        <div>Room Management</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="{{URL::to('vendor/room/avalibility')}}" class="menu-link">
+                        <div>Room Avaliblity</div>
+                    </a>
                 </li>
 
 

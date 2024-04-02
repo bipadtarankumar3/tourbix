@@ -51,7 +51,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
     });
 
     Route::group(['prefix' => 'room', 'as' => 'room.'], function () {
+        Route::get('amenities', [HotelController::class, 'roomamenities']);
+        Route::get('type', [HotelController::class, 'roomtype']);
         Route::get('list', [HotelController::class, 'roomList']);
+        Route::get('addRoom', [HotelController::class, 'addRoom']);
+        Route::get('avalibility', [HotelController::class, 'roomAvalibility']);
        
     });
 

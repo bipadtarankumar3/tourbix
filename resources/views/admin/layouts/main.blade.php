@@ -86,6 +86,8 @@
     <link rel="stylesheet"
     href="{{ URL::to('public/assets/admin/css/style.css') }}" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.css">
+
 </head>
 
 <body>
@@ -186,7 +188,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.js"></script>
 
     <script>
         function deleteConfirmation(ev) {
@@ -241,6 +245,8 @@
 
 
     <!-- END: Page JS-->
+
+    @yield('js')
 
 </body>
 
