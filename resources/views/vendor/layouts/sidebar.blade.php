@@ -61,6 +61,26 @@
                 </li>
 
                 <li class="menu-item ">
+                    <a href="{{URL::to('admin/hotel/hotel_service')}}" class="menu-link">
+                        <div>Hotel Service</div>
+                    </a>
+                </li>
+
+
+                
+                <li class="menu-item ">
+                    <a href="{{URL::to('vendor/room/amenities')}}" class="menu-link">
+                        <div>Room Amenities</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="{{URL::to('vendor/room/type')}}" class="menu-link">
+                        <div>Room Types</div>
+                    </a>
+                </li>
+                
+
+                <li class="menu-item ">
                     <a href="{{URL::to('vendor/room/list')}}" class="menu-link">
                         <div>Room Management</div>
                     </a>
@@ -145,6 +165,55 @@
 
 
                 </li>
+            </ul>
+        </li>
+
+        <li class="menu-item ">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <span class="mdi mdi-emoticon  mdi-24px"></span>
+                <div>Experience</div>
+            </a>
+
+            <ul class="menu-sub">
+                <li class="menu-item ">
+                    <a href="{{URL::To('vendor/experiance/list')}}" class="menu-link">
+                       
+                        <div>All Tour</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="{{URL::to('vendor/experiance/add-new-tour')}}" class="menu-link">
+                        <div>Add New Tour </div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="{{URL::to('vendor/experiance/category')}}" class="menu-link">
+                        <div>Categories</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="{{URL::to('vendor/experiance/attributes')}}" class="menu-link">
+                        <div>Attributes</div>
+                    </a>
+                </li>
+                {{-- <li class="menu-item ">
+                    <a href="#" class="menu-link">
+                        <div>Avaliblity</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="#" class="menu-link">
+                        <div>Booking Calender</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="#" class="menu-link">
+                        <div>Recovery</div>
+                    </a>
+                </li> --}}
+
+
+
             </ul>
         </li>
 

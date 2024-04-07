@@ -1,4 +1,4 @@
-@extends('admin.layouts.main')
+@extends('vendor.layouts.main')
 
 @section('content')
 
@@ -11,17 +11,17 @@
     <form action="" class="browser-default-validation">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">1. Content</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">2. Location</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">3. Pricing</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="ATTRIBUTES-tab" data-bs-toggle="tab" data-bs-target="#ATTRIBUTES" type="button" role="tab" aria-controls="ATTRIBUTES" aria-selected="false">4. Attributes</button>
-            </li>
+                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">1. Content</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">2. Location</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">3. Pricing</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="ATTRIBUTES-tab" data-bs-toggle="tab" data-bs-target="#ATTRIBUTES" type="button" role="tab" aria-controls="ATTRIBUTES" aria-selected="false">4. Attributes</button>
+              </li>
            
           </ul>
           <div class="tab-content" id="myTabContent">

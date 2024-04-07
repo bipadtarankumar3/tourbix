@@ -16,6 +16,7 @@ Route::post('admin-login-action', [AdminAuthController::class, 'adminLoginAction
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\Middleware\AdminAuth']], function () {
     Route::get('dashboard', [AdminAuthController::class, 'dashboard']);
+    Route::get('enquiry', [AdminAuthController::class, 'enquiry']);
     Route::get('logout', [AdminAuthController::class, 'logout']);
 
     Route::group(['prefix' => 'user', 'as' => 'user.'], function () {

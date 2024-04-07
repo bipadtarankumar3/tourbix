@@ -114,7 +114,7 @@
                 </li>
                 <li class="menu-item ">
                     <a href="{{URL::to('admin/room/list')}}" class="menu-link">
-                        <div>Room List</div>
+                        <div>Room Management</div>
                     </a>
                 </li>
                 <li class="menu-item ">
@@ -174,7 +174,7 @@
                         <div>Attributes</div>
                     </a>
                 </li>
-                <li class="menu-item ">
+                {{-- <li class="menu-item ">
                     <a href="#" class="menu-link">
                         <div>Avaliblity</div>
                     </a>
@@ -188,10 +188,7 @@
                     <a href="#" class="menu-link">
                         <div>Recovery</div>
                     </a>
-                </li>
-
-
-
+                </li> --}}
             </ul>
         </li>
         <li class="menu-item ">
@@ -237,6 +234,12 @@
                 </li>
                
             </ul>
+        </li>
+        <li class="menu-item ">
+            <a href="{{URL::To('admin/enquiry')}}" class="menu-link">
+                <span class="mdi mdi-file-chart  mdi-24px"></span>
+                <div>Enquiry</div>
+            </a>
         </li>
         <li class="menu-item ">
             <a href="{{URL::To('admin/vendor/list')}}" class="menu-link">

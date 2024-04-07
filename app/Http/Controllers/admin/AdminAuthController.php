@@ -38,4 +38,9 @@ class AdminAuthController extends Controller
      $request->session()->flash('error','loged out');
      return redirect('login');
     }
+
+    public function enquiry(){
+        return view('admin.pages.enquiry.enquiry');
+    }
+
 }

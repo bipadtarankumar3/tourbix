@@ -9,6 +9,7 @@ use App\Http\Controllers\vendor\VendorAuthController;
 use App\Http\Controllers\vendor\HotelController;
 use App\Http\Controllers\vendor\ReportController;
 use App\Http\Controllers\vendor\PayoutsController;
+use App\Http\Controllers\vendor\ExperianceController;
 
 Route::get('vendor/login', [VendorAuthController::class, 'login'])->name('vendor.login');
 Route::post('vendor-login-action', [VendorAuthController::class, 'vendorLoginAction']);
@@ -42,12 +43,23 @@ Route::group(['prefix' => 'vendor', 'as' => 'vendor.', 'middleware' => ['App\Htt
     });
 
     Route::group(['prefix' => 'room', 'as' => 'room.'], function () {
+
+        Route::get('amenities', [HotelController::class, 'roomamenities']);
+        Route::get('type', [HotelController::class, 'roomtype']);
         Route::get('list', [HotelController::class, 'roomList']);
+        Route::get('addRoom', [HotelController::class, 'addRoom']);
         Route::get('avalibility', [HotelController::class, 'roomAvalibility']);
        
     });
 
 
+    Route::group(['prefix' => 'experiance', 'as' => 'experiance.'], function () {
+        Route::get('list', [ExperianceController::class, 'experianceList']);
+        Route::get('add-new-tour', [ExperianceController::class, 'addNewTour']);
+        Route::get('category', [ExperianceController::class, 'category']);
+        Route::get('attributes', [ExperianceController::class, 'attributes']);
+       
+    });
 
 
 });

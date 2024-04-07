@@ -1,8 +1,8 @@
-@extends('admin.layouts.main')
+@extends('vendor.layouts.main')
 
 @section('content')
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h6 class="py-3 mb-4"><span class="text-muted fw-light">Admin/</span>
+    <h6 class="py-3 mb-4"><span class="text-muted fw-light">Vendor/</span>
         {{ Request::segment(2) . '/' . Request::segment(3) }}
 
     </h6>
