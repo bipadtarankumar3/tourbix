@@ -15,16 +15,17 @@
     <title>Tourbix</title>
     <meta name="description"
         content="Most Powerful &amp; Comprehensive Bootstrap 5 HTML Admin Dashboard Template built for developers!" />
-    <meta name="keywords"
-        content="">
+    <meta name="keywords" content="">
     <!-- laravel CRUD token -->
-    <meta name="csrf-token" content="Fh5jYGDPizn8OZeM3AxJp8ecY405k7hbJCFpTG8Y">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Canonical SEO -->
     <link rel="canonical" href="#">
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon/favicon.ico" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Google Tag Manager (Default ThemeSelection: GTM-5DDHKGP, PixInvent: GTM-5J3LMKC) -->
 
     <!-- End Google Tag Manager -->
@@ -33,6 +34,9 @@
     <!-- Include Styles -->
     <!-- BEGIN: Theme CSS-->
     <!-- Fonts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;ampdisplay=swap"
@@ -83,8 +87,7 @@
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="../../../buttons.github.io/buttons.js')}}"></script>
 
-    <link rel="stylesheet"
-    href="{{ URL::to('public/assets/admin/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ URL::to('public/assets/admin/css/style.css') }}" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.css">
 
@@ -130,8 +133,9 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
- 
-    <script src="{{ URL::to('public/assets/admin/vendor/libs/popper/poppere728.js?id=bd2c3acedf00f48d6ee99997ba90f1d8') }}">
+
+    <script
+        src="{{ URL::to('public/assets/admin/vendor/libs/popper/poppere728.js?id=bd2c3acedf00f48d6ee99997ba90f1d8') }}">
     </script>
     <script src="{{ URL::to('public/assets/admin/vendor/js/bootstrap05f9.js?id=0a1f83aa0a6a7fd382c37453e3f11128') }}">
     </script>
@@ -190,7 +194,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.1.0/main.js"></script>
 
     <script>
         function deleteConfirmation(ev) {

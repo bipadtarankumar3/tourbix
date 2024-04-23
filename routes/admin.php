@@ -29,6 +29,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
         Route::get('list', [LocationManagementController::class, 'locationList']);
         Route::group(['prefix' => 'category', 'as' => 'category.'], function () {
             Route::get('list', [LocationManagementController::class, 'locationCategoryList']);
+            Route::post('add-action', [LocationManagementController::class, 'locationCategoryAddAction']);
+            Route::get('edit/{id}', [LocationManagementController::class, 'locationCategoryEdit']);
+            Route::post('edit-action/{id}', [LocationManagementController::class, 'locationCategoryEditAction']);
+            Route::post('delete/{id}', [LocationManagementController::class, 'locationCategoryDelete']);
         });
     });
 

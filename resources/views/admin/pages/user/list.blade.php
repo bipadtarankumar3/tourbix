@@ -28,7 +28,7 @@
             <td>demo@user.com</td>
             <td>9933225544</td>
             <td>
-                <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a href="#"><i class="fa-solid fa-pen"></i></a>
                 <a href="#"  onclick="deleteConfirmation(event)"><i class="fa-solid fa-trash"></i></a>
                
             </td>
