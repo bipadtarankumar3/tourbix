@@ -11,10 +11,11 @@
                 <div class="card">
                     <h4  class="card-header">{{$title}}</h4>
                     <div class="card-body">
-                        <form action="">
+                        <form action="{{URL::to('admin/hotel/service_add')}}" method="POST">
+                            @csrf
                             <div class="form-group">
                                 <label for="name"> Hotel Service Name</label>
-                                <input type="text" placeholder="Hotel Service Name" class="form-control">
+                                <input type="text" placeholder="Hotel Service Name" required name="service_name" class="form-control">
                             </div>
                         
                             <button class="btn btn-primary mt-2">Add New</button>

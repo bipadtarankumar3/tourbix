@@ -23,10 +23,7 @@ class HotelController extends Controller
         $data['title']='Facility Add';
         return view('admin.pages.facility.list',$data);
     }
-    public function hotel_service(){
-        $data['title']='Hotel Service Add';
-        return view('admin.pages.hotel_service.list',$data);
-    }
+
 
     public function roomamenities(){
         $data['title']='Room amenities';

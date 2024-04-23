@@ -10,6 +10,7 @@ use App\Http\Controllers\admin\UserManagementController;
 use App\Http\Controllers\admin\HotelController;
 use App\Http\Controllers\admin\VendorController;
 use App\Http\Controllers\admin\ExperianceController;
+use App\Http\Controllers\admin\ServiceController;
 
 Route::get('login', [AdminAuthController::class, 'login'])->name('login');
 Route::post('admin-login-action', [AdminAuthController::class, 'adminLoginAction']);
@@ -37,7 +38,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
         Route::get('add_hotel', [HotelController::class, 'add_hotel']);
         Route::get('proprity_type', [HotelController::class, 'proprity_type']);
         Route::get('facility', [HotelController::class, 'facility']);
-        Route::get('hotel_service', [HotelController::class, 'hotel_service']);
+        Route::get('hotel_service', [ServiceController::class, 'hotel_service']);
+        Route::post('service_add', [ServiceController::class, 'service_add']);
     });
 
 
