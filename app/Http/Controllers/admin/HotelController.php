@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Facility;
+use App\Models\PropertyType;
 use Illuminate\Http\Request;
-
+use Auth;
 class HotelController extends Controller
 {
     public function hotelList(){
@@ -17,13 +19,82 @@ class HotelController extends Controller
     }
     public function proprity_type(){
         $data['title']='Add Poperty Type';
+        $data['propertyTypes']=PropertyType::orderBy('id','desc')->get();
         return view('admin.pages.proprity_type.list',$data);
     }
+    public function proprity_typeAddAction(Request $request){
+        PropertyType::create([
+            'property_type' => $request->property_type,
+           
+            'added_by' => Auth::user()->id,
+            'status' => '1'
+        ]);
+        $request->session()->flash('success', 'added success');
+        return redirect()->back();
+    }
+    public function proprity_typeEditAction(Request $request , $id){
+        PropertyType::where('id',$id)->update([
+            'property_type' => $request->property_type,
+           
+            'added_by' => Auth::user()->id,
+            'status' => '1'
+        ]);
+        $request->session()->flash('success', 'Update success');
+        return redirect()->back();
+    }
+    public function proprity_type_edit($id){
+        $data['title']='Edit Poperty Type';
+        $data['propertyTypes']=PropertyType::orderBy('id','desc')->get();
+        $data['propertyType']=PropertyType::where('id',$id)->first();
+        return view('admin.pages.proprity_type.list',$data);
+    }
+    public function proprity_type_delete(Request $request , $id){
+        $data['title']='Add Poperty Type';
+        $data['propertyType']=PropertyType::where('id',$id)->delete();
+        $request->session()->flash('success', 'prperty Type Deleted successfully');
+        return redirect()->back();
+    }
+
     public function facility(){
         $data['title']='Facility Add';
+        $data['facilities']=Facility::orderBy('id','desc')->get();
         return view('admin.pages.facility.list',$data);
     }
 
+    public function facilityAddAction(Request $request){
+        Facility::create([
+            'facility_name' => $request->facility_name,
+           
+            'added_by' => Auth::user()->id,
+            'status' => '1'
+        ]);
+        $request->session()->flash('success', 'added success');
+        return redirect()->back();
+    }
+
+    public function facilityEditAction(Request $request , $id){
+        Facility::where('id',$id)->update([
+            'facility_name' => $request->facility_name,
+           
+            'added_by' => Auth::user()->id,
+            'status' => '1'
+        ]);
+        $request->session()->flash('success', 'Update success');
+        return redirect()->back();
+    }
+
+    public function facility_edit($id){
+        $data['title']='Edit Poperty Type';
+        $data['propertyTypes']=Facility::orderBy('id','desc')->get();
+        $data['propertyType']=Facility::where('id',$id)->first();
+        return view('admin.pages.proprity_type.list',$data);
+    }
+    public function facility_delete(Request $request , $id){
+        $data['title']='Add Poperty Type';
+        $data['propertyType']=Facility::where('id',$id)->delete();
+        $request->session()->flash('success', ' Deleted successfully');
+        return redirect()->back();
+    }
 
     public function roomamenities(){
         $data['title']='Room amenities';

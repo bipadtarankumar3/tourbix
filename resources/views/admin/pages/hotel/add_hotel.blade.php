@@ -31,26 +31,26 @@
                     <div class="card-body">
                   
                         <div class="form-floating form-floating-outline mb-4">
-                          <input type="text" class="form-control" id="basic-default-name" placeholder="Name of the hotel" required="">
+                          <input type="text" class="form-control" id="basic-default-name" name="title" placeholder="Name of the hotel" required="">
                           <label for="basic-default-name">Title</label>
                         </div>
 
                         <div class="form-floating form-floating-outline mb-4">
-                            <textarea name="" class="form-control" id="Content" ></textarea>
+                            <textarea name="content" class="form-control" id="Content" ></textarea>
                           <label for="Content">Content</label>
                         </div>
 
                         <div class="form-floating form-floating-outline mb-4">
-                            <input type="text" class="form-control" id="basic-default-name" placeholder="Youtube Video" required="">
+                            <input type="text" class="form-control" id="basic-default-name" name="youtube_link" placeholder="Youtube Video" required="">
                             <label for="basic-default-name">Youtube Video</label>
                           </div>
 
                         <div class="form-floating form-floating-outline mb-4">
-                            <input type="file" class="form-control" id="basic-default-name" placeholder="Banner Image" required="">
+                            <input type="file" class="form-control" id="basic-default-name" name="banner_image" placeholder="Banner Image" required="">
                             <label for="basic-default-name">Banner Image</label>
                         </div>
                         <div class="form-floating form-floating-outline mb-4">
-                            <input type="file" multiple class="form-control" id="basic-default-name" >
+                            <input type="file" name="gallery_image" multiple class="form-control" id="basic-default-name" >
                             <label for="basic-default-name">Gallery Image</label>
                         </div>
                         
@@ -64,7 +64,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-floating form-floating-outline mb-4">
-                                    <input type="text" class="form-control" id="basic-default-name" placeholder="Rating" required="">
+                                    <input type="text" name="hotel_rating" class="form-control" id="basic-default-name" placeholder="Rating" required="">
                                     <label for="basic-default-name">Hotel Rating Standard</label>
                                 </div>
                             </div>

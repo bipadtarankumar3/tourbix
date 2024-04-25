@@ -35,21 +35,47 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
             Route::post('edit-action/{id}', [LocationManagementController::class, 'locationCategoryEditAction']);
             Route::post('delete/{id}', [LocationManagementController::class, 'locationCategoryDelete']);
         });
+    
+        // Add the routes for location management
+        Route::get('edit/{id?}', [LocationManagementController::class, 'locationEdit'])->name('edit'); // For displaying the edit form
+        Route::post('update-action', [LocationManagementController::class, 'locationUpdateAction'])->name('update-action'); // For updating location data
+        Route::post('delete/{id}', [LocationManagementController::class, 'locationDelete']);
+    
+        // Route for adding new location
+        Route::post('add-action', [LocationManagementController::class, 'locationAddAction'])->name('add-action');
     });
+    
 
     Route::group(['prefix' => 'hotel', 'as' => 'hotel.'], function () {
         Route::get('list', [HotelController::class, 'hotelList']);
         Route::get('add_hotel', [HotelController::class, 'add_hotel']);
+        //property
         Route::get('proprity_type', [HotelController::class, 'proprity_type']);
+        Route::post('property-type/add-action', [HotelController::class, 'proprity_typeAddAction']);
+        Route::post('property-type/edit-action/{id}', [HotelController::class, 'proprity_typeEditAction']);
+        Route::get('property-type/edit/{id}', [HotelController::class, 'proprity_type_edit']);
+        Route::post('property-type/delete/{id}', [HotelController::class, 'proprity_type_delete']);
+
+        //facility
         Route::get('facility', [HotelController::class, 'facility']);
+        Route::post('facility/add-action', [HotelController::class, 'facilityAddAction']);
+        Route::get('facility/edit/{id}', [HotelController::class, 'facility_edit']);
+        Route::post('facility/delete/{id}', [HotelController::class, 'facility_delete']);
+        Route::post('facility/edit-action/{id}', [HotelController::class, 'facilityEditAction']);
+        // services
         Route::get('hotel_service', [ServiceController::class, 'hotel_service']);
-        Route::post('service_add', [ServiceController::class, 'service_add']);
+        Route::post('service/add-action', [ServiceController::class, 'hotel_service_add_action']);
+        Route::post('service/edit-action/{id}', [ServiceController::class, 'hotel_service']);
+        Route::get('service/edit/{id}', [ServiceController::class, 'hotel_service']);
+        Route::post('service/delete/{id}', [ServiceController::class, 'hotel_service']);
+      
     });
 
 
     Route::group(['prefix' => 'coupon', 'as' => 'coupon.'], function () {
         Route::get('list', [CouponManagementController::class, 'couponList']);
         Route::get('add', [CouponManagementController::class, 'addCoupon']);
+        Route::post('add-action', [CouponManagementController::class, 'addAction']);
     });
 
     Route::group(['prefix' => 'payout', 'as' => 'payout.'], function () {
