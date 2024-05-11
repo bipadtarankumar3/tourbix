@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('services', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('user_id');
-            $table->text('service_name');
-            $table->string('status');
+        Schema::create('experiance_categories', function (Blueprint $table) {
+            $table->id();
+            $table->string('category_name')->nullable();
+            $table->string('icon_class')->nullable();
+            $table->string('status')->nullable();
+            $table->string('added_by')->nullable();
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('services');
+        Schema::dropIfExists('experiance_categories');
     }
 };
