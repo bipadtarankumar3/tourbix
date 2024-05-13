@@ -5,21 +5,38 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\experianceAttribute;
 use App\Models\experianceCategory;
+
+use App\Models\Tour;
+use App\Models\Surrounding;
+use App\Models\TourAttribute;
+use App\Models\TourContent;
+
 use Illuminate\Http\Request;
 use Auth;
 
 
 class ExperianceController extends Controller
 {
+
+    //------------ Tour -------------------------------------
     public function experianceList(){
         $data['title']='Experiance List';
         return view('admin.pages.experiance.list',$data);
     }
     public function addNewTour(){
         $data['title']='Add New Tour';
+        $data['category'] = experianceCategory::all();
+        $data['top_feature'] = experianceAttribute::where('attribute_type','top_feature')->get();
+        $data['property_type'] = experianceAttribute::where('attribute_type','property_type')->get();
+        $data['travel_style'] = experianceAttribute::where('attribute_type','travel_style')->get();
+        $data['tour_feature'] = experianceAttribute::where('attribute_type','tour_feature')->get();
+        $data['facilities'] = experianceAttribute::where('attribute_type','facilities')->get();
         return view('admin.pages.experiance.add_new_tour',$data);
     }
-
+    public function submit_tour_form(Request $request){
+        
+    }
+    //------------ Tour End -------------------------------------
 
     //------------ Category -------------------------------------
     public function category(){
