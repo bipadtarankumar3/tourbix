@@ -101,8 +101,18 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
     Route::group(['prefix' => 'experiance', 'as' => 'experiance.'], function () {
         Route::get('list', [ExperianceController::class, 'experianceList']);
         Route::get('add-new-tour', [ExperianceController::class, 'addNewTour']);
+
+
         Route::get('category', [ExperianceController::class, 'category']);
+        Route::post('category/add-action-category', [ExperianceController::class, 'categoryAddAction']);
+        Route::get('category/edit/{id}', [ExperianceController::class, 'categoryEdit']);
+        Route::get('category/delete/{id}', [ExperianceController::class, 'categoryDelete']);
+
+
         Route::get('attributes', [ExperianceController::class, 'attributes']);
+        Route::post('attribute/add-action-attribute', [ExperianceController::class, 'attributeAddAction']);
+        Route::get('attribute/edit/{id}', [ExperianceController::class, 'attributeEdit']);
+        Route::get('attribute/delete/{id}', [ExperianceController::class, 'attributeDelete']);
        
     });
 });
