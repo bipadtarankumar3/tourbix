@@ -101,6 +101,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
     Route::group(['prefix' => 'experiance', 'as' => 'experiance.'], function () {
         Route::get('list', [ExperianceController::class, 'experianceList']);
         Route::get('add-new-tour', [ExperianceController::class, 'addNewTour']);
+        Route::post('submit-tour-form', [ExperianceController::class, 'submit_tour_form']);
 
 
         Route::get('category', [ExperianceController::class, 'category']);
