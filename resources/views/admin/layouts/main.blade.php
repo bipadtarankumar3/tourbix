@@ -85,7 +85,7 @@
     <script src="{{ URL::to('public/assets/admin/js/config.js') }}"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
     <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="../../../buttons.github.io/buttons.js')}}"></script>
+
 
     <link rel="stylesheet" href="{{ URL::to('public/assets/admin/css/style.css') }}" />
 

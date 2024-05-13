@@ -103,6 +103,11 @@
                     </a>
                 </li>
                 <li class="menu-item ">
+                    <a href="{{URL::to('admin/hotel/hotel-privacy')}}" class="menu-link">
+                        <div>Hotel Privacy</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
                     <a href="{{URL::to('admin/room/amenities')}}" class="menu-link">
                         <div>Room Amenities</div>
                     </a>

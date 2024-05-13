@@ -4,7 +4,9 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Facility;
+use App\Models\HotelPrivacy;
 use App\Models\PropertyType;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Auth;
 class HotelController extends Controller
@@ -15,6 +17,10 @@ class HotelController extends Controller
     }
     public function add_hotel(){
         $data['title']='Hotel Add';
+        $data['propertyTypes']=PropertyType::orderBy('id','desc')->get();
+        $data['facilities']=Facility::orderBy('id','desc')->get();
+        $data['privacies']=HotelPrivacy::orderBy('id','desc')->get();
+        $data['services'] = Service::orderBy('id', 'desc')->get();
         return view('admin.pages.hotel.add_hotel',$data);
     }
     public function proprity_type(){
@@ -92,6 +98,46 @@ class HotelController extends Controller
     public function facility_delete(Request $request , $id){
         $data['title']='Add Poperty Type';
         $data['propertyType']=Facility::where('id',$id)->delete();
+        $request->session()->flash('success', ' Deleted successfully');
+        return redirect()->back();
+    }
+    public function hotelPrivacy(){
+        $data['title']='Privacy Add';
+        $data['privacies']=HotelPrivacy::orderBy('id','desc')->get();
+        return view('admin.pages.privacy.list',$data);
+    }
+
+    public function privacyAddAction(Request $request){
+        HotelPrivacy::create([
+            'privacy_name' => $request->privacy_name,
+           
+            'added_by' => Auth::user()->id,
+            'status' => '1'
+        ]);
+        $request->session()->flash('success', 'added success');
+        return redirect()->back();
+    }
+
+    public function privacyEditAction(Request $request , $id){
+        HotelPrivacy::where('id',$id)->update([
+            'privacy_name' => $request->privacy_name,
+           
+            'added_by' => Auth::user()->id,
+            'status' => '1'
+        ]);
+        $request->session()->flash('success', 'Update success');
+        return redirect()->back();
+    }
+
+    public function privacy_edit($id){
+        $data['title']='Edit Privacy ';
+        $data['privacies']=HotelPrivacy::orderBy('id','desc')->get();
+        $data['privacy']=HotelPrivacy::where('id',$id)->first();
+        return view('admin.pages.privacy.list',$data);
+    }
+    public function privacy_delete(Request $request , $id){
+        $data['title']='Add Poperty Type';
+        $data['propertyType']=HotelPrivacy::where('id',$id)->delete();
         $request->session()->flash('success', ' Deleted successfully');
         return redirect()->back();
     }

@@ -62,6 +62,12 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
         Route::get('facility/edit/{id}', [HotelController::class, 'facility_edit']);
         Route::post('facility/delete/{id}', [HotelController::class, 'facility_delete']);
         Route::post('facility/edit-action/{id}', [HotelController::class, 'facilityEditAction']);
+        //privacy
+        Route::get('hotel-privacy', [HotelController::class, 'hotelPrivacy']);
+        Route::post('privacy/add-action', [HotelController::class, 'privacyAddAction']);
+        Route::get('privacy/edit/{id}', [HotelController::class, 'privacy_edit']);
+        Route::post('privacy/delete/{id}', [HotelController::class, 'privacy_delete']);
+        Route::post('privacy/edit-action/{id}', [HotelController::class, 'privacyEditAction']);
         // services
         Route::get('hotel_service', [ServiceController::class, 'hotel_service']);
         Route::post('service/add-action', [ServiceController::class, 'hotel_service_add_action']);
