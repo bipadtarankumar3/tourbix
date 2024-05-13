@@ -49,6 +49,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
     Route::group(['prefix' => 'hotel', 'as' => 'hotel.'], function () {
         Route::get('list', [HotelController::class, 'hotelList']);
         Route::get('add_hotel', [HotelController::class, 'add_hotel']);
+        Route::post('add-action', [HotelController::class, 'add_hotel_action']);
         //property
         Route::get('proprity_type', [HotelController::class, 'proprity_type']);
         Route::post('property-type/add-action', [HotelController::class, 'proprity_typeAddAction']);

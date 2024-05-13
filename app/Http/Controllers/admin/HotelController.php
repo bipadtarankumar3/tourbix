@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Facility;
+use App\Models\Hotel;
 use App\Models\HotelPrivacy;
 use App\Models\PropertyType;
 use App\Models\Service;
@@ -22,6 +23,26 @@ class HotelController extends Controller
         $data['privacies']=HotelPrivacy::orderBy('id','desc')->get();
         $data['services'] = Service::orderBy('id', 'desc')->get();
         return view('admin.pages.hotel.add_hotel',$data);
+    }
+    public function add_hotel_action(Request $request){
+      dd($request->all());
+      $create=Hotel::create([
+        'title'=>$request->title,
+        'content'=>$request->content,
+        'title'=>$request->youtube_link,
+        'title'=>$request->hotel_rating,
+        'title'=>$request->location,
+        'title'=>$request->real_address,
+        'title'=>$request->map_link,
+        'title'=>$request->check_in_time,
+        'title'=>$request->check_out_time,
+        'title'=>$request->minimun_advance_reservaction,
+        'title'=>$request->minimum_reservaction_day_req,
+        'title'=>$request->extera_price,
+        'title'=>$request->service_fee,
+        'title'=>$request->extera_price,
+        'title'=>$request->extera_price,
+      ]);
     }
     public function proprity_type(){
         $data['title']='Add Poperty Type';
