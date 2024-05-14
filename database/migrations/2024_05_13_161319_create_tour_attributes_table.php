@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('tour_attributes', function (Blueprint $table) {
             $table->id();
             $table->integer('tour_id');
-            $table->string('type');               
-            $table->integer('attribute_id'); 
-            $table->string('name'); 
+            $table->string('type')->nullable();               
+            $table->integer('attribute_id')->nullable(); 
+            $table->string('name')->nullable(); 
             $table->timestamps();
             $table->softDeletes();
         });

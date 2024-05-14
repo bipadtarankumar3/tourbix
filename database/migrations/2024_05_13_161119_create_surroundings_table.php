@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('surroundings', function (Blueprint $table) {
             $table->id();
             $table->integer('tour_id');
-            $table->string('type');               
-            $table->text('name'); 
-            $table->text('content'); 
-            $table->text('distance'); 
+            $table->string('type')->nullable();               
+            $table->text('name')->nullable(); 
+            $table->text('content')->nullable(); 
+            $table->text('distance')->nullable(); 
             $table->timestamps();
             $table->softDeletes();
         });

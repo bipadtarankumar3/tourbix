@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('tour_contents', function (Blueprint $table) {
             $table->id();
             $table->integer('tour_id');
-            $table->string('type');               
-            $table->text('title'); 
-            $table->text('content'); 
-            $table->text('image'); 
+            $table->string('type')->nullable();               
+            $table->text('title')->nullable(); 
+            $table->text('content')->nullable(); 
+            $table->text('image')->nullable(); 
             $table->timestamps();
             $table->softDeletes();
         });
