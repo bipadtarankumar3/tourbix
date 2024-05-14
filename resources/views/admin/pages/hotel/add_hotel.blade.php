@@ -58,7 +58,7 @@
                                 <label for="basic-default-name">Banner Image</label>
                             </div>
                             <div class="form-floating form-floating-outline mb-4">
-                                <input type="file" name="gallery_image" multiple class="form-control"
+                                <input type="file" name="gallery_image[]" multiple class="form-control"
                                     id="basic-default-name">
                                 <label for="basic-default-name">Gallery Image</label>
                             </div>
@@ -487,7 +487,7 @@
                                     <div class="mb-3">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input" id="basic-default-checkbox"
-                                                required="" name="extera_price">
+                                               value="1" name="extera_price">
                                             <label class="form-check-label"  for="basic-default-checkbox">Enable Extra
                                                 Price</label>
                                         </div>
@@ -497,8 +497,8 @@
                                 <div class="col-md-3">
                                     <div class="mb-3">
                                         <div class="form-check">
-                                            <input type="checkbox" name="service_fee" class="form-check-input" id="basic-default-checkbox"
-                                                required="">
+                                            <input type="checkbox" name="service_fee" value="1" class="form-check-input" id="basic-default-checkbox"
+                                                >
                                             <label class="form-check-label" for="basic-default-checkbox">Service
                                                 Fee</label>
                                         </div>
@@ -522,7 +522,7 @@
                                         <div class="mb-3">
                                             <div class="form-check">
                                                 <input type="checkbox" name="property_type[]" class="form-check-input"
-                                                    id="basic-default-checkbox" value="1">
+                                                    id="basic-default-checkbox" value="{{ $propertyT->id }}">
                                                 <label class="form-check-label"
                                                     for="basic-default-checkbox">{{ $propertyT->property_type }}</label>
                                             </div>
@@ -543,7 +543,7 @@
                                         <div class="mb-3">
                                             <div class="form-check">
                                                 <input type="checkbox" name="facility[]" class="form-check-input"
-                                                    id="basic-default-checkbox" value="1">
+                                                    id="basic-default-checkbox" value="{{ $facility->id }}">
                                                 <label class="form-check-label"
                                                     for="basic-default-checkbox">{{ $facility->facility_name }}</label>
                                             </div>
@@ -563,7 +563,7 @@
                                     <div class="col-2">
                                         <div class="mb-3">
                                             <div class="form-check">
-                                                <input type="checkbox" name="service[]" value="1" class="form-check-input"
+                                                <input type="checkbox" name="service[]" value="{{ $service->id }}" class="form-check-input"
                                                     id="basic-default-checkbox" >
                                                 <label class="form-check-label"
                                                     for="basic-default-checkbox">{{ $service->service_name }}</label>
@@ -584,7 +584,7 @@
                                         <div class="mb-3">
                                             <div class="form-check">
                                                 <input type="checkbox" name="privacy_name[]" class="form-check-input"
-                                                    id="basic-default-checkbox"  value="1">
+                                                    id="basic-default-checkbox"  value="{{ $privacy->id }}">
                                                 <label class="form-check-label"
                                                     for="basic-default-checkbox">{{ $privacy->privacy_name }}</label>
                                             </div>

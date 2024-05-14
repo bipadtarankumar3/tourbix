@@ -1,5 +1,6 @@
 <?php
 use App\Models\Document;
+use App\Models\Documents;
 use Illuminate\Http\Request;
 
 
@@ -55,7 +56,7 @@ function multiple_files_upload($files, $id, $table_name, $document_type)
 
     // Insert all document data into the database in one go
     if ($uploadSuccess) {
-        Document::insert($documentData);
+        Documents::insert($documentData);
     }
 
     return $uploadSuccess;
