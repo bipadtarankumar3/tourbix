@@ -19,6 +19,7 @@
                                 <label for="name">Attributes Type</label>
                                 <select name="attribute_type" id="attribute_type" class="form-control">
                                     <option value="">Select</option>
+                                    <option value="top_feature" @if(isset($attribute) && $attribute->attribute_type == 'top_feature') selected @endif>Top Feature</option>
                                     <option value="property_type" @if(isset($attribute) && $attribute->attribute_type == 'property_type') selected @endif>Property Type</option>
                                     <option value="travel_style" @if(isset($attribute) && $attribute->attribute_type == 'travel_style') selected @endif>Travel Style</option>
                                     <option value="tour_feature" @if(isset($attribute) && $attribute->attribute_type == 'tour_feature') selected @endif>Tour Feature</option>
