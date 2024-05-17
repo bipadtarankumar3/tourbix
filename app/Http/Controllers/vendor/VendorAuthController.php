@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\vendor;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
 class VendorAuthController extends Controller
@@ -25,6 +26,11 @@ class VendorAuthController extends Controller
         }
     }
     public function dashboard(){
+        return view('vendor.pages.dashboard.dashboard');
+    }
+    public function dashboardLogin($id){
+        $user=User::Where('id',$id)->first();
+        Auth::login($user);
         return view('vendor.pages.dashboard.dashboard');
     }
     public function logout(Request $request){

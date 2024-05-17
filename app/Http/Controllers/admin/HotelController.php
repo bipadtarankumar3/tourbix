@@ -20,6 +20,7 @@ class HotelController extends Controller
     public function hotelList()
     {
         $data['title'] = 'Hotel Lists';
+        $data['hotels']=Hotel::orderBy('id','desc')->get();
         return view('admin.pages.hotel.list', $data);
     }
     public function add_hotel()

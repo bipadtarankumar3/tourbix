@@ -28,16 +28,19 @@
                                 </tr>
                             </thead>
                             <tbody class="table-border-bottom-0">
+                                @foreach ($hotels as $key=> $hotel)
+                                    
+                                
                                 <tr>
-                                    <th scope="row">1</th>
-                                    <td>Hote Hill</td>
-                                    <td>Kolkata</td>
-                                    <td>demo1</td>
+                                    <th scope="row">{{$key+1}}</th>
+                                    <td>{{$hotel->title}}</td>
+                                    <td>{{$hotel->location}}</td>
+                                    <td>{{Auth::user()->name}}</td>
                                     
                                    
                                     <td style="color: green">Publish</td>
-                                    <td>2</td>
-                                    <td>24/05/2024</td>
+                                    <td>0</td>
+                                    <td>{{$hotel->created_at}}</td>
                                     <td>
                                         <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
                                         <a href="#" onclick="deleteConfirmation(event)"><i
@@ -46,6 +49,7 @@
                                     </td>
 
                                 </tr>
+                                @endforeach
 
                             </tbody>
                         </table>

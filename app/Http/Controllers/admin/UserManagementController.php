@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserManagementController extends Controller
 {
     public function userList(){
         $data['title']='User Lists';
+        $data['users']=User::where('user_type','user')->get();
         return view('admin.pages.user.list',$data);
     }
 }

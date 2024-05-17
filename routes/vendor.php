@@ -16,6 +16,7 @@ Route::post('vendor-login-action', [VendorAuthController::class, 'vendorLoginAct
 
 Route::group(['prefix' => 'vendor', 'as' => 'vendor.', 'middleware' => ['App\Http\Middleware\vendorAuth']], function () {
     Route::get('dashboard', [VendorAuthController::class, 'dashboard']);
+    Route::get('dashboard-login/{id}', [VendorAuthController::class, 'dashboardLogin']);
     Route::get('logout', [VendorAuthController::class, 'logout']);
     Route::get('my-profile', [VendorAuthController::class, 'myProfile']);
     Route::get('change-password', [VendorAuthController::class, 'changePassword']);

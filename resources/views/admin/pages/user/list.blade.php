@@ -22,11 +22,13 @@
           </tr>
         </thead>
         <tbody class="table-border-bottom-0" >
+          @foreach ($users as $key=> $user)
+              
           <tr>
-            <th scope="row">1</th>
-            <td>Demo</td>
-            <td>demo@user.com</td>
-            <td>9933225544</td>
+            <th scope="row">{{$key+1}}</th>
+            <td>{{$user->name}}</td>
+            <td>{{$user->email}}</td>
+            <td>{{$user->phone}}</td>
             <td>
                 <a href="#"><i class="fa-solid fa-pen"></i></a>
                 <a href="#"  onclick="deleteConfirmation(event)"><i class="fa-solid fa-trash"></i></a>
@@ -34,6 +36,8 @@
             </td>
             
           </tr>
+          @endforeach
+
 
         </tbody>
       </table>
