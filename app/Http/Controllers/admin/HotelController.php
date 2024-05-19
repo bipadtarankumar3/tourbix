@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Documents;
 use App\Models\Facility;
 use App\Models\Hotel;
 use App\Models\HotelAttribute;
@@ -14,6 +15,7 @@ use App\Models\Service;
 use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Str;
+use League\CommonMark\Node\Block\Document;
 
 class HotelController extends Controller
 {
@@ -23,6 +25,15 @@ class HotelController extends Controller
         $data['hotels']=Hotel::orderBy('id','desc')->get();
         return view('admin.pages.hotel.list', $data);
     }
+    public function documetDelete(Request $request ,$id)
+    {
+       
+        $data['hotels']=Documents::where('id',$id)->delete();
+        $request->session()->flash('success', 'Delete success');
+        return redirect()->back();
+    }
+
+
     public function add_hotel()
     {
         $data['title'] = 'Hotel Add';
@@ -31,6 +42,18 @@ class HotelController extends Controller
         $data['privacies'] = HotelPrivacy::orderBy('id', 'desc')->get();
         $data['services'] = Service::orderBy('id', 'desc')->get();
         return view('admin.pages.hotel.add_hotel', $data);
+    }
+    public function edit_hotel($id)
+    {
+        $data['title'] = 'Hotel Add';
+        $data['propertyTypes'] = PropertyType::orderBy('id', 'desc')->get();
+        $data['facilities'] = Facility::orderBy('id', 'desc')->get();
+        $data['privacies'] = HotelPrivacy::orderBy('id', 'desc')->get();
+        $data['services'] = Service::orderBy('id', 'desc')->get();
+        $data['hotel'] = Hotel::where('id', $id)->first();
+        $data['gallery_images'] = Documents::where('item_id', $id)->get();
+
+        return view('admin.pages.hotel.edit_hotel', $data);
     }
     public function add_hotel_action(Request $request)
     {
@@ -131,6 +154,115 @@ class HotelController extends Controller
         }
 
         $request->session()->flash('success', 'added success');
+        return redirect()->back();
+    }
+    public function edit_hotel_action(Request $request ,$id)
+    {
+        // dd($request->all());
+        $banner_image = ''; // Initialize the variable
+
+        if ($request->hasFile('banner_image')) {
+            $thumbnail = $request->file('banner_image');
+            $thumbnailName = Str::uuid() . '_' . $thumbnail->getClientOriginalName(); // Unique filename
+            $banner_image = '/images/banner_image/' . $thumbnailName; // Adjust path as needed
+            $thumbnail->move(public_path('images/banner_image'), $thumbnailName);
+            Hotel::where('id',$id)->update([
+                'banner_image' => $banner_image,
+            ]);
+        }
+        $feature_image = ''; // Initialize the variable
+
+        if ($request->hasFile('feature_image')) {
+            $thumbnail = $request->file('feature_image');
+            $thumbnailName = Str::uuid() . '_' . $thumbnail->getClientOriginalName(); // Unique filename
+            $feature_image = '/images/feature_image/' . $thumbnailName; // Adjust path as needed
+            $thumbnail->move(public_path('images/feature_image'), $thumbnailName);
+            Hotel::where('id',$id)->update([
+                'feature_image' =>  $feature_image,
+            ]);
+        }
+        $create =  Hotel::where('id',$id)->update([
+            'title' => $request->title,
+            'content' => $request->content,
+            'youtube_video' => $request->youtube_link,
+            'ratings' => $request->hotel_rating,
+            'location' => $request->location,
+            'real_address' => $request->real_address,
+            'map_link' => $request->map_link,
+            'check_in_time' => $request->check_in_time,
+            'check_out_time' => $request->check_out_time,
+            'minimum_advance_reservaction' => $request->minimun_advance_reservaction,
+            'maximum_day_stay_req' => $request->minimum_reservaction_day_req,
+            'price' => $request->price,
+            'exctera_price' => $request->extera_price,
+            'service_fee' => $request->service_fee,
+            
+            
+            'added_by' => Auth::user()->id,
+        ]);
+        $files = $request->gallery_image;
+        $id = $create->id;
+        $table_name = "hotels";
+        $document_type = "Gallery image";
+        $uploadSuccess = multiple_files_upload($files, $id, $table_name, $document_type);
+
+        $categories = ['education', 'health', 'transportation', 'adventure', 'experience'];
+
+        foreach ($categories as $category) {
+            // Extract data for this category
+            $names = $request->input($category . '_name');
+            $contents = $request->input($category . '_content');
+            $distances = $request->input($category . '_distance');
+            HotelSaraunding::where('hotel_id',$id)->delete();
+            // Ensure all arrays are defined and have the same length
+            if (is_array($names) && is_array($contents) && is_array($distances) && count($names) === count($contents) && count($contents) === count($distances)) {
+                $count = count($names);
+
+                // Create records for each item in this category
+                for ($i = 0; $i < $count; $i++) {
+
+                    HotelSaraunding::create([
+                        'hotel_id' => $id, // Assuming $id is defined elsewhere in your code
+                        'type' => $category,
+                        'name' => $names[$i],
+                        'content' => $contents[$i],
+                        'distance' => $distances[$i],
+                    ]);
+                }
+            }
+        }
+
+        $policyTitles = $request['policy_title'];
+        $policyContents = $request['policy_content'];
+        $count = count($policyTitles);
+        HotelPolicy::where('hotel_id',$id)->delete();
+        for ($i = 0; $i < $count; $i++) {
+            // Create a new HotelPolicy record
+            HotelPolicy::create([
+                'hotel_id' => $id,
+                'title' => $policyTitles[$i],
+                'content' => $policyContents[$i],
+            ]);
+        }
+
+        $desiredKeys = ['property_type', 'facility', 'service', 'privacy_name'];
+        HotelAttribute::where('hotel_id',$id)->delete();
+        foreach ($desiredKeys as $key) {
+
+            if (isset($request[$key]) && is_array($request[$key])) {
+
+                foreach ($request[$key] as $name) {
+
+                    HotelAttribute::create([
+                        'hotel_id' => $id,
+                        'type' => $key,
+                        'name' => $name,
+                    ]);
+                }
+            }
+        }
+
+        $request->session()->flash('success', 'Update success');
         return redirect()->back();
     }
     public function proprity_type()

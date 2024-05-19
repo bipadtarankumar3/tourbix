@@ -42,7 +42,7 @@
                                     <td>0</td>
                                     <td>{{$hotel->created_at}}</td>
                                     <td>
-                                        <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
+                                        <a href="{{URL::To('admin/hotel/edit',$hotel->id)}}"><i class="fa-solid fa-pen-to-square"></i></a>
                                         <a href="#" onclick="deleteConfirmation(event)"><i
                                                 class="fa-solid fa-trash"></i></a>
 
