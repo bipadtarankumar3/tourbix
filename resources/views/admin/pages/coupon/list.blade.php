@@ -27,32 +27,46 @@
             <div class="table-responsive text-nowrap">
                 <table class="table" id="zero_config">
                     <thead>
-                        <tr class="text-nowrap">
-                            <th>#</th>
-                            <th>Code</th>
-                            <th>Name</th>
-                            <th>Amount</th>
+                        <tr>
+                            <th>Coupon Code</th>
+                            <th>Actions</th>
+                            <th>Coupon Name</th>
+                            <th>Coupon Amount</th>
                             <th>Discount Type</th>
+                            <th>Feature Image</th>
                             <th>End Date</th>
-                            <th>Action</th>
-
+                            <th>Min Spend</th>
+                            <th>Max Spend</th>
+                            <th>Only for Services</th>
+                            <th>Only for User</th>
+                            <th>Usage Limit Per Coupon</th>
+                            <th>Usage Limit Per User</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>NEW50</td>
-                            <td>New User</td>
-                            <td>50</td>
-                            <td>Flat</td>
-                            <td>25/09/2024</td>
-                            <td>
-                                <a href="#"><i class="fa-solid fa-pen-to-square"></i></a>
-                                <a href="#" onclick="deleteConfirmation(event)"><i class="fa-solid fa-trash"></i></a>
-
-                            </td>
-
-                        </tr>
+                        @foreach($coupons as $coupon)
+                    <tr>
+                        <td>{{ $coupon->coupon_code }}</td>
+                        <td>
+                            <a href="{{ URL::to('admin/coupon/edit', $coupon->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <a href="{{ URL::to('admin/coupon/delete', $coupon->id) }}" onclick="deleteConfirmation(event)"><i class="fa-solid fa-trash"></i></a>
+                                            
+                        </td>
+                        <td>{{ $coupon->coupon_name }}</td>
+                        <td>{{ $coupon->coupon_amount }}</td>
+                        <td>{{ $coupon->discount_type }}</td>
+                        <td><img src="{{ asset($coupon->feature_image) }}" alt="Feature Image" width="50"></td>
+                        <td>{{ $coupon->end_date }}</td>
+                        <td>{{ $coupon->min_spend }}</td>
+                        <td>{{ $coupon->max_spend }}</td>
+                        <td>{{ $coupon->only_for_services }}</td>
+                        <td>{{ $coupon->only_for_user }}</td>
+                        <td>{{ $coupon->usage_limit_per_coupon }}</td>
+                        <td>{{ $coupon->usage_limit_per_user }}</td>
+                        <td>{{ $coupon->status }}</td>
+                    </tr>
+                @endforeach
 
                     </tbody>
                 </table>

@@ -245,6 +245,35 @@
                 return false;
             })
         }
+
+        function deleteConfirmationGet(ev) {
+
+            ev.preventDefault();
+            var urlToRedirect = ev.currentTarget.getAttribute(
+                'href'
+            );
+
+            swal({
+                title: "Delete?",
+                text: "Please ensure and then confirm!",
+                type: "warning",
+                showCancelButton: !0,
+                confirmButtonText: "Yes, delete it!",
+                cancelButtonText: "No, cancel!",
+                reverseButtons: !0
+            }).then(function(e) {
+
+                if (e.value === true) {
+                    window.location.href = urlToRedirect;
+
+                } else {
+                    e.dismiss;
+                }
+
+            }, function(dismiss) {
+                return false;
+            })
+            }
     </script>
 
 

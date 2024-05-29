@@ -11,6 +11,7 @@ use App\Http\Controllers\admin\HotelController;
 use App\Http\Controllers\admin\VendorController;
 use App\Http\Controllers\admin\ExperianceController;
 use App\Http\Controllers\admin\ServiceController;
+use App\Http\Controllers\admin\RoomController;
 
 Route::get('login', [AdminAuthController::class, 'login'])->name('login');
 Route::post('admin-login-action', [AdminAuthController::class, 'adminLoginAction']);
@@ -85,7 +86,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
     Route::group(['prefix' => 'coupon', 'as' => 'coupon.'], function () {
         Route::get('list', [CouponManagementController::class, 'couponList']);
         Route::get('add', [CouponManagementController::class, 'addCoupon']);
-        Route::post('add-action', [CouponManagementController::class, 'addAction']);
+        Route::post('add-action', [CouponManagementController::class, 'updateOrAddCoupon']);
+        Route::post('add-action/{id}', [CouponManagementController::class, 'updateOrAddCoupon']);
+        Route::get('edit/{id}', [CouponManagementController::class, 'editCoupon']);
+        Route::post('delete/{id}', [CouponManagementController::class, 'deleteCoupon']);
     });
 
     Route::group(['prefix' => 'payout', 'as' => 'payout.'], function () {
@@ -94,12 +98,17 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
     });
 
     Route::group(['prefix' => 'room', 'as' => 'room.'], function () {
-        Route::get('amenities', [HotelController::class, 'roomamenities']);
-        Route::get('type', [HotelController::class, 'roomtype']);
-        Route::get('list', [HotelController::class, 'roomList']);
-        Route::get('addRoom', [HotelController::class, 'addRoom']);
-        Route::get('avalibility', [HotelController::class, 'roomAvalibility']);
-       
+        Route::get('amenities', [RoomController::class, 'roomamenities']);
+        Route::post('amenity/add-action', [RoomController::class, 'updateOrAddAmenity']);
+        Route::get('amenity/edit/{id?}', [RoomController::class, 'amenityEdit'])->name('amenity.edit');
+        Route::post('amenity/update/{id?}', [RoomController::class, 'amenityUpdateOrAddAmenity'])->name('amenity.update');
+        Route::get('amenity/delete/{id}', [RoomController::class, 'amenityDelete'])->name('amenity.delete');
+
+
+        Route::get('type', [RoomController::class, 'roomtype']);
+        Route::get('list', [RoomController::class, 'roomList']);
+        Route::get('addRoom', [RoomController::class, 'addRoom']);
+        Route::get('avalibility', [RoomController::class, 'roomAvalibility']);
     });
 
     Route::group(['prefix' => 'experiance', 'as' => 'experiance.'], function () {
