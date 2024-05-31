@@ -107,7 +107,19 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
         Route::get('amenity/delete/{id}', [RoomController::class, 'amenityDelete'])->name('amenity.delete');
 
 
-        Route::get('type', [RoomController::class, 'roomtype']);
+        // List all room types
+        Route::get('type', [RoomController::class, 'roomTypes'])->name('roomTypes');
+        Route::post('type/add-action', [RoomController::class, 'roomTypeUpdateOrAdd']);
+        // Edit or add a room type
+        Route::get('type/edit/{id?}', [RoomController::class, 'roomTypeEdit'])->name('roomTypeEdit');
+
+        // Update or add a room type
+        Route::post('type/update/{id?}', [RoomController::class, 'roomTypeUpdateOrAdd'])->name('roomTypeUpdateOrAdd');
+
+        // Delete a room type
+        Route::get('type/delete/{id}', [RoomController::class, 'roomTypeDelete'])->name('roomTypeDelete');
+
+
         Route::get('list', [RoomController::class, 'roomList']);
         Route::get('addRoom', [RoomController::class, 'addRoom']);
         Route::get('avalibility', [RoomController::class, 'roomAvalibility']);

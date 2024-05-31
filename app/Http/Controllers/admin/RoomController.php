@@ -4,20 +4,12 @@ namespace App\Http\Controllers\admin;
 
 
 use App\Http\Controllers\Controller;
-use App\Models\Documents;
-use App\Models\Facility;
-use App\Models\Hotel;
-use App\Models\HotelAttribute;
-use App\Models\HotelPolicy;
-use App\Models\HotelPrivacy;
-use App\Models\HotelSaraunding;
-use App\Models\PropertyType;
-use App\Models\Service;
 use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Str;
 use League\CommonMark\Node\Block\Document;
 use App\Models\RoomAmenities;
+use App\Models\RoomType;
 
 class RoomController extends Controller
 {
@@ -81,11 +73,68 @@ class RoomController extends Controller
         return redirect()->back();
     }
 
-    public function roomtype()
+    // List all room types
+    public function roomTypes()
     {
-        $data['title'] = 'Room Type';
+        $data['title'] = 'Room Types';
+        $data['roomTypes'] = RoomType::all();
         return view('admin.pages.room.roomtype', $data);
     }
+
+    // Edit a specific room type or add a new one
+    public function roomTypeEdit($id = null)
+    {
+        $data['title'] = $id ? 'Edit Room Type' : 'Add New Room Type';
+        $data['roomTypes'] = RoomType::all();
+        $data['roomType'] = $id ? RoomType::find($id) : null;
+        return view('admin.pages.room.roomtype', $data);
+    }
+
+    // Update or add a new room type
+    public function roomTypeUpdateOrAdd(Request $request, $id = null)
+    {
+        $validatedData = $request->validate([
+            'type' => 'required|string|max:255',
+            'status' => 'required|string|max:255'
+        ]);
+
+        $data = [
+            'type' => $validatedData['type'],
+            'status' => $validatedData['status'],
+        ];
+
+        if ($id) {
+            $roomType = RoomType::find($id);
+            if ($roomType) {
+                $roomType->update($data);
+                $message = 'Room Type updated successfully';
+            } else {
+                $message = 'Room Type not found';
+            }
+        } else {
+            RoomType::create($data);
+            $message = 'Room Type added successfully';
+        }
+
+        $request->session()->flash('success', $message);
+        return redirect()->back();
+    }
+
+    // Delete a specific room type
+    public function roomTypeDelete(Request $request, $id)
+    {
+        $roomType = RoomType::find($id);
+        if ($roomType) {
+            $roomType->delete();
+            $message = 'Room Type deleted successfully';
+        } else {
+            $message = 'Room Type not found';
+        }
+
+        $request->session()->flash('success', $message);
+        return redirect()->back();
+    }
+
     public function roomList()
     {
         $data['title'] = 'Room Management';
