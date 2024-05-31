@@ -39,8 +39,6 @@ class AdminAuthController extends Controller
      return redirect('login');
     }
 
-    public function enquiry(){
-        return view('admin.pages.enquiry.enquiry');
-    }
+ 
 
 }

@@ -27,20 +27,21 @@
                                     </tr>
                                 </thead>
                                 <tbody class="table-border-bottom-0">
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>David</td>
-                                        <td>david@gmail.com</td>
-                                        <td>9012566666</td>
-                                        <td>Lorem Ipsum</td>
-                                        <td>24/05/2024</td>
-                                        <td>
-                                            <a href="#" onclick="deleteConfirmation(event)"><i
-                                                    class="fa-solid fa-trash"></i></a>
-
-                                        </td>
-
-                                    </tr>
+                                    @foreach ($enquiry as $index => $user)
+                                        <tr>
+                                            <th scope="row">{{ $index + 1 }}</th>
+                                            <td>{{ $user['name'] }}</td>
+                                            <td>{{ $user['email'] }}</td>
+                                            <td>{{ $user['phone'] }}</td>
+                                            <td>{{ $user['message'] }}</td>
+                                            <td>{{ $user['created_at'] }}</td>
+                                            <td>
+                                                <a href="{{URL::to('admin/enquiry/delete/'.$user['id'])}}" onclick="deleteConfirmation(event, {{ $user['id'] }})">
+                                                    <i class="fa-solid fa-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
 
                                 </tbody>
                             </table>

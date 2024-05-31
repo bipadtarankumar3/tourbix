@@ -12,13 +12,15 @@ use App\Http\Controllers\admin\VendorController;
 use App\Http\Controllers\admin\ExperianceController;
 use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\admin\RoomController;
+use App\Http\Controllers\admin\EnquiryController;
 
 Route::get('login', [AdminAuthController::class, 'login'])->name('login');
 Route::post('admin-login-action', [AdminAuthController::class, 'adminLoginAction']);
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\Middleware\AdminAuth']], function () {
     Route::get('dashboard', [AdminAuthController::class, 'dashboard']);
-    Route::get('enquiry', [AdminAuthController::class, 'enquiry']);
+    Route::get('enquiry', [EnquiryController::class, 'enquiry']);
+    Route::get('enquiry/delete/{id}', [EnquiryController::class, 'enquiry_delete']);
     Route::get('logout', [AdminAuthController::class, 'logout']);
 
     Route::group(['prefix' => 'user', 'as' => 'user.'], function () {
