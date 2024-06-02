@@ -103,7 +103,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
         Route::get('amenities', [RoomController::class, 'roomamenities']);
         Route::post('amenity/add-action', [RoomController::class, 'updateOrAddAmenity']);
         Route::get('amenity/edit/{id?}', [RoomController::class, 'amenityEdit'])->name('amenity.edit');
-        Route::post('amenity/update/{id?}', [RoomController::class, 'amenityUpdateOrAddAmenity'])->name('amenity.update');
+        Route::post('amenity/update/{id?}', [RoomController::class, 'updateOrAddAmenity'])->name('amenity.update');
         Route::get('amenity/delete/{id}', [RoomController::class, 'amenityDelete'])->name('amenity.delete');
 
 
@@ -122,6 +122,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\
 
         Route::get('list', [RoomController::class, 'roomList']);
         Route::get('addRoom', [RoomController::class, 'addRoom']);
+        Route::post('save_room/{id?}', [RoomController::class, 'saveRoom'])->name('room.save');
+        Route::get('edit_room/{id?}', [RoomController::class, 'edit_room']);
+        Route::get('delete_room_images/{id?}', [RoomController::class, 'delete_room_images']);
+        Route::get('delete_room/{id}', [RoomController::class, 'deleteRoom'])->name('room.delete');
+
         Route::get('avalibility', [RoomController::class, 'roomAvalibility']);
     });
 

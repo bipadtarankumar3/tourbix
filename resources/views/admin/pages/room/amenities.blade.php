@@ -45,7 +45,7 @@
                                     @foreach ($amenities as $key => $amenity)
                                         <tr>
                                             <th scope="row">{{ $key + 1 }}</th>
-                                            <td>{{ $amenity->icon }}</td>
+                                            <td>{!! $amenity->icon !!}</td>
                                             <td>{{ $amenity->name }}</td>
                                             <td style="color: {{ $amenity->status == 'publish' ? 'green' : 'red' }}">{{ $amenity->status }}</td>
                                             <td>{{ $amenity->created_at->format('d/m/Y') }}</td>

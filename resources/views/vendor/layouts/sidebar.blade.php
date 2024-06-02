@@ -61,7 +61,7 @@
                 </li>
 
                 <li class="menu-item ">
-                    <a href="{{URL::to('admin/hotel/hotel_service')}}" class="menu-link">
+                    <a href="{{URL::to('vendor/hotel/hotel_service')}}" class="menu-link">
                         <div>Hotel Service</div>
                     </a>
                 </li>

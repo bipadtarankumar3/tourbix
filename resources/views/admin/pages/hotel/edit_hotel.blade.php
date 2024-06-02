@@ -38,7 +38,7 @@
 
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control" id="basic-default-name" name="title"
-                                    placeholder="Name of the hotel" value="{{ $hotel->title }}" required="">
+                                    placeholder="Name of the hotel" value="{{ $hotel->title }}" >
                                 <label for="basic-default-name">Title</label>
                             </div>
 
@@ -50,13 +50,13 @@
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control" id="basic-default-name"
                                     value="{{ $hotel->youtube_video }}" name="youtube_link" placeholder="Youtube Video"
-                                    required="">
+                                    >
                                 <label for="basic-default-name">Youtube Video</label>
                             </div>
 
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="file" class="form-control" id="basic-default-name" name="banner_image"
-                                    placeholder="Banner Image" required="">
+                                    placeholder="Banner Image" >
                                 <img src="{{ URL::To('public/' . $hotel->banner_image) }}" alt="" height="60px"
                                     width="80px">
                                 <label for="basic-default-name">Banner Image</label>
@@ -84,19 +84,20 @@
                                     <div class="form-floating form-floating-outline mb-4">
                                         <input type="text" name="hotel_rating" value="{{ $hotel->ratings }}"
                                             class="form-control" id="basic-default-name" placeholder="Rating"
-                                            required="">
+                                            >
                                         <label for="basic-default-name">Hotel Rating Standard</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="dynamic_hotel_field">
-                                @foreach ($hotel->hotelPolicy as $policy)
+
+                                @foreach ($hotel->hotelPolicy as $key=>  $policy)
                                     <div class="row">
                                         <div class="col-md-5">
                                             <div class="form-floating form-floating-outline mb-4">
                                                 <input type="text" class="form-control" id="basic-default-name"
                                                     placeholder="Name of the hotel" value="{{ $policy->title }}"
-                                                    name="policy_title[]" required="">
+                                                    name="policy_title[]" >
                                                 <label for="basic-default-name">Title</label>
                                             </div>
                                         </div>
@@ -107,10 +108,18 @@
                                             </div>
                                         </div>
                                         <div class="col-md-2">
-                                            <a class="extra-fields" href="javascript:void(0);"
-                                                onclick="add_more_hotel_policy()">
-                                                <i class="fa-solid fa fa-plus" style="color: rgb(0, 245, 53)"></i>
-                                            </a>
+
+                                            @if ($key ==0 )
+                                                 <a class="extra-fields" href="javascript:void(0);"
+                                                    onclick="add_more_hotel_policy()">
+                                                    <i class="fa-solid fa fa-plus" style="color: rgb(0, 245, 53)"></i>
+                                                </a>
+                                            @else
+                                                <i class="fa fa-trash" style="color:red;" onclick="remove_hotel_policy(this)" aria-hidden="true"></i>
+                                           
+                                            @endif
+
+                                            
                                         </div>
                                     </div>
                                 @endforeach
@@ -128,7 +137,7 @@
 
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="file" class="form-control" name="feature_image" id="basic-default-name"
-                                    placeholder="Banner Image" required="">
+                                    placeholder="Banner Image" >
                                 <img src="{{ URL::To('public/' . $hotel->feature_image) }}" alt="" height="60px"
                                     width="80px">
 
@@ -147,7 +156,7 @@
 
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" name="location" class="form-control" id="basic-default-name"
-                                    placeholder="Location" value="{{ $hotel->location }}" required="">
+                                    placeholder="Location" value="{{ $hotel->location }}" >
                                 <label for="basic-default-name">Location</label>
                             </div>
 
@@ -158,7 +167,7 @@
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" name="map_link" class="form-control"
                                     value="{{ $hotel->map_link }}" id="basic-default-name" placeholder="Location"
-                                    required="">
+                                    >
                                 <label for="basic-default-name">Map link</label>
                             </div>
 
@@ -184,49 +193,91 @@
                                         </thead>
                                         <tbody>
 
-                                            @foreach ($hotel->hotelSaraundings as $hotelSaraunding)
-                                                @if ($hotelSaraunding->type == 'education')
-                                                <tr class="dynamic_education">
+                                            @if (count($education) > 0)
+                                                @foreach ($education as $key=>  $hotelSaraunding)
+                                                   
+                                                    <tr class="dynamic_education">
 
-                                                    <td>
-                                                        <div class="form-floating form-floating-outline mb-4">
-                                                            <input type="text" class="form-control"
-                                                                id="basic-default-name" value="{{$hotelSaraunding->name}}" name="education_name[]"
-                                                                placeholder="Name" required="">
-    
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-floating form-floating-outline mb-4">
-                                                            <input type="text" class="form-control"
-                                                                id="basic-default-name" value="{{$hotelSaraunding->content}}" name="education_content[]"
-                                                                placeholder="Content" required="">
-    
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-floating form-floating-outline mb-4">
-                                                            <input type="text" class="form-control"
-                                                                id="basic-default-name" value="{{$hotelSaraunding->distance}}" name="education_distance[]"
-                                                                placeholder="Distance" required="">
-    
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="form-floating form-floating-outline mb-4">
-                                                            <div class="col-md-12 text-right">
-                                                                <a class="extra-fields" href="javascript:void(0);"
-                                                                    onclick="add_more_hotel_education()">
-                                                                    <i class="fa-solid fa fa-plus"
-                                                                        style="color: rgb(0, 245, 53)"></i>
-                                                                </a>
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <input type="text" class="form-control"
+                                                                    id="basic-default-name" value="{{$hotelSaraunding->name}}" name="education_name[]"
+                                                                    placeholder="Name" >
+        
                                                             </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                @endif
-                                            @endforeach
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <input type="text" class="form-control"
+                                                                    id="basic-default-name" value="{{$hotelSaraunding->content}}" name="education_content[]"
+                                                                    placeholder="Content" >
+        
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <input type="text" class="form-control"
+                                                                    id="basic-default-name" value="{{$hotelSaraunding->distance}}" name="education_distance[]"
+                                                                    placeholder="Distance" >
+        
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <div class="col-md-12 text-right">
+                                                                    @if($key ==0 )
+                                                                    <a class="extra-fields" href="javascript:void(0);"
+                                                                        onclick="add_more_hotel_education()">
+                                                                        <i class="fa-solid fa fa-plus"
+                                                                            style="color: rgb(0, 245, 53)"></i>
+                                                                    </a>
+                                                                    @else
+                                                                    <a class="extra-fields">
+                                                                        <i class="fa fa-trash" style="color:red;" onclick="remove_hotel_education(this)" aria-hidden="true"></i>
+                                                                    </a>
+                                                                    @endif
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            @else
+                                            <tr class="dynamic_education">
+                                                <td>
+                                                    <div class="form-floating form-floating-outline mb-4">
+                                                        <input type="text" class="form-control"
+                                                            id="basic-default-name" name="education_name[]" placeholder="Name" >
 
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="form-floating form-floating-outline mb-4">
+                                                        <input type="text" class="form-control"
+                                                            id="basic-default-name" name="education_content[]" placeholder="Content" >
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="form-floating form-floating-outline mb-4">
+                                                        <input type="text" class="form-control"
+                                                            id="basic-default-name" name="education_distance[]" placeholder="Distance"
+                                                            >
+
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="form-floating form-floating-outline mb-4">
+                                                        <div class="col-md-12 text-right">
+                                                            <a class="extra-fields" href="javascript:void(0);"
+                                                                onclick="add_more_hotel_education()">
+                                                                <i class="fa-solid fa fa-plus"
+                                                                    style="color: rgb(0, 245, 53)"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            @endif
 
                                         </tbody>
                                     </table>
@@ -246,30 +297,79 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($hotel->hotelSaraundings as $hotelSaraunding)
-                                            @if ($hotelSaraunding->type == 'health')
+                                            @php
+                                                // dd($hotel->hotelSaraundings);
+                                            @endphp
+                                            @if (count($health)>0)
+                                                @foreach ($health as $health_key=> $hotelSaraunding)
+                                                   
+                                                        <tr class="dynamic_health">
+                                                            <td>
+                                                                <div class="form-floating form-floating-outline mb-4">
+                                                                    <input type="text" class="form-control"
+                                                                        id="basic-default-name" value="{{$hotelSaraunding->name}}" name="health_name[]"
+                                                                        placeholder="Name" >
+
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="form-floating form-floating-outline mb-4">
+                                                                    <input type="text" class="form-control"
+                                                                        id="basic-default-name" value="{{$hotelSaraunding->content}}" name="health_content[]"
+                                                                        placeholder="Content" >
+
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="form-floating form-floating-outline mb-4">
+                                                                    <input type="text" class="form-control"
+                                                                        id="basic-default-name" value="{{$hotelSaraunding->distance}}" name="health_distance[]"
+                                                                        placeholder="Distance" >
+
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="form-floating form-floating-outline mb-4">
+                                                                    <div class="col-md-12 text-right">
+                                                                        @if ($health_key == 0)
+                                                                        <a class="extra-fields" href="javascript:void(0);"
+                                                                            onclick="add_more_hotel_health()">
+                                                                            <i class="fa-solid fa fa-plus"
+                                                                                style="color: rgb(0, 245, 53)"></i>
+                                                                        </a>
+                                                                        @else
+                                                                        <a class="extra-fields">
+                                                                            <i class="fa fa-trash" style="color:red;" onclick="remove_hotel_health(this)" aria-hidden="true"></i>
+                                                                        </a>
+                                                                        @endif
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                               
+                                                @endforeach
+                                            @else
                                             <tr class="dynamic_health">
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" value="{{$hotelSaraunding->name}}" name="health_name[]"
-                                                            placeholder="Name" required="">
+                                                            id="basic-default-name" name="health_name[]" placeholder="Name" >
 
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" value="{{$hotelSaraunding->content}}" name="health_content[]"
-                                                            placeholder="Content" required="">
+                                                            id="basic-default-name" name="health_content[]" placeholder="Content" >
 
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" value="{{$hotelSaraunding->distance}}" name="health_distance[]"
-                                                            placeholder="Distance" required="">
+                                                            id="basic-default-name" name="health_distance[]" placeholder="Distance"
+                                                            >
 
                                                     </div>
                                                 </td>
@@ -286,7 +386,7 @@
                                                 </td>
                                             </tr>
                                             @endif
-                                            @endforeach
+                                            
                                         </tbody>
                                     </table>
 
@@ -305,30 +405,76 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($hotel->hotelSaraundings as $hotelSaraunding)
-                                            @if ($hotelSaraunding->type == 'transportation')
+                                            @if (count($transportation)>0)
+                                                @foreach ($transportation as $transportation_key=> $hotelSaraunding)
+                                                    <tr class="dynamic_transpotation">
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <input type="text" class="form-control"
+                                                                    id="basic-default-name" value="{{$hotelSaraunding->name}}" name="transpotaion_name[]"
+                                                                    placeholder="Name" >
+
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <input type="text" class="form-control"
+                                                                    id="basic-default-name" value="{{$hotelSaraunding->content}}" name="transpotaion_content[]"
+                                                                    placeholder="Content" >
+
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <input type="text" class="form-control"
+                                                                    id="basic-default-name" value="{{$hotelSaraunding->distance}}" name="transpotaion_distance[]"
+                                                                    placeholder="Distance" >
+
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <div class="col-md-12 text-right">
+                                                                    @if ($transportation_key == 0)
+                                                                    <a class="extra-fields" href="javascript:void(0);"
+                                                                    onclick="add_more_hotel_transpotation()">
+                                                                    <i class="fa-solid fa fa-plus"
+                                                                        style="color: rgb(0, 245, 53)"></i>
+                                                                </a>
+                                                                    @else
+                                                                    <a class="extra-fields">
+                                                                        <i class="fa fa-trash" style="color:red;" onclick="remove_hotel_transpotation(this)" aria-hidden="true"></i>
+                                                                    </a>
+                                                                    @endif
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                
+                                                @endforeach
+
+                                            @else
                                             <tr class="dynamic_transpotation">
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" value="{{$hotelSaraunding->name}}" name="transpotaion_name[]"
-                                                            placeholder="Name" required="">
+                                                            id="basic-default-name" name="transpotaion_name[]" placeholder="Name" >
 
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" value="{{$hotelSaraunding->content}}" name="transpotaion_content[]"
-                                                            placeholder="Content" required="">
+                                                            id="basic-default-name" name="transpotaion_content[]" placeholder="Content" >
 
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" value="{{$hotelSaraunding->distance}}" name="transpotaion_distance[]"
-                                                            placeholder="Distance" required="">
+                                                            id="basic-default-name" name="transpotaion_distance[]" placeholder="Distance"
+                                                            >
 
                                                     </div>
                                                 </td>
@@ -345,7 +491,6 @@
                                                 </td>
                                             </tr>
                                             @endif
-                                            @endforeach
                                         </tbody>
                                     </table>
 
@@ -364,31 +509,69 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($hotel->hotelSaraundings as $hotelSaraunding)
-                                            @if ($hotelSaraunding->type == 'adventure')
-                                           
+
+                                            @if (count($adventure)>0)
+                                                @foreach ($adventure as $adventure_key=> $hotelSaraunding)
+                                               
+                                                    <tr class="dynamic_adventures">
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <input type="text" class="form-control"
+                                                                    id="basic-default-name" value="{{$hotelSaraunding->name}}" name="adventure_name[]"
+                                                                    placeholder="Name" >
+
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <input type="text" class="form-control"
+                                                                    id="basic-default-name" value="{{$hotelSaraunding->content}}" name="adventure_conent[]"
+                                                                    placeholder="Content" >
+
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <input type="text" class="form-control"
+                                                                    id="basic-default-name" value="{{$hotelSaraunding->distance}}" name="adventure_distance[]"
+                                                                    placeholder="Distance" >
+
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <div class="col-md-12 text-right">
+                                                                    <a class="extra-fields" href="javascript:void(0);"
+                                                                        onclick="add_more_hotel_adventures()">
+                                                                        <i class="fa-solid fa fa-plus"
+                                                                            style="color: rgb(0, 245, 53)"></i>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            @else
                                             <tr class="dynamic_adventures">
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" value="{{$hotelSaraunding->name}}" name="adventure_name[]"
-                                                            placeholder="Name" required="">
+                                                            id="basic-default-name" name="adventure_name[]" placeholder="Name" >
 
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" value="{{$hotelSaraunding->content}}" name="adventure_conent[]"
-                                                            placeholder="Content" required="">
+                                                            id="basic-default-name" name="adventure_conent[]" placeholder="Content" >
 
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" value="{{$hotelSaraunding->distance}}" name="adventure_distance[]"
-                                                            placeholder="Distance" required="">
+                                                            id="basic-default-name" name="adventure_distance[]" placeholder="Distance"
+                                                            >
 
                                                     </div>
                                                 </td>
@@ -405,7 +588,6 @@
                                                 </td>
                                             </tr>
                                             @endif
-                                            @endforeach
                                         </tbody>
                                     </table>
 
@@ -424,30 +606,74 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($hotel->hotelSaraundings as $hotelSaraunding)
-                                            @if ($hotelSaraunding->type == 'experience')
+                                            @if (count($experience) > 0)
+                                                @foreach ($hotel->hotelSaraundings as $experience_key=> $hotelSaraunding)
+                                                    <tr class="dynamic_experience">
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <input type="text" class="form-control"
+                                                                    id="basic-default-name" value="{{$hotelSaraunding->name}}" name="exprience_name[]"
+                                                                    placeholder="Name" >
+
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <input type="text" class="form-control"
+                                                                    id="basic-default-name" value="{{$hotelSaraunding->content}}" name="exprience_content[]"
+                                                                    placeholder="Content" >
+
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <input type="text" class="form-control"
+                                                                    id="basic-default-name" value="{{$hotelSaraunding->distance}}" name="exprience_distance[]"
+                                                                    placeholder="Distance" >
+
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="form-floating form-floating-outline mb-4">
+                                                                <div class="col-md-12 text-right">
+                                                                    @if ($experience_key == 0 )
+                                                                    <a class="extra-fields" href="javascript:void(0);"
+                                                                    onclick="add_more_hotel_experience()">
+                                                                    <i class="fa-solid fa fa-plus"
+                                                                        style="color: rgb(0, 245, 53)"></i>
+                                                                </a>
+                                                                    @else
+                                                                    <a class="extra-fields">
+                                                                        <i class="fa fa-trash" style="color:red;" onclick="remove_hotel_experience(this)" aria-hidden="true"></i>
+                                                                    </a>
+                                                                    @endif
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            @else
                                             <tr class="dynamic_experience">
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" value="{{$hotelSaraunding->name}}" name="exprience_name[]"
-                                                            placeholder="Name" required="">
+                                                            id="basic-default-name" name="exprience_name[]" placeholder="Name" >
 
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" value="{{$hotelSaraunding->content}}" name="exprience_content[]"
-                                                            placeholder="Content" required="">
+                                                            id="basic-default-name" name="exprience_content[]" placeholder="Content" >
 
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" value="{{$hotelSaraunding->distance}}" name="exprience_distance[]"
-                                                            placeholder="Distance" required="">
+                                                            id="basic-default-name" name="exprience_distance[]" placeholder="Distance"
+                                                            >
 
                                                     </div>
                                                 </td>
@@ -464,7 +690,7 @@
                                                 </td>
                                             </tr>
                                             @endif
-                                            @endforeach
+                                            
                                         </tbody>
                                     </table>
 
@@ -487,7 +713,7 @@
                                 <div class="col-md-6">
                                     <div class="form-floating form-floating-outline mb-4">
                                         <input type="time" class="form-control" id="basic-default-name"
-                                            placeholder="Name of the hotel" value="{{$hotel->check_in_time}}" name="check_in_time" required="">
+                                            placeholder="Name of the hotel" value="{{$hotel->check_in_time}}" name="check_in_time" >
                                         <label for="basic-default-name">Time for check in</label>
                                     </div>
                                 </div>
@@ -503,17 +729,17 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-floating form-floating-outline mb-4">
-                                        <input type="text" class="form-control" value="{{$hotel->minimun_advance_reservaction}}" name="minimun_advance_reservaction"
+                                        <input type="text" class="form-control" value="{{$hotel->minimum_advance_reservaction}}" name="minimum_advance_reservaction"
                                             id="basic-default-name" placeholder="Minimum advance reservations"
-                                            required="">
+                                            >
                                         <label for="basic-default-name">Minimum advance reservations</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating form-floating-outline mb-4">
                                         <input type="text" class="form-control" id="basic-default-name"
-                                            placeholder="Minimum day stay requirments" value="{{$hotel->minimum_reservaction_day_req}}" name="minimum_reservaction_day_req"
-                                            required="">
+                                            placeholder="Minimum day stay requirments" value="{{$hotel->maximum_day_stay_req}}" name="maximum_day_stay_req"
+                                            >
                                         <label for="basic-default-name">Minimum day stay requirments</label>
                                     </div>
                                 </div>
@@ -532,7 +758,7 @@
                                 <div class="col-md-6">
                                     <div class="form-floating form-floating-outline mb-4">
                                         <input type="text" class="form-control" id="basic-default-name"
-                                            placeholder="Price" required="" value="{{$hotel->price}}" name="price">
+                                            placeholder="Price"  value="{{$hotel->price}}" name="price">
                                         <label for="basic-default-name">Price</label>
                                     </div>
                                 </div>
@@ -540,7 +766,7 @@
                                     <div class="mb-3">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input" id="basic-default-checkbox"
-                                                value="1" @if($hotel->extera_price==1) checked @endif name="extera_price">
+                                                value="1" @if($hotel->exctera_price==1) checked @endif name="exctera_price">
                                             <label class="form-check-label" for="basic-default-checkbox">Enable Extra
                                                 Price</label>
                                         </div>
@@ -571,22 +797,25 @@
 
                             <div class="row">
                                 @foreach ($propertyTypes as $propertyT)
-                                @foreach ($hotel->hotelAttributes as $hotelAttribute)
-                                @if($hotelAttribute->type == "property_type")
+                                    @php
+                                        $property_type_arr = array();
+                                        foreach ($property_type as $key => $value) {
+                                            $property_type_arr[] = $value->name;
+                                        }
+                                    @endphp
                                     <div class="col-2">
                                         <div class="mb-3">
                                             <div class="form-check">
                                                 <input type="checkbox" name="property_type[]" class="form-check-input"
-                                                    id="basic-default-checkbox" value="{{ $propertyT->id }}" @if($propertyT->id==$hotelAttribute->name) checked @endif>
+                                                    id="basic-default-checkbox" value="{{ $propertyT->id }}" @if(in_array($propertyT->id,$property_type_arr)) checked @endif>
                                                 <label class="form-check-label"
                                                     for="basic-default-checkbox">{{ $propertyT->property_type }}</label>
                                             </div>
                                         </div>
                                     </div>
-                                    @endif
-                                    @endforeach
+                                       
                                         
-                                    @endforeach
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -597,20 +826,22 @@
 
                             <div class="row">
                                 @foreach ($facilities as $facility)
-                                @foreach ($hotel->hotelAttributes as $hotelAttribute)
-                                @if($hotelAttribute->type == "facility")
-                                <div class="col-2">
-                                    <div class="mb-3">
-                                        <div class="form-check">
-                                            <input type="checkbox" name="facility[]" class="form-check-input"
-                                                id="basic-default-checkbox" value="{{ $facility->id }}" @if($facility->id==$hotelAttribute->name) checked @endif>
-                                            <label class="form-check-label"
-                                                for="basic-default-checkbox">{{ $facility->facility_name }}</label>
+                                    @php
+                                        $facility_arr = array();
+                                        foreach ($facility_data as $key => $value) {
+                                            $facility_arr[] = $value->name;
+                                        }
+                                    @endphp
+                                    <div class="col-2">
+                                        <div class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="facility[]" class="form-check-input"
+                                                    id="basic-default-checkbox" value="{{ $facility->id }}" @if(in_array($facility->id,$facility_arr)) checked  @endif>
+                                                <label class="form-check-label"
+                                                    for="basic-default-checkbox">{{ $facility->facility_name }}</label>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                @endif
-                                @endforeach
                                     
                                 @endforeach
                             </div>
@@ -623,22 +854,24 @@
 
                             <div class="row">
                                 @foreach ($services as $service)
-                                @foreach ($hotel->hotelAttributes as $hotelAttribute)
-                                @if($hotelAttribute->type == "service")
-                                    <div class="col-2">
-                                        <div class="mb-3">
-                                            <div class="form-check">
-                                                <input type="checkbox" name="service[]" value="{{ $service->id }}"
-                                                    class="form-check-input" @if($service->id==$hotelAttribute->name) checked @endif id="basic-default-checkbox">
-                                                <label class="form-check-label"
-                                                    for="basic-default-checkbox">{{ $service->service_name }}</label>
+                                    @php
+                                        $service_arr = array();
+                                        foreach ($service_data as $key => $value) {
+                                            $service_arr[] = $value->name;
+                                        }
+                                    @endphp
+                                        <div class="col-2">
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input type="checkbox" name="service[]" value="{{ $service->id }}"
+                                                        class="form-check-input" @if(in_array($service->id,$service_arr)) checked @endif id="basic-default-checkbox">
+                                                    <label class="form-check-label"
+                                                        for="basic-default-checkbox">{{ $service->service_name }}</label>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    @endif
-                                    @endforeach
                                         
-                                    @endforeach
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -648,22 +881,24 @@
 
                             <div class="row">
                                 @foreach ($privacies as $privacy)
-                                @foreach ($hotel->hotelAttributes as $hotelAttribute)
-                                @if($hotelAttribute->type == "privacy_name")
+                                    @php
+                                        $privacy_arr = array();
+                                        foreach ($privacy_name as $key => $value) {
+                                            $privacy_arr[] = $value->name;
+                                        }
+                                    @endphp
                                     <div class="col-2">
                                         <div class="mb-3">
                                             <div class="form-check">
                                                 <input type="checkbox" name="privacy_name[]" class="form-check-input"
-                                                    id="basic-default-checkbox" @if($privacy->id==$hotelAttribute->name) checked @endif value="{{ $privacy->id }}">
+                                                    id="basic-default-checkbox"  @if(in_array($privacy->id,$privacy_arr)) checked @endif value="{{ $privacy->id }}">
                                                 <label class="form-check-label"
                                                     for="basic-default-checkbox">{{ $privacy->privacy_name }}</label>
                                             </div>
                                         </div>
                                     </div>
-                                    @endif
-                                    @endforeach
                                         
-                                    @endforeach
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -689,7 +924,7 @@
                     <div class="col-md-5">
                                     <div class="form-floating form-floating-outline mb-4">
                                         <input type="text" class="form-control" name="policy_title[]" id="basic-default-name"
-                                            placeholder="Name of the hotel" required="">
+                                            placeholder="Name of the hotel" >
                                         <label for="basic-default-name">Title</label>
                                     </div>
                                 </div>
@@ -721,14 +956,14 @@
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" name="education_name[]" placeholder="Name" required="">
+                                    id="basic-default-name" name="education_name[]" placeholder="Name" >
 
                             </div>
                         </td>
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" name="education_content[]" placeholder="Content" required="">
+                                    id="basic-default-name" name="education_content[]" placeholder="Content" >
 
                             </div>
                         </td>
@@ -736,7 +971,7 @@
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
                                     id="basic-default-name" name="education_distance[]" placeholder="Distance"
-                                    required="">
+                                    >
 
                             </div>
                         </td>
@@ -768,14 +1003,14 @@
                     <td>
                         <div class="form-floating form-floating-outline mb-4">
                             <input type="text" class="form-control"
-                                id="basic-default-name" placeholder="Name" name="health_name[]" required="">
+                                id="basic-default-name" placeholder="Name" name="health_name[]" >
 
                         </div>
                     </td>
                     <td>
                         <div class="form-floating form-floating-outline mb-4">
                             <input type="text" class="form-control"
-                                id="basic-default-name" placeholder="Content" name="health_content[]" required="">
+                                id="basic-default-name" placeholder="Content" name="health_content[]" >
 
                         </div>
                     </td>
@@ -783,7 +1018,7 @@
                         <div class="form-floating form-floating-outline mb-4">
                             <input type="text" class="form-control" name="health_distance[]"
                                 id="basic-default-name" placeholder="Distance"
-                                required="">
+                                >
 
                         </div>
                     </td>
@@ -815,14 +1050,14 @@
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" placeholder="Name" name="transpotaion_name[]" required="">
+                                    id="basic-default-name" placeholder="Name" name="transpotaion_name[]" >
 
                             </div>
                         </td>
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" placeholder="Content" name="transpotaion_content[]" required="">
+                                    id="basic-default-name" placeholder="Content" name="transpotaion_content[]" >
 
                             </div>
                         </td>
@@ -830,7 +1065,7 @@
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
                                     id="basic-default-name" name="transpotaion_distance[]" placeholder="Distance"
-                                    required="">
+                                    >
 
                             </div>
                         </td>
@@ -862,14 +1097,14 @@
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" placeholder="Name" name="adventure_name[]" required="">
+                                    id="basic-default-name" placeholder="Name" name="adventure_name[]" >
 
                             </div>
                         </td>
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" placeholder="Content" name="adventure_conent[]" required="">
+                                    id="basic-default-name" placeholder="Content" name="adventure_conent[]" >
 
                             </div>
                         </td>
@@ -877,7 +1112,7 @@
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
                                     id="basic-default-name" name="adventure_distance[]" placeholder="Distance"
-                                    required="">
+                                    >
 
                             </div>
                         </td>
@@ -909,14 +1144,14 @@
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" placeholder="Name" name="exprience_name[]" required="">
+                                    id="basic-default-name" placeholder="Name" name="exprience_name[]" >
 
                             </div>
                         </td>
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" placeholder="Content" name="exprience_content[]" required="">
+                                    id="basic-default-name" placeholder="Content" name="exprience_content[]" >
 
                             </div>
                         </td>
@@ -924,7 +1159,7 @@
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
                                     id="basic-default-name" name="exprience_distance[]" placeholder="Distance"
-                                    required="">
+                                    >
 
                             </div>
                         </td>

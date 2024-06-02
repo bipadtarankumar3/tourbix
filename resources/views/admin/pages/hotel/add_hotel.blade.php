@@ -37,7 +37,7 @@
 
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control" id="basic-default-name" name="title"
-                                    placeholder="Name of the hotel" required="">
+                                    placeholder="Name of the hotel" >
                                 <label for="basic-default-name">Title</label>
                             </div>
 
@@ -48,13 +48,13 @@
 
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control" id="basic-default-name" name="youtube_link"
-                                    placeholder="Youtube Video" required="">
+                                    placeholder="Youtube Video" >
                                 <label for="basic-default-name">Youtube Video</label>
                             </div>
 
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="file" class="form-control" id="basic-default-name" name="banner_image"
-                                    placeholder="Banner Image" required="">
+                                    placeholder="Banner Image" >
                                 <label for="basic-default-name">Banner Image</label>
                             </div>
                             <div class="form-floating form-floating-outline mb-4">
@@ -74,7 +74,7 @@
                                 <div class="col-md-12">
                                     <div class="form-floating form-floating-outline mb-4">
                                         <input type="text" name="hotel_rating" class="form-control"
-                                            id="basic-default-name" placeholder="Rating" required="">
+                                            id="basic-default-name" placeholder="Rating" >
                                         <label for="basic-default-name">Hotel Rating Standard</label>
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@
                                     <div class="col-md-5">
                                         <div class="form-floating form-floating-outline mb-4">
                                             <input type="text" class="form-control" id="basic-default-name"
-                                                placeholder="Name of the hotel" name="policy_title[]" required="">
+                                                placeholder="Name of the hotel" name="policy_title[]" >
                                             <label for="basic-default-name">Title</label>
                                         </div>
                                     </div>
@@ -115,7 +115,7 @@
 
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="file" class="form-control" name="feature_image" id="basic-default-name"
-                                    placeholder="Banner Image" required="">
+                                    placeholder="Banner Image" >
                                 <label for="basic-default-name">Featured Image</label>
                             </div>
 
@@ -131,7 +131,7 @@
 
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" name="location" class="form-control" id="basic-default-name"
-                                    placeholder="Location" required="">
+                                    placeholder="Location" >
                                 <label for="basic-default-name">Location</label>
                             </div>
 
@@ -141,7 +141,7 @@
                             </div>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" name="map_link" class="form-control" id="basic-default-name"
-                                placeholder="Location" required="">
+                                placeholder="Location" >
                             <label for="basic-default-name">Map link</label>
                             </div>
 
@@ -170,14 +170,14 @@
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" name="education_name[]" placeholder="Name" required="">
+                                                            id="basic-default-name" name="education_name[]" placeholder="Name" >
 
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" name="education_content[]" placeholder="Content" required="">
+                                                            id="basic-default-name" name="education_content[]" placeholder="Content" >
 
                                                     </div>
                                                 </td>
@@ -185,7 +185,7 @@
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
                                                             id="basic-default-name" name="education_distance[]" placeholder="Distance"
-                                                            required="">
+                                                            >
 
                                                     </div>
                                                 </td>
@@ -224,14 +224,14 @@
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" name="health_name[]" placeholder="Name" required="">
+                                                            id="basic-default-name" name="health_name[]" placeholder="Name" >
 
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" name="health_content[]" placeholder="Content" required="">
+                                                            id="basic-default-name" name="health_content[]" placeholder="Content" >
 
                                                     </div>
                                                 </td>
@@ -239,7 +239,7 @@
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
                                                             id="basic-default-name" name="health_distance[]" placeholder="Distance"
-                                                            required="">
+                                                            >
 
                                                     </div>
                                                 </td>
@@ -277,14 +277,14 @@
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" name="transpotaion_name[]" placeholder="Name" required="">
+                                                            id="basic-default-name" name="transpotaion_name[]" placeholder="Name" >
 
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" name="transpotaion_content[]" placeholder="Content" required="">
+                                                            id="basic-default-name" name="transpotaion_content[]" placeholder="Content" >
 
                                                     </div>
                                                 </td>
@@ -292,7 +292,7 @@
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
                                                             id="basic-default-name" name="transpotaion_distance[]" placeholder="Distance"
-                                                            required="">
+                                                            >
 
                                                     </div>
                                                 </td>
@@ -330,14 +330,14 @@
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" name="adventure_name[]" placeholder="Name" required="">
+                                                            id="basic-default-name" name="adventure_name[]" placeholder="Name" >
 
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" name="adventure_conent[]" placeholder="Content" required="">
+                                                            id="basic-default-name" name="adventure_conent[]" placeholder="Content" >
 
                                                     </div>
                                                 </td>
@@ -345,7 +345,7 @@
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
                                                             id="basic-default-name" name="adventure_distance[]" placeholder="Distance"
-                                                            required="">
+                                                            >
 
                                                     </div>
                                                 </td>
@@ -383,14 +383,14 @@
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" name="exprience_name[]" placeholder="Name" required="">
+                                                            id="basic-default-name" name="exprience_name[]" placeholder="Name" >
 
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
-                                                            id="basic-default-name" name="exprience_content[]" placeholder="Content" required="">
+                                                            id="basic-default-name" name="exprience_content[]" placeholder="Content" >
 
                                                     </div>
                                                 </td>
@@ -398,7 +398,7 @@
                                                     <div class="form-floating form-floating-outline mb-4">
                                                         <input type="text" class="form-control"
                                                             id="basic-default-name" name="exprience_distance[]" placeholder="Distance"
-                                                            required="">
+                                                            >
 
                                                     </div>
                                                 </td>
@@ -436,7 +436,7 @@
                                 <div class="col-md-6">
                                     <div class="form-floating form-floating-outline mb-4">
                                         <input type="time" class="form-control" id="basic-default-name"
-                                            placeholder="Name of the hotel" name="check_in_time" required="">
+                                            placeholder="Name of the hotel" name="check_in_time" >
                                         <label for="basic-default-name">Time for check in</label>
                                     </div>
                                 </div>
@@ -452,15 +452,15 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-floating form-floating-outline mb-4">
-                                        <input type="text" class="form-control" name="minimun_advance_reservaction" id="basic-default-name"
-                                            placeholder="Minimum advance reservations" required="">
+                                        <input type="text" class="form-control" name="minimum_advance_reservaction" id="basic-default-name"
+                                            placeholder="Minimum advance reservations" >
                                         <label for="basic-default-name">Minimum advance reservations</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating form-floating-outline mb-4">
                                         <input type="text" class="form-control" id="basic-default-name"
-                                            placeholder="Minimum day stay requirments" name="minimum_reservaction_day_req" required="">
+                                            placeholder="Minimum day stay requirments" name="maximum_day_stay_req" >
                                         <label for="basic-default-name">Minimum day stay requirments</label>
                                     </div>
                                 </div>
@@ -479,7 +479,7 @@
                                 <div class="col-md-6">
                                     <div class="form-floating form-floating-outline mb-4">
                                         <input type="text" class="form-control" id="basic-default-name"
-                                            placeholder="Price" required="" name="price">
+                                            placeholder="Price"  name="price">
                                         <label for="basic-default-name">Price</label>
                                     </div>
                                 </div>
@@ -487,7 +487,7 @@
                                     <div class="mb-3">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input" id="basic-default-checkbox"
-                                               value="1" name="extera_price">
+                                               value="1" name="exctera_price">
                                             <label class="form-check-label"  for="basic-default-checkbox">Enable Extra
                                                 Price</label>
                                         </div>
@@ -616,7 +616,7 @@
                     <div class="col-md-5">
                                     <div class="form-floating form-floating-outline mb-4">
                                         <input type="text" class="form-control" name="policy_title[]" id="basic-default-name"
-                                            placeholder="Name of the hotel" required="">
+                                            placeholder="Name of the hotel" >
                                         <label for="basic-default-name">Title</label>
                                     </div>
                                 </div>
@@ -648,14 +648,14 @@
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" name="education_name[]" placeholder="Name" required="">
+                                    id="basic-default-name" name="education_name[]" placeholder="Name" >
 
                             </div>
                         </td>
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" name="education_content[]" placeholder="Content" required="">
+                                    id="basic-default-name" name="education_content[]" placeholder="Content" >
 
                             </div>
                         </td>
@@ -663,7 +663,7 @@
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
                                     id="basic-default-name" name="education_distance[]" placeholder="Distance"
-                                    required="">
+                                    >
 
                             </div>
                         </td>
@@ -695,14 +695,14 @@
                     <td>
                         <div class="form-floating form-floating-outline mb-4">
                             <input type="text" class="form-control"
-                                id="basic-default-name" placeholder="Name" name="health_name[]" required="">
+                                id="basic-default-name" placeholder="Name" name="health_name[]" >
 
                         </div>
                     </td>
                     <td>
                         <div class="form-floating form-floating-outline mb-4">
                             <input type="text" class="form-control"
-                                id="basic-default-name" placeholder="Content" name="health_content[]" required="">
+                                id="basic-default-name" placeholder="Content" name="health_content[]" >
 
                         </div>
                     </td>
@@ -710,7 +710,7 @@
                         <div class="form-floating form-floating-outline mb-4">
                             <input type="text" class="form-control" name="health_distance[]"
                                 id="basic-default-name" placeholder="Distance"
-                                required="">
+                                >
 
                         </div>
                     </td>
@@ -742,14 +742,14 @@
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" placeholder="Name" name="transpotaion_name[]" required="">
+                                    id="basic-default-name" placeholder="Name" name="transpotaion_name[]" >
 
                             </div>
                         </td>
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" placeholder="Content" name="transpotaion_content[]" required="">
+                                    id="basic-default-name" placeholder="Content" name="transpotaion_content[]" >
 
                             </div>
                         </td>
@@ -757,7 +757,7 @@
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
                                     id="basic-default-name" name="transpotaion_distance[]" placeholder="Distance"
-                                    required="">
+                                    >
 
                             </div>
                         </td>
@@ -789,14 +789,14 @@
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" placeholder="Name" name="adventure_name[]" required="">
+                                    id="basic-default-name" placeholder="Name" name="adventure_name[]" >
 
                             </div>
                         </td>
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" placeholder="Content" name="adventure_conent[]" required="">
+                                    id="basic-default-name" placeholder="Content" name="adventure_conent[]" >
 
                             </div>
                         </td>
@@ -804,7 +804,7 @@
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
                                     id="basic-default-name" name="adventure_distance[]" placeholder="Distance"
-                                    required="">
+                                    >
 
                             </div>
                         </td>
@@ -836,14 +836,14 @@
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" placeholder="Name" name="exprience_name[]" required="">
+                                    id="basic-default-name" placeholder="Name" name="exprience_name[]" >
 
                             </div>
                         </td>
                         <td>
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
-                                    id="basic-default-name" placeholder="Content" name="exprience_content[]" required="">
+                                    id="basic-default-name" placeholder="Content" name="exprience_content[]" >
 
                             </div>
                         </td>
@@ -851,7 +851,7 @@
                             <div class="form-floating form-floating-outline mb-4">
                                 <input type="text" class="form-control"
                                     id="basic-default-name" name="exprience_distance[]" placeholder="Distance"
-                                    required="">
+                                    >
 
                             </div>
                         </td>

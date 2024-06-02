@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\vendor;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -18,8 +18,7 @@ class ServiceController extends Controller
         if($id){
             $data['service'] = Service::where('id',$id)->first();
         }
-       
-        return view('admin.pages.hotel_service.list', $data);
+        return view('vendor.pages.hotel_service.list', $data);
     }
 
     public function hotel_service_add_action(Request $request,$id=null)
@@ -62,7 +61,7 @@ class ServiceController extends Controller
         $data['title'] = 'Edit Service Type';
         $data['services'] = Service::orderBy('id', 'desc')->where('user_id',Auth::user()->id)->get();
         $data['service'] = Service::where('id', $id)->first();
-        return view('admin.pages.proprity_type.list', $data);
+        return view('vendor.pages.proprity_type.list', $data);
     }
     public function facility_delete(Request $request, $id)
     {

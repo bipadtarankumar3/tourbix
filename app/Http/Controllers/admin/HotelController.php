@@ -114,13 +114,26 @@ function multiple_files_upload($files, $id, $table_name, $document_type)
         $data['privacies'] = HotelPrivacy::orderBy('id', 'desc')->get();
         $data['services'] = Service::orderBy('id', 'desc')->get();
         $data['hotel'] = Hotel::where('id', $id)->first();
-        $data['gallery_images'] = Documents::where('item_id', $id)->get();
+
+        $data['education'] = HotelSaraunding::where('hotel_id', $id)->where('type', 'education')->get();
+        $data['health'] = HotelSaraunding::where('hotel_id', $id)->where('type', 'health')->get();
+        $data['transportation'] = HotelSaraunding::where('hotel_id', $id)->where('type', 'transportation')->get();
+        $data['adventure'] = HotelSaraunding::where('hotel_id', $id)->where('type', 'adventure')->get();
+        $data['experience'] = HotelSaraunding::where('hotel_id', $id)->where('type', 'experience')->get();
+
+        $data['property_type'] = HotelAttribute::select('name')->where('hotel_id', $id)->where('type', 'property_type')->get();
+        $data['facility_data'] = HotelAttribute::select('name')->where('hotel_id', $id)->where('type', 'facility')->get();
+        $data['service_data'] = HotelAttribute::select('name')->where('hotel_id', $id)->where('type', 'service')->get();
+        $data['privacy_name'] = HotelAttribute::select('name')->where('hotel_id', $id)->where('type', 'privacy_name')->get();
+
+
+        $data['gallery_images'] = Documents::where('item_id', $id)->where('table_name','hotels')->get();
 
         return view('admin.pages.hotel.edit_hotel', $data);
     }
     public function add_hotel_action(Request $request)
     {
-        // dd($request->all());
+        //dd($request->all());
         $banner_image = ''; // Initialize the variable
 
         if ($request->hasFile('banner_image')) {
@@ -160,7 +173,10 @@ function multiple_files_upload($files, $id, $table_name, $document_type)
         $id = $create->id;
         $table_name = "hotels";
         $document_type = "Gallery image";
-        $uploadSuccess = $this->multiple_files_upload($files, $id, $table_name, $document_type);
+        if (!empty($files)) {
+            $uploadSuccess = $this->multiple_files_upload($files, $id, $table_name, $document_type);
+        }
+
 
         $categories = ['education', 'health', 'transportation', 'adventure', 'experience'];
 
@@ -173,15 +189,15 @@ function multiple_files_upload($files, $id, $table_name, $document_type)
             // Ensure all arrays are defined and have the same length
             if (is_array($names) && is_array($contents) && is_array($distances) && count($names) === count($contents) && count($contents) === count($distances)) {
                 $count = count($names);
-
+                // dd( $count );
                 // Create records for each item in this category
                 for ($i = 0; $i < $count; $i++) {
                     HotelSaraunding::create([
                         'hotel_id' => $id, // Assuming $id is defined elsewhere in your code
                         'type' => $category,
-                        'name' => $names[$i],
-                        'content' => $contents[$i],
-                        'distance' => $distances[$i],
+                        'name' => isset($names[$i])?$names[$i]:null,
+                        'content' => isset($contents[$i])?$contents[$i]:null,
+                        'distance' => isset($distances[$i])?$distances[$i]:null,
                     ]);
                 }
             }
@@ -194,8 +210,8 @@ function multiple_files_upload($files, $id, $table_name, $document_type)
             // Create a new HotelPolicy record
             HotelPolicy::create([
                 'hotel_id' => $id,
-                'title' => $policyTitles[$i],
-                'content' => $policyContents[$i],
+                'title' => isset($policyTitles[$i])?$policyTitles[$i]:null,
+                'content' => isset($policyContents[$i])?$policyContents[$i]:null,
             ]);
         }
 
@@ -254,29 +270,34 @@ function multiple_files_upload($files, $id, $table_name, $document_type)
             'map_link' => $request->map_link,
             'check_in_time' => $request->check_in_time,
             'check_out_time' => $request->check_out_time,
-            'minimum_advance_reservaction' => $request->minimun_advance_reservaction,
-            'maximum_day_stay_req' => $request->minimum_reservaction_day_req,
+            'minimum_advance_reservaction' => $request->minimum_advance_reservaction,
+            'maximum_day_stay_req' => $request->maximum_day_stay_req,
             'price' => $request->price,
-            'exctera_price' => $request->extera_price,
+            'exctera_price' => $request->exctera_price,
             'service_fee' => $request->service_fee,
             
             
             'added_by' => Auth::user()->id,
         ]);
         $files = $request->gallery_image;
-        $id = $create->id;
+       
         $table_name = "hotels";
         $document_type = "Gallery image";
-        $uploadSuccess = $this->multiple_files_upload($files, $id, $table_name, $document_type);
+
+        if (!empty($files)) {
+            $uploadSuccess = $this->multiple_files_upload($files, $id, $table_name, $document_type);
+        }
+
+        
 
         $categories = ['education', 'health', 'transportation', 'adventure', 'experience'];
-
+        HotelSaraunding::where('hotel_id',$id)->delete();
         foreach ($categories as $category) {
             // Extract data for this category
             $names = $request->input($category . '_name');
             $contents = $request->input($category . '_content');
             $distances = $request->input($category . '_distance');
-            HotelSaraunding::where('hotel_id',$id)->delete();
+            
             // Ensure all arrays are defined and have the same length
             if (is_array($names) && is_array($contents) && is_array($distances) && count($names) === count($contents) && count($contents) === count($distances)) {
                 $count = count($names);
@@ -287,9 +308,9 @@ function multiple_files_upload($files, $id, $table_name, $document_type)
                     HotelSaraunding::create([
                         'hotel_id' => $id, // Assuming $id is defined elsewhere in your code
                         'type' => $category,
-                        'name' => $names[$i],
-                        'content' => $contents[$i],
-                        'distance' => $distances[$i],
+                        'name' => isset($names[$i])?$names[$i]:null,
+                        'content' => isset($contents[$i])?$contents[$i]:null,
+                        'distance' => isset($distances[$i])?$distances[$i]:null,
                     ]);
                 }
             }
@@ -303,8 +324,8 @@ function multiple_files_upload($files, $id, $table_name, $document_type)
             // Create a new HotelPolicy record
             HotelPolicy::create([
                 'hotel_id' => $id,
-                'title' => $policyTitles[$i],
-                'content' => $policyContents[$i],
+                'title' => isset($policyTitles[$i])?$policyTitles[$i]:null,
+                'content' => isset($policyContents[$i])?$policyContents[$i]:null,
             ]);
         }
 

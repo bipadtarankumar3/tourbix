@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('hotel_saraundings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('hotel_id');
-            $table->string('type');               
-            $table->string('name');               
-            $table->string('content');
-            $table->string('distance');
+            $table->string('type')->nullable();;               
+            $table->string('name')->nullable();;               
+            $table->string('content')->nullable();;
+            $table->string('distance')->nullable();;
             $table->timestamps();
             $table->softDeletes();
         });

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\vendor;
 
 
 use App\Http\Controllers\Controller;
@@ -15,12 +15,11 @@ use App\Models\Documents;
 
 class RoomController extends Controller
 {
- 
     public function roomamenities()
     {
         $data['title'] = 'Hotel Amenities';
         $data['amenities'] = RoomAmenities::where('user_id',Auth::user()->id)->get();
-        return view('admin.pages.room.amenities', $data);
+        return view('vendor.pages.room.amenities', $data);
     }
 
     public function amenityEdit($id = null)
@@ -28,7 +27,7 @@ class RoomController extends Controller
         $data['title'] = $id ? 'Edit Amenity' : 'Add New Amenity';
         $data['amenities'] = RoomAmenities::where('user_id',Auth::user()->id)->get();
         $data['amenity'] = $id ? RoomAmenities::find($id) : null;
-        return view('admin.pages.room.amenities', $data);
+        return view('vendor.pages.room.amenities', $data);
     }
 
     public function updateOrAddAmenity(Request $request, $id = null)
@@ -81,7 +80,7 @@ class RoomController extends Controller
     {
         $data['title'] = 'Room Types';
         $data['roomTypes'] = RoomType::where('user_id',Auth::user()->id)->get();
-        return view('admin.pages.room.roomtype', $data);
+        return view('vendor.pages.room.roomtype', $data);
     }
 
     // Edit a specific room type or add a new one
@@ -90,7 +89,7 @@ class RoomController extends Controller
         $data['title'] = $id ? 'Edit Room Type' : 'Add New Room Type';
         $data['roomTypes'] = RoomType::where('user_id',Auth::user()->id)->get();
         $data['roomType'] = $id ? RoomType::find($id) : null;
-        return view('admin.pages.room.roomtype', $data);
+        return view('vendor.pages.room.roomtype', $data);
     }
 
     // Update or add a new room type
@@ -143,14 +142,14 @@ class RoomController extends Controller
     {
         $data['title'] = 'Room Management';
         $data['rooms'] = Room::where('user_id',Auth::user()->id)->get();
-        return view('admin.pages.room.list', $data);
+        return view('vendor.pages.room.list', $data);
     }
     public function addRoom()
     {
         $data['title'] = 'Add Room';
         $data['roomTypes'] = RoomType::where('user_id',Auth::user()->id)->get();
         $data['amenities'] = RoomAmenities::where('user_id',Auth::user()->id)->get();
-        return view('admin.pages.room.addRoom', $data);
+        return view('vendor.pages.room.addRoom', $data);
     }
 
     public function edit_room($id)
@@ -160,7 +159,7 @@ class RoomController extends Controller
         $data['roomTypes'] = RoomType::where('user_id',Auth::user()->id)->get();
         $data['amenities'] = RoomAmenities::where('user_id',Auth::user()->id)->get();
         $data['documents'] = Documents::where('item_id',$id)->where('table_name','rooms')->get();
-        return view('admin.pages.room.addRoom', $data);
+        return view('vendor.pages.room.addRoom', $data);
     }
 
     public function saveRoom(Request $request, $roomId = null)
@@ -294,6 +293,6 @@ class RoomController extends Controller
     public function roomAvalibility()
     {
         $data['title'] = 'Room Management';
-        return view('admin.pages.room.avalibility', $data);
+        return view('vendor.pages.room.avalibility', $data);
     }
 }
