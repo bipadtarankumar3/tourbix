@@ -29,7 +29,6 @@ class LocationManagementController extends Controller
         return view('admin.pages.location.list', $data);
     }
 
-
     public function locationAddAction(Request $request)
     {
         // Validate the incoming request data
@@ -37,20 +36,64 @@ class LocationManagementController extends Controller
             'location_name' => 'required|string|max:255',
             'location_category_id' => 'nullable|exists:location_categories,id',
             'location_description' => 'nullable|string',
+            'location_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
+
+        // Handle image upload
+        $filename = null;
+        if ($request->hasFile('location_image')) {
+            $file = $request->file('location_image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('images'), $filename);
+        }
 
         // Create a new location record
         Location::create([
             'location_name' => $validatedData['location_name'],
             'location_category_id' => $validatedData['location_category_id'],
             'location_description' => $validatedData['location_description'],
+            'location_image' => $filename,
             'added_by' => Auth::user()->id,
             'status' => '1'
-            // Add any additional fields here if needed
         ]);
 
         // Flash success message to the session
         $request->session()->flash('success', 'Location added successfully');
+
+        // Redirect back to the location list page
+        return redirect()->back();
+    }
+
+    public function locationUpdateAction(Request $request)
+    {
+        $location = Location::findOrFail($request->id);
+
+        // Validate the incoming request data
+        $validatedData = $request->validate([
+            'location_name' => 'required|string|max:255',
+            'location_category_id' => 'nullable|exists:location_categories,id',
+            'location_description' => 'nullable|string',
+            'location_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
+
+        // Handle image upload
+        if ($request->hasFile('location_image')) {
+            $file = $request->file('location_image');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('images'), $filename);
+            $location->location_image = $filename;
+        }
+
+        // Update location record
+        $location->update([
+            'location_name' => $validatedData['location_name'],
+            'location_category_id' => $validatedData['location_category_id'],
+            'location_description' => $validatedData['location_description'],
+            'location_image' => $location->location_image
+        ]);
+
+        // Flash success message to the session
+        $request->session()->flash('success', 'Location updated successfully');
 
         // Redirect back to the location list page
         return redirect()->back();
@@ -62,6 +105,7 @@ class LocationManagementController extends Controller
         $data['lists'] = LocationCategory::orderBy('id', 'desc')->get();
         return view('admin.pages.location.categorylist', $data);
     }
+
     public function locationCategoryEdit($id)
     {
         $data['title'] = 'Location Category Lists';
@@ -70,7 +114,7 @@ class LocationManagementController extends Controller
 
         return view('admin.pages.location.categorylist', $data);
     }
-   
+
     public function locationCategoryAddAction(Request $request)
     {
         LocationCategory::create([
@@ -82,6 +126,7 @@ class LocationManagementController extends Controller
         $request->session()->flash('success', 'added success');
         return redirect()->back();
     }
+
     public function locationCategoryEditAction(Request $request, $id)
     {
         $category = LocationCategory::findOrFail($id);
@@ -97,19 +142,14 @@ class LocationManagementController extends Controller
 
     public function locationCategoryDelete(Request $request, $id)
     {
-        $category = LocationCategory::whereId($id)->delete();
-
-
-
+        LocationCategory::whereId($id)->delete();
         $request->session()->flash('success', 'Category Deleted successfully');
         return redirect()->back();
     }
+
     public function locationDelete(Request $request, $id)
     {
-        $category = Location::whereId($id)->delete();
-
-
-
+        Location::whereId($id)->delete();
         $request->session()->flash('success', 'Category Deleted successfully');
         return redirect()->back();
     }

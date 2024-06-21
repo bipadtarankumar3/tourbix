@@ -4,26 +4,25 @@
     <div class="container-xxl flex-grow-1 container-p-y">
         <h6 class="py-3 mb-4"><span class="text-muted fw-light">Admin/</span>
             {{ Request::segment(2) . '/' . Request::segment(3) }}
-
         </h6>
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
                     <h4 class="card-header">{{ isset($location) ? 'Update Location' : 'Add Location' }}</h4>
                     <div class="card-body">
-                        <form action="{{ isset($location) ? URL::to('admin/location/update-action') : URL::to('admin/location/add-action') }}" method="post">
+                        <form action="{{ isset($location) ? URL::to('admin/location/update-action') : URL::to('admin/location/add-action') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @if(isset($location))
                                 <input type="hidden" name="id" value="{{ $location->id }}">
                             @endif
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" placeholder="Category Name" name="location_name" class="form-control" value="{{ isset($location) ? $location->location_name : '' }}">
+                                <input type="text" placeholder="Location Name" name="location_name" class="form-control" value="{{ isset($location) ? $location->location_name : '' }}">
                             </div>
                             <div class="form-group">
-                                <label for="name">Parent</label>
-                                <select name="location_category_id" class="form-control" id="">
-                                    <option value="">--please Select--</option>
+                                <label for="parent">Parent</label>
+                                <select name="location_category_id" class="form-control" id="parent">
+                                    <option value="">--Please Select--</option>
                                     @foreach($categories as $category)
                                         <option value="{{ $category->id }}" {{ isset($location) && $location->location_category_id == $category->id ? 'selected' : '' }}>{{ $category->category_name }}</option>
                                     @endforeach
@@ -33,6 +32,10 @@
                                 <label for="description">Description</label>
                                 <textarea id="description" name="location_description" class="ckeditor form-control">{{ isset($location) ? $location->location_description : '' }}</textarea>
                             </div>
+                            <div class="form-group">
+                                <label for="image">Image</label>
+                                <input type="file" name="location_image" class="form-control">
+                            </div>
                             <button class="btn btn-primary mt-2" type="submit">{{ isset($location) ? 'Update' : 'Add' }}</button>
                         </form>
                     </div>
@@ -40,7 +43,6 @@
             </div>
             <div class="col-md-9">
                 <div class="card">
-                    {{-- <h5 class="card-header">Location List</h5> --}}
                     <div class="card-body">
                         <div class="table-responsive text-nowrap">
                             <table class="table" id="zero_config">
