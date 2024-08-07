@@ -158,13 +158,13 @@
 
 
                 </li>
-                <li class="menu-item ">
+                {{-- <li class="menu-item ">
                     <a href="{{URL::To('vendor/change-password')}}" class="menu-link">
                         <div>Password change</div>
                     </a>
 
 
-                </li>
+                </li> --}}
             </ul>
         </li>
 
@@ -217,12 +217,12 @@
             </ul>
         </li>
 
-        <li class="menu-item ">
+        {{-- <li class="menu-item ">
             <a href="#" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-google-circles-extended"></i>
                 <div>Admin Dashboard</div>
             </a>
-        </li>
+        </li> --}}
 
 
 

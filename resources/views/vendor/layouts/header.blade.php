@@ -20,9 +20,9 @@
         <!-- /Search -->
         <ul class="navbar-nav flex-row align-items-center ms-auto">
 
-          <!-- Place this tag where you want the button to render. -->
-         
-
+       @if(Session::get('email'))
+         <a href="{{URL::To('back-to-admin')}}"><button class="btn btn-primary mr-2">Back To admin</button></a>
+          @endif
           <!-- User -->
           <li class="nav-item navbar-dropdown dropdown-user dropdown">
             <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">

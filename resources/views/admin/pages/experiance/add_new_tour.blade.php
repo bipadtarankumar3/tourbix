@@ -533,23 +533,6 @@
                         </div>
                     </div>
 
-                    {{-- <div class="card mt-4">
-                        <h5 class="card-header">Author Setting</h5>
-                        <div class="card-body">
-
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="mb-3">
-                                        <div class="form-check">
-                                            <select name="" id="" class="form-control">
-                                                <option value="">-- plese select--</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> --}}
                     <div class="card mt-4">
                         <h5 class="card-header">Top Feature</h5>
                         <div class="card-body">
@@ -567,20 +550,6 @@
                                     </div>
                                 </div>
                             @endforeach
-                            
-
-                            {{-- <div class="row">
-                                <div class="col-12">
-                                    <div class="mb-3">
-                                        <div class="form-check">
-                                            <select name="" id="" class="form-control">
-                                                <option value=""> alaways Available</option>
-                                            </select>
-                                           
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                     <div class="card mt-4">
@@ -887,7 +856,6 @@
     function delete_experience_row(button) {
         $(button).closest('tr').remove();
     }
-    ////------------------------------------------------------------------------------------------------
-
+   
 </script>
 @endsection

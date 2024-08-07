@@ -87,7 +87,8 @@
                                         <label for="only_for_services">Only For Services</label>
                                         <select name="only_for_services" id="only_for_services" class="form-control" >
                                             <option value="">--select--</option>
-                                            <!-- Add service options here -->
+                                            <option value="">Yes</option>
+                                            <option value="">No</option>
                                         </select>
                                     </div>
                                 </div>
@@ -96,7 +97,9 @@
                                         <label for="only_for_user">Only For User</label>
                                         <select name="only_for_user" id="only_for_user" class="form-control" >
                                             <option value="">--select--</option>
-                                            <!-- Add user options here -->
+                                            <option value="">Yes</option>
+                                            <option value="">No</option>
+                                           
                                         </select>
                                     </div>
                                 </div>

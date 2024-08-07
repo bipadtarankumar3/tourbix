@@ -231,7 +231,7 @@
 
                 </li>
                 <li class="menu-item ">
-                    <a href="auth/login-basic.html" class="menu-link">
+                    <a href="{{URL::To('admin/profile')}}" class="menu-link">
                         <div>Profile</div>
                     </a>
 

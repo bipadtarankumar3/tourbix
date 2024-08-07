@@ -40,7 +40,7 @@ function single_files_upload($file, $id, $table_name, $document_type)
             'document_type' => $document_type,
         ];
 
-        Document::create($documentData);
+        Documents::create($documentData);
 
         return true; // Indicate successful upload
     }

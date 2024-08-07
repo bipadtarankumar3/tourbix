@@ -21,6 +21,8 @@ Route::group(['prefix' => 'vendor', 'as' => 'vendor.', 'middleware' => ['App\Htt
     Route::get('dashboard-login/{id}', [VendorAuthController::class, 'dashboardLogin']);
     Route::get('logout', [VendorAuthController::class, 'logout']);
     Route::get('my-profile', [VendorAuthController::class, 'myProfile']);
+    Route::put('profile/update', [VendorAuthController::class, 'updateVendorProfile'])->name('profile.update');
+    Route::put('password/update', [VendorAuthController::class, 'updateVendorPassword'])->name('password.update');
     Route::get('change-password', [VendorAuthController::class, 'changePassword']);
     Route::group(['prefix' => 'reports', 'as' => 'reports.'], function () {
         Route::get('booking-report', [ReportsController::class, 'bookingReports']);
@@ -40,17 +42,19 @@ Route::group(['prefix' => 'vendor', 'as' => 'vendor.', 'middleware' => ['App\Htt
     Route::group(['prefix' => 'hotel', 'as' => 'hotel.'], function () {
         Route::get('list', [HotelController::class, 'hotelList']);
         Route::get('add_hotel', [HotelController::class, 'add_hotel']);
+        Route::get('edit/{id}', [HotelController::class, 'edit_hotel']);
+        Route::post('add-action', [HotelController::class, 'add_hotel_action']);
+        Route::post('edit-action/{id}', [HotelController::class, 'edit_hotel_action']);
         Route::get('proprity_type', [HotelController::class, 'proprity_type']);
         Route::get('facility', [HotelController::class, 'facility']);
 
 
-         // services
-         Route::get('hotel_service/{id?}', [ServiceController::class, 'hotel_service']);
-         Route::post('service/add-action', [ServiceController::class, 'hotel_service_add_action']);
-         Route::post('service/edit-action/{id}', [ServiceController::class, 'hotel_service_add_action']);
-         Route::get('service/edit/{id}', [ServiceController::class, 'hotel_service']);
-         Route::post('service/delete/{id}', [ServiceController::class, 'hotel_service']);
-
+        // services
+        Route::get('hotel_service/{id?}', [ServiceController::class, 'hotel_service']);
+        Route::post('service/add-action', [ServiceController::class, 'hotel_service_add_action']);
+        Route::post('service/edit-action/{id}', [ServiceController::class, 'hotel_service_add_action']);
+        Route::get('service/edit/{id}', [ServiceController::class, 'hotel_service']);
+        Route::post('service/delete/{id}', [ServiceController::class, 'hotel_service']);
     });
 
     Route::group(['prefix' => 'room', 'as' => 'room.'], function () {
@@ -81,12 +85,12 @@ Route::group(['prefix' => 'vendor', 'as' => 'vendor.', 'middleware' => ['App\Htt
         Route::get('delete_room_images/{id?}', [RoomController::class, 'delete_room_images']);
         Route::get('delete_room/{id}', [RoomController::class, 'deleteRoom'])->name('room.delete');
 
-        
+
         Route::get('avalibility', [RoomController::class, 'roomAvalibility']);
     });
 
 
-   
+
     Route::group(['prefix' => 'experiance', 'as' => 'experiance.'], function () {
         Route::get('list', [ExperianceController::class, 'experianceList']);
         Route::get('add-new-tour', [ExperianceController::class, 'addNewTour']);
@@ -103,8 +107,5 @@ Route::group(['prefix' => 'vendor', 'as' => 'vendor.', 'middleware' => ['App\Htt
         Route::post('attribute/add-action-attribute', [ExperianceController::class, 'attributeAddAction']);
         Route::get('attribute/edit/{id}', [ExperianceController::class, 'attributeEdit']);
         Route::get('attribute/delete/{id}', [ExperianceController::class, 'attributeDelete']);
-       
     });
-
-
 });

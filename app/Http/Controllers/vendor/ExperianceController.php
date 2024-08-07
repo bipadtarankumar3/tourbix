@@ -21,6 +21,7 @@ class ExperianceController extends Controller
     //------------ Tour -------------------------------------
     public function experianceList(){
         $data['title']='Experiance List';
+        $data['tours']=Tour::where('user_id',Auth::user()->id)->get();
         return view('vendor.pages.experiance.list',$data);
     }
     public function addNewTour(){

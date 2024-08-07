@@ -15,10 +15,14 @@ use App\Http\Controllers\admin\RoomController;
 use App\Http\Controllers\admin\EnquiryController;
 
 Route::get('login', [AdminAuthController::class, 'login'])->name('login');
+Route::get('back-to-admin', [AdminAuthController::class, 'backToAdmin']);
 Route::post('admin-login-action', [AdminAuthController::class, 'adminLoginAction']);
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['App\Http\Middleware\AdminAuth']], function () {
     Route::get('dashboard', [AdminAuthController::class, 'dashboard']);
+    Route::get('profile', [AdminAuthController::class, 'profile']);
+    Route::put('/admin/profile/update', [AdminAuthController::class, 'updateProfile'])->name('profile.update');
+Route::put('/admin/password/update', [AdminAuthController::class, 'updatePassword'])->name('password.update');
     Route::get('enquiry', [EnquiryController::class, 'enquiry']);
     Route::get('enquiry/delete/{id}', [EnquiryController::class, 'enquiry_delete']);
     Route::get('logout', [AdminAuthController::class, 'logout']);
