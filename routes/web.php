@@ -18,3 +18,5 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/', [WebViewController::class, 'index'])->name('home');
+Route::get('search', [WebViewController::class, 'search']);
+Route::get('property_details/{id}', [WebViewController::class, 'property_details']);

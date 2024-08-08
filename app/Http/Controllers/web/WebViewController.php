@@ -12,4 +12,12 @@ class WebViewController extends Controller
         $data['locations']=Location::orderBy('id','desc')->get();
         return view('web.pages.index',$data);
     }
+    public function search(){
+        $data['locations']=Location::orderBy('id','desc')->get();
+        return view('web.pages.search_list',$data);
+    }
+    public function property_details(){
+        $data['locations']=Location::orderBy('id','desc')->get();
+        return view('web.pages.property_details',$data);
+    }
 }

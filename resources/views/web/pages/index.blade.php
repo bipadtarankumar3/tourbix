@@ -26,7 +26,7 @@
 
                             <div class="col-md-12">
                                 <div id="TabA" class="tabcontent-inner">
-                                    <form class="row book-form">
+                                    <form action="{{URL::to('search')}}" class="row book-form">
                                         <div class="col-md-11">
                                             <div class="row">
                                                 <div class="form-group col-md-4">
@@ -214,7 +214,7 @@
                                 </div>
 
                                 <div id="TabF" class="tabcontent-inner">
-                                    <form class="row book-form">
+                                    <form action="{{URL::to('search')}}" class="row book-form" method="GET">
                                         <div class="col-md-11">
                                             <div class="row">
                                                 <div class="form-group col-md-3">

@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-md-12">
           <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="index.html"><img src="{{ URL::to('public/assets/web/images/logo.png')}}" alt=""></a>
+            <a class="navbar-brand" href="{{URL::to('/')}}"><img src="{{ URL::to('public/assets/web/images/logo.png')}}" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
             </button>

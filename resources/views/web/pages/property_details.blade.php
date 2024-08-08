@@ -8,27 +8,27 @@
       <div class="row mt-4 mb-4">
         <div class="col-md-8 mb-1 p-0 img-over">
         <a href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
-          <img src="images/img-5.jpg" alt="" class="w-100"/>
+          <img src="{{URL::to('public/assets/web/images/img-5.jpg')}}" alt="" class="w-100"/>
           </a>
         </div>
         <div class="col-md-4 p-0 pl-1">
           <div class="row m-0">
             <div class="col-md-12 col-xs-6 pl-1 pr-1 pb-2 img-over">
             <a href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
-              <img src="images/img-2.jpg" alt="" class="w-100"/>
+              <img src="{{URL::to('public/assets/web/images/img-2.jpg')}}" alt="" class="w-100"/>
               </a>
             </div>
             <div class="col-md-12 col-xs-6 pl-1 pr-1 pb-2 img-over" style="position:relative;">
               <a href="#" data-toggle="modal" data-target=".bd-example-modal-xl">
-                <img src="images/img-3.jpg" alt="" class="w-100"/>
+                <img src="{{URL::to('public/assets/web/images/img-3.jpg')}}" alt="" class="w-100"/>
               </a>
               <div class="view-all"><button class="btn btn-view-all" data-toggle="modal" data-target=".bd-example-modal-xl">View all <i class="fa fa-angle-right"></i></button></div>
             </div>
             <!--<div class="col-md-12 pl-1 pr-1 pb-2 img-over">
-              <img src="images/img-4.jpg" alt="" class="w-100"/>
+              <img src="{{URL::to('public/assets/web/images/img-4.jpg')}}" alt="" class="w-100"/>
             </div>-->
             <!--<div class="col-md-6 pl-1 pr-1 pb-2 img-over">
-              <img src="images/img-5.jpg" alt="" class="w-100"/>
+              <img src="{{URL::to('public/assets/web/images/img-5.jpg')}}" alt="" class="w-100"/>
             </div>-->
           </div>
         </div>
@@ -77,18 +77,18 @@
               <div class="col-6">
                 <div class="popular-amenities">
                    <ul>
-                     <li><img src="images/pool.svg" alt=""/> Pool <img src="images/info.svg" alt="" style="width: 16px;"/></li>
-                     <li><img src="images/coffee-cup.svg" alt=""/> Breakfast available <img src="images/info.svg" alt="" style="width: 16px;"/></li>
-                     <li><img src="images/spa.svg" alt=""/> Spa</li>
+                     <li><img src="{{URL::to('public/assets/web/images/pool.svg')}}" alt=""/> Pool <img src="{{URL::to('public/assets/web/images/info.svg')}}" alt="" style="width: 16px;"/></li>
+                     <li><img src="{{URL::to('public/assets/web/images/coffee-cup.svg')}}" alt=""/> Breakfast available <img src="{{URL::to('public/assets/web/images/info.svg')}}" alt="" style="width: 16px;"/></li>
+                     <li><img src="{{URL::to('public/assets/web/images/spa.svg')}}" alt=""/> Spa</li>
                    </ul>
                 </div>
               </div>
               <div class="col-6">
                <div class="popular-amenities">
                    <ul>
-                     <li><img src="images/restaurant.svg" alt=""/> Restaurant <img src="images/info.svg" alt="" style="width: 16px;"/></li>
-                     <li><img src="images/wifi.svg" alt=""/> Free WiFi </li>
-                     <li><img src="images/air-conditioning.svg" alt=""/> Air conditioning</li>
+                     <li><img src="{{URL::to('public/assets/web/images/restaurant.svg')}}" alt=""/> Restaurant <img src="{{URL::to('public/assets/web/images/info.svg')}}" alt="" style="width: 16px;"/></li>
+                     <li><img src="{{URL::to('public/assets/web/images/wifi.svg')}}" alt=""/> Free WiFi </li>
+                     <li><img src="{{URL::to('public/assets/web/images/air-conditioning.svg')}}" alt=""/> Air conditioning</li>
                    </ul>
                 </div>
               </div>
@@ -111,10 +111,10 @@
              <div class="map-location mt-3">
                <div class="popular-amenities">
                    <ul>
-                     <li><img src="images/map.svg" alt=""/> Beachwalk Shopping Center <span>1 min walk</span></li>
-                     <li><img src="images/map.svg" alt=""/> Kuta Beach <span>1 min walk</span></li>
-                     <li><img src="images/map.svg" alt=""/> Waterbom Bali <span>18 min walk</span></li>
-                     <li><img src="images/airplane.svg" alt=""/> Denpasar (DPS-Ngurah Rai Intl.) <span>29 min drive</span></li>
+                     <li><img src="{{URL::to('public/assets/web/images/map.svg')}}" alt=""/> Beachwalk Shopping Center <span>1 min walk</span></li>
+                     <li><img src="{{URL::to('public/assets/web/images/map.svg')}}" alt=""/> Kuta Beach <span>1 min walk</span></li>
+                     <li><img src="{{URL::to('public/assets/web/images/map.svg')}}" alt=""/> Waterbom Bali <span>18 min walk</span></li>
+                     <li><img src="{{URL::to('public/assets/web/images/airplane.svg')}}" alt=""/> Denpasar (DPS-Ngurah Rai Intl.) <span>29 min drive</span></li>
                    </ul>
                 </div>
                 <div class="see-all mb-4"><a href="#">See more <i class="fa fa-angle-right"></i> </a></div>
@@ -160,11 +160,11 @@
            <div class="listing-box border border-red">
              <div class="listing-box-slider">
                 <div class="owl-product-list owl-carousel owl-theme">
-                  <div class="item"><img src="images/img-1.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-2.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-3.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-4.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-5.jpg" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-1.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-2.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-3.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-4.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-5.jpg')}}" alt=""/></div>
                 </div>
                 <div class="listing-box-top p-0">
                    <div class="popular-shay">Popular for short stays</div>
@@ -175,14 +175,14 @@
              <p>9.8/10 Exceptional</p>
               <div class="popular-amenities">
                    <ul>
-                     <li><img src="images/map.svg" alt=""/> 495 sq ft</li>
-                     <li><img src="images/wifi.svg" alt=""/> Free WiFi</li>
-                     <li><img src="images/parking.svg" alt=""/> Free self parking</li>
-                     <li><img src="images/user-group.svg" alt=""/> Sleeps 4</li>
-                     <li><img src="images/bed.svg" alt=""/> 1 King Bed</li>
+                     <li><img src="{{URL::to('public/assets/web/images/map.svg')}}" alt=""/> 495 sq ft</li>
+                     <li><img src="{{URL::to('public/assets/web/images/wifi.svg')}}" alt=""/> Free WiFi</li>
+                     <li><img src="{{URL::to('public/assets/web/images/parking.svg')}}" alt=""/> Free self parking</li>
+                     <li><img src="{{URL::to('public/assets/web/images/user-group.svg')}}" alt=""/> Sleeps 4</li>
+                     <li><img src="{{URL::to('public/assets/web/images/bed.svg')}}" alt=""/> 1 King Bed</li>
                    </ul>
                 </div>
-                <div class="see-all-r mb-2"><a href="#">Non-refundable <img src="images/info.svg" alt=""/> </a></div>
+                <div class="see-all-r mb-2"><a href="#">Non-refundable <img src="{{URL::to('public/assets/web/images/info.svg')}}" alt=""/> </a></div>
                 <div class="see-all mb-2"><a href="#">More details <i class="fa fa-angle-right"></i> </a></div>
               </div>
               <div class="border-1"></div>
@@ -276,11 +276,11 @@
            <div class="listing-box border border-red">
              <div class="listing-box-slider">
                 <div class="owl-product-list owl-carousel owl-theme">
-                  <div class="item"><img src="images/img-2.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-3.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-1.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-4.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-5.jpg" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-2.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-3.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-1.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-4.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-5.jpg')}}" alt=""/></div>
                 </div>
                 <!--<div class="listing-box-top p-0">
                    <div class="popular-shay">Popular for short stays</div>
@@ -291,14 +291,14 @@
              <p>9.8/10 Exceptional</p>
               <div class="popular-amenities">
                    <ul>
-                     <li><img src="images/map.svg" alt=""/> 495 sq ft</li>
-                     <li><img src="images/wifi.svg" alt=""/> Free WiFi</li>
-                     <li><img src="images/parking.svg" alt=""/> Free self parking</li>
-                     <li><img src="images/user-group.svg" alt=""/> Sleeps 4</li>
-                     <li><img src="images/bed.svg" alt=""/> 1 King Bed</li>
+                     <li><img src="{{URL::to('public/assets/web/images/map.svg')}}" alt=""/> 495 sq ft</li>
+                     <li><img src="{{URL::to('public/assets/web/images/wifi.svg')}}" alt=""/> Free WiFi</li>
+                     <li><img src="{{URL::to('public/assets/web/images/parking.svg')}}" alt=""/> Free self parking</li>
+                     <li><img src="{{URL::to('public/assets/web/images/user-group.svg')}}" alt=""/> Sleeps 4</li>
+                     <li><img src="{{URL::to('public/assets/web/images/bed.svg')}}" alt=""/> 1 King Bed</li>
                    </ul>
                 </div>
-                <div class="see-all-r mb-2"><a href="#">Non-refundable <img src="images/info.svg" alt=""/> </a></div>
+                <div class="see-all-r mb-2"><a href="#">Non-refundable <img src="{{URL::to('public/assets/web/images/info.svg')}}" alt=""/> </a></div>
                 <div class="see-all mb-2"><a href="#">More details <i class="fa fa-angle-right"></i> </a></div>
               </div>
               <div class="border-1"></div>
@@ -392,11 +392,11 @@
            <div class="listing-box border border-red">
              <div class="listing-box-slider">
                 <div class="owl-product-list owl-carousel owl-theme">
-                  <div class="item"><img src="images/img-3.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-2.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-1.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-4.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-5.jpg" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-3.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-2.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-1.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-4.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-5.jpg')}}" alt=""/></div>
                 </div>
                 <!--<div class="listing-box-top p-0">
                    <div class="popular-shay">Popular for short stays</div>
@@ -407,14 +407,14 @@
              <p>9.8/10 Exceptional</p>
               <div class="popular-amenities">
                    <ul>
-                     <li><img src="images/map.svg" alt=""/> 495 sq ft</li>
-                     <li><img src="images/wifi.svg" alt=""/> Free WiFi</li>
-                     <li><img src="images/parking.svg" alt=""/> Free self parking</li>
-                     <li><img src="images/user-group.svg" alt=""/> Sleeps 4</li>
-                     <li><img src="images/bed.svg" alt=""/> 1 King Bed</li>
+                     <li><img src="{{URL::to('public/assets/web/images/map.svg')}}" alt=""/> 495 sq ft</li>
+                     <li><img src="{{URL::to('public/assets/web/images/wifi.svg')}}" alt=""/> Free WiFi</li>
+                     <li><img src="{{URL::to('public/assets/web/images/parking.svg')}}" alt=""/> Free self parking</li>
+                     <li><img src="{{URL::to('public/assets/web/images/user-group.svg')}}" alt=""/> Sleeps 4</li>
+                     <li><img src="{{URL::to('public/assets/web/images/bed.svg')}}" alt=""/> 1 King Bed</li>
                    </ul>
                 </div>
-                <div class="see-all-r mb-2"><a href="#">Non-refundable <img src="images/info.svg" alt=""/> </a></div>
+                <div class="see-all-r mb-2"><a href="#">Non-refundable <img src="{{URL::to('public/assets/web/images/info.svg')}}" alt=""/> </a></div>
                 <div class="see-all mb-2"><a href="#">More details <i class="fa fa-angle-right"></i> </a></div>
               </div>
               <div class="border-1"></div>
@@ -510,7 +510,7 @@
           <div class="border border-red p-3">
             <table class="w-100">
               <tr>
-                <td><img src="images/lodging_priming.svg" alt=""/></td>
+                <td><img src="{{URL::to('public/assets/web/images/lodging_priming.svg')}}" alt=""/></td>
                 <td><h5>Enjoy more peace of mind by adding stay protection at checkout.</h5></td>
               </tr>
             </table>
@@ -522,11 +522,11 @@
            <div class="listing-box border border-red">
              <div class="listing-box-slider">
                 <div class="owl-product-list owl-carousel owl-theme">
-                  <div class="item"><img src="images/img-1.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-2.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-3.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-4.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-5.jpg" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-1.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-2.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-3.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-4.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-5.jpg')}}" alt=""/></div>
                 </div>
                 <div class="listing-box-top p-0">
                    <div class="popular-shay">Popular for short stays</div>
@@ -537,14 +537,14 @@
              <p>9.8/10 Exceptional</p>
               <div class="popular-amenities">
                    <ul>
-                     <li><img src="images/map.svg" alt=""/> 495 sq ft</li>
-                     <li><img src="images/wifi.svg" alt=""/> Free WiFi</li>
-                     <li><img src="images/parking.svg" alt=""/> Free self parking</li>
-                     <li><img src="images/user-group.svg" alt=""/> Sleeps 4</li>
-                     <li><img src="images/bed.svg" alt=""/> 1 King Bed</li>
+                     <li><img src="{{URL::to('public/assets/web/images/map.svg')}}" alt=""/> 495 sq ft</li>
+                     <li><img src="{{URL::to('public/assets/web/images/wifi.svg')}}" alt=""/> Free WiFi</li>
+                     <li><img src="{{URL::to('public/assets/web/images/parking.svg')}}" alt=""/> Free self parking</li>
+                     <li><img src="{{URL::to('public/assets/web/images/user-group.svg')}}" alt=""/> Sleeps 4</li>
+                     <li><img src="{{URL::to('public/assets/web/images/bed.svg')}}" alt=""/> 1 King Bed</li>
                    </ul>
                 </div>
-                <div class="see-all-r mb-2"><a href="#">Non-refundable <img src="images/info.svg" alt=""/> </a></div>
+                <div class="see-all-r mb-2"><a href="#">Non-refundable <img src="{{URL::to('public/assets/web/images/info.svg')}}" alt=""/> </a></div>
                 <div class="see-all mb-2"><a href="#">More details <i class="fa fa-angle-right"></i> </a></div>
               </div>
               <div class="border-1"></div>
@@ -638,11 +638,11 @@
            <div class="listing-box border border-red">
              <div class="listing-box-slider">
                 <div class="owl-product-list owl-carousel owl-theme">
-                  <div class="item"><img src="images/img-2.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-3.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-1.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-4.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-5.jpg" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-2.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-3.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-1.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-4.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-5.jpg')}}" alt=""/></div>
                 </div>
                 <!--<div class="listing-box-top p-0">
                    <div class="popular-shay">Popular for short stays</div>
@@ -653,14 +653,14 @@
              <p>9.8/10 Exceptional</p>
               <div class="popular-amenities">
                    <ul>
-                     <li><img src="images/map.svg" alt=""/> 495 sq ft</li>
-                     <li><img src="images/wifi.svg" alt=""/> Free WiFi</li>
-                     <li><img src="images/parking.svg" alt=""/> Free self parking</li>
-                     <li><img src="images/user-group.svg" alt=""/> Sleeps 4</li>
-                     <li><img src="images/bed.svg" alt=""/> 1 King Bed</li>
+                     <li><img src="{{URL::to('public/assets/web/images/map.svg')}}" alt=""/> 495 sq ft</li>
+                     <li><img src="{{URL::to('public/assets/web/images/wifi.svg')}}" alt=""/> Free WiFi</li>
+                     <li><img src="{{URL::to('public/assets/web/images/parking.svg')}}" alt=""/> Free self parking</li>
+                     <li><img src="{{URL::to('public/assets/web/images/user-group.svg')}}" alt=""/> Sleeps 4</li>
+                     <li><img src="{{URL::to('public/assets/web/images/bed.svg')}}" alt=""/> 1 King Bed</li>
                    </ul>
                 </div>
-                <div class="see-all-r mb-2"><a href="#">Non-refundable <img src="images/info.svg" alt=""/> </a></div>
+                <div class="see-all-r mb-2"><a href="#">Non-refundable <img src="{{URL::to('public/assets/web/images/info.svg')}}" alt=""/> </a></div>
                 <div class="see-all mb-2"><a href="#">More details <i class="fa fa-angle-right"></i> </a></div>
               </div>
               <div class="border-1"></div>
@@ -754,11 +754,11 @@
            <div class="listing-box border border-red">
              <div class="listing-box-slider">
                 <div class="owl-product-list owl-carousel owl-theme">
-                  <div class="item"><img src="images/img-3.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-2.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-1.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-4.jpg" alt=""/></div>
-                  <div class="item"><img src="images/img-5.jpg" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-3.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-2.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-1.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-4.jpg')}}" alt=""/></div>
+                  <div class="item"><img src="{{URL::to('public/assets/web/images/img-5.jpg')}}" alt=""/></div>
                 </div>
                 <!--<div class="listing-box-top p-0">
                    <div class="popular-shay">Popular for short stays</div>
@@ -769,14 +769,14 @@
              <p>9.8/10 Exceptional</p>
               <div class="popular-amenities">
                    <ul>
-                     <li><img src="images/map.svg" alt=""/> 495 sq ft</li>
-                     <li><img src="images/wifi.svg" alt=""/> Free WiFi</li>
-                     <li><img src="images/parking.svg" alt=""/> Free self parking</li>
-                     <li><img src="images/user-group.svg" alt=""/> Sleeps 4</li>
-                     <li><img src="images/bed.svg" alt=""/> 1 King Bed</li>
+                     <li><img src="{{URL::to('public/assets/web/images/map.svg')}}" alt=""/> 495 sq ft</li>
+                     <li><img src="{{URL::to('public/assets/web/images/wifi.svg')}}" alt=""/> Free WiFi</li>
+                     <li><img src="{{URL::to('public/assets/web/images/parking.svg')}}" alt=""/> Free self parking</li>
+                     <li><img src="{{URL::to('public/assets/web/images/user-group.svg')}}" alt=""/> Sleeps 4</li>
+                     <li><img src="{{URL::to('public/assets/web/images/bed.svg')}}" alt=""/> 1 King Bed</li>
                    </ul>
                 </div>
-                <div class="see-all-r mb-2"><a href="#">Non-refundable <img src="images/info.svg" alt=""/> </a></div>
+                <div class="see-all-r mb-2"><a href="#">Non-refundable <img src="{{URL::to('public/assets/web/images/info.svg')}}" alt=""/> </a></div>
                 <div class="see-all mb-2"><a href="#">More details <i class="fa fa-angle-right"></i> </a></div>
               </div>
               <div class="border-1"></div>
@@ -926,7 +926,7 @@
          <div class="col-md-4 mb-3">
            <div class="listing-box border border-red">
              <div class="listing-box-slider">
-                  <img src="images/img-5.jpg" alt="" class="w-100"/>
+                  <img src="{{URL::to('public/assets/web/images/img-5.jpg')}}" alt="" class="w-100"/>
                 
                 <div class="listing-box-top p-0">
                    <div class="popular-shay">Walk to Kuta Beach</div>
@@ -957,7 +957,7 @@
         <div class="col-md-4 mb-3">
            <div class="listing-box border border-red">
              <div class="listing-box-slider">
-                  <img src="images/img-4.jpg" alt="" class="w-100"/>
+                  <img src="{{URL::to('public/assets/web/images/img-4.jpg')}}" alt="" class="w-100"/>
                 
                 <!--<div class="listing-box-top p-0">
                    <div class="popular-shay">Walk to Kuta Beach</div>
@@ -988,7 +988,7 @@
         <div class="col-md-4 mb-3">
            <div class="listing-box border border-red">
              <div class="listing-box-slider">
-                  <img src="images/img-3.jpg" alt="" class="w-100"/>
+                  <img src="{{URL::to('public/assets/web/images/img-3.jpg')}}" alt="" class="w-100"/>
                 
                 <div class="listing-box-top p-0">
                    <div class="popular-shay">Walk to Kuta Beach</div>
@@ -1088,19 +1088,19 @@
             <div id="TabA"  class="tabcontent-inner">
                   <div class="row">
                   <div class="col-md-3">    
-                    <a class="example-image-link" href="images/img-1.jpg" data-lightbox="example-set1" data-title="Image-1"><img class="example-image w-100 mb-4 b-r-10p" src="images/img-1.jpg" alt=""/></a>
+                    <a class="example-image-link" href="{{URL::to('public/assets/web/images/img-1.jpg')}}" data-lightbox="example-set1" data-title="Image-1"><img class="example-image w-100 mb-4 b-r-10p" src="{{URL::to('public/assets/web/images/img-1.jpg')}}" alt=""/></a>
                   </div>
                   <div class="col-md-3">
-                     <a class="example-image-link" href="images/img-2.jpg" data-lightbox="example-set1" data-title="Image-2"><img class="example-image w-100 mb-4 b-r-10p" src="images/img-2.jpg" alt="" /></a>
+                     <a class="example-image-link" href="{{URL::to('public/assets/web/images/img-2.jpg')}}" data-lightbox="example-set1" data-title="Image-2"><img class="example-image w-100 mb-4 b-r-10p" src="{{URL::to('public/assets/web/images/img-2.jpg')}}" alt="" /></a>
                   </div>
                   <div class="col-md-3">
-                     <a class=" example-image-link" href="images/img-3.jpg" data-lightbox="example-set1" data-title="Image-3"><img class="example-image w-100 mb-4 b-r-10p" src="images/img-3.jpg" alt="" /></a>
+                     <a class=" example-image-link" href="{{URL::to('public/assets/web/images/img-3.jpg')}}" data-lightbox="example-set1" data-title="Image-3"><img class="example-image w-100 mb-4 b-r-10p" src="{{URL::to('public/assets/web/images/img-3.jpg')}}" alt="" /></a>
                   </div>
                   <div class="col-md-3">
-                     <a class="example-image-link" href="images/img-4.jpg" data-lightbox="example-set1" data-title="Image-4"><img class="example-image w-100 mb-4 b-r-10p" src="images/img-4.jpg" alt="" /></a>
+                     <a class="example-image-link" href="{{URL::to('public/assets/web/images/img-4.jpg')}}" data-lightbox="example-set1" data-title="Image-4"><img class="example-image w-100 mb-4 b-r-10p" src="{{URL::to('public/assets/web/images/img-4.jpg')}}" alt="" /></a>
                   </div>
                   <div class="col-md-3">
-                    <a class="example-image-link" href="images/img-5.jpg" data-lightbox="example-set1" data-title="Image-5"><img class="example-image w-100 mb-4 b-r-10p" src="images/img-5.jpg" alt="" /></a>
+                    <a class="example-image-link" href="{{URL::to('public/assets/web/images/img-5.jpg')}}" data-lightbox="example-set1" data-title="Image-5"><img class="example-image w-100 mb-4 b-r-10p" src="{{URL::to('public/assets/web/images/img-5.jpg')}}" alt="" /></a>
                   </div>
                </div>
                </div>
@@ -1108,19 +1108,19 @@
                <div id="TabB" class="tabcontent-inner" style="display:none">
                   <div class="row">
                   <div class="col-md-3">    
-                    <a class="example-image-link" href="images/img-3.jpg" data-lightbox="example-set2" data-title="Image-1"><img class="example-image w-100 mb-4 b-r-10p" src="images/img-3.jpg" alt=""/></a>
+                    <a class="example-image-link" href="{{URL::to('public/assets/web/images/img-3.jpg')}}" data-lightbox="example-set2" data-title="Image-1"><img class="example-image w-100 mb-4 b-r-10p" src="{{URL::to('public/assets/web/images/img-3.jpg')}}" alt=""/></a>
                   </div>
                   <div class="col-md-3">
-                     <a class="example-image-link" href="images/img-2.jpg" data-lightbox="example-set2" data-title="Image-2"><img class="example-image w-100 mb-4 b-r-10p" src="images/img-2.jpg" alt="" /></a>
+                     <a class="example-image-link" href="{{URL::to('public/assets/web/images/img-2.jpg')}}" data-lightbox="example-set2" data-title="Image-2"><img class="example-image w-100 mb-4 b-r-10p" src="{{URL::to('public/assets/web/images/img-2.jpg')}}" alt="" /></a>
                   </div>
                   <div class="col-md-3">
-                     <a class=" example-image-link" href="images/img-1.jpg" data-lightbox="example-set2" data-title="Image-3"><img class="example-image w-100 mb-4 b-r-10p" src="images/img-1.jpg" alt="" /></a>
+                     <a class=" example-image-link" href="{{URL::to('public/assets/web/images/img-1.jpg')}}" data-lightbox="example-set2" data-title="Image-3"><img class="example-image w-100 mb-4 b-r-10p" src="{{URL::to('public/assets/web/images/img-1.jpg')}}" alt="" /></a>
                   </div>
                   <div class="col-md-3">
-                     <a class="example-image-link" href="images/img-4.jpg" data-lightbox="example-set2" data-title="Image-4"><img class="example-image w-100 mb-4 b-r-10p" src="images/img-4.jpg" alt="" /></a>
+                     <a class="example-image-link" href="{{URL::to('public/assets/web/images/img-4.jpg')}}" data-lightbox="example-set2" data-title="Image-4"><img class="example-image w-100 mb-4 b-r-10p" src="{{URL::to('public/assets/web/images/img-4.jpg')}}" alt="" /></a>
                   </div>
                   <div class="col-md-3">
-                    <a class="example-image-link" href="images/img-5.jpg" data-lightbox="example-set2" data-title="Image-5"><img class="example-image w-100 mb-4 b-r-10p" src="images/img-5.jpg" alt="" /></a>
+                    <a class="example-image-link" href="{{URL::to('public/assets/web/images/img-5.jpg')}}" data-lightbox="example-set2" data-title="Image-5"><img class="example-image w-100 mb-4 b-r-10p" src="{{URL::to('public/assets/web/images/img-5.jpg')}}" alt="" /></a>
                   </div>
                </div>
                </div>
